@@ -603,7 +603,7 @@ public class JTelMobView extends FrameView {
 private void saveNewUtilizator(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveNewUtilizator
 // TODO add your handling code here:
      setUtilizatorConfirmed(true);
-     // test SVN
+     //  SVN
     // setVisible(false);
 }//GEN-LAST:event_saveNewUtilizator
 
