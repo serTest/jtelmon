@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+   id="SISP4IPOC"
+   iconfile="SISP4IPOC.png"
+   description="SISP4IPOC"
+   tooltip="Simple Plugin For Inserts into a Palo OLAP's Cube"
+   category="Output"
+   classname="com.atolcd.pentaho.kettle.plugin.SISP4IPOCMeta">
+   <libraries>
+    	<library name="SISP4IPOC.jar"/>
+	<library name="jpalo.jar"/>
+    </libraries>
+    
+   <localized_category>
+     <category locale="en_US">Output</category>
+     <category locale="nl_NL">Output</category>
+     <category locale="fr_FR">Alimentation</category>
+   </localized_category>
+   <localized_description>
+     <description locale="en_US">SISP4IPOC</description>
+     <description locale="nl_NL">SISP4IPOC</description>
+     <description locale="fr_FR">SISP4IPOC</description>
+   </localized_description>
+   <localized_tooltip>
+     <tooltip locale="en_US">SISP4IPOC Is a Simple Plugin For Inserting into a Palo's OLAP's Cube</tooltip>
+     <tooltip locale="nl_NL">SISP4IPOC Is a Simple Plugin For Inserting into a Palo's OLAP's Cube</tooltip>
+     <tooltip locale="fr_FR">SISP4IPOC Is a Simple Plugin For Inserting into a Palo's OLAP's Cube</tooltip>
+   </localized_tooltip>
+   
+</plugin>
