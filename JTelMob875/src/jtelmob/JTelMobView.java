@@ -1,5 +1,6 @@
 /*
  * JTelMob4: JTelMobView.java
+ * 2008-07.10 @18:30
  */
 
 package jtelmob;
