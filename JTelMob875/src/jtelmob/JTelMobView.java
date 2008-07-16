@@ -2,6 +2,9 @@
  * JTelMob4: JTelMobView.java
  * 2008-07.10 @19:52
  * system32.drivers.local
+ * http://code.google.com/p/jtelmon/source/browse
+ * http://weblogs.java.net/blog/pkeegan/
+ * http://www.netbeans.org/kb/61/java/gui-db-custom.html
  * 
  */
 
@@ -235,6 +238,8 @@ public class JTelMobView extends FrameView {
                 Thread.sleep(150L); // remove for real app
                 list.clear();
                 list.addAll(data);
+                //Nfunctions nfi = new Nfunctions();
+                //currentRecord.setFunctie(nfi);
             } catch(InterruptedException ignore) { }
             return null;
         }
@@ -410,6 +415,7 @@ public class JTelMobView extends FrameView {
         deleteButton.setAction(actionMap.get("deleteRecord")); // NOI18N
         deleteButton.setName("deleteButton"); // NOI18N
 
+        functieComboBox.setEnabled(false);
         functieComboBox.setName("functieComboBox"); // NOI18N
         functieComboBox.setRenderer(functionListCellRenderer1);
 
@@ -433,6 +439,7 @@ public class JTelMobView extends FrameView {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${currentRecord.anulat}"), anulatCheckBox, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
 
+        localitateComboBox.setEnabled(false);
         localitateComboBox.setName("localitateComboBox"); // NOI18N
         localitateComboBox.setRenderer(cityListCellRenderer1);
 
@@ -466,15 +473,15 @@ public class JTelMobView extends FrameView {
                             .addComponent(functieLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(functieComboBox, 0, 347, Short.MAX_VALUE)
+                            .addComponent(functieComboBox, 0, 306, Short.MAX_VALUE)
                             .addComponent(anulatCheckBox)
-                            .addComponent(numarTelefonField, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
-                            .addComponent(numePrenumeField, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
-                            .addComponent(deductibilField, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
-                            .addComponent(localitateComboBox, 0, 347, Short.MAX_VALUE)))
+                            .addComponent(numarTelefonField, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
+                            .addComponent(numePrenumeField, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
+                            .addComponent(deductibilField, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
+                            .addComponent(localitateComboBox, 0, 306, Short.MAX_VALUE)))
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)))
+                        .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -484,7 +491,7 @@ public class JTelMobView extends FrameView {
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(numarTelefonLabel)
@@ -579,7 +586,7 @@ public class JTelMobView extends FrameView {
             .addGroup(statusPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(statusMessageLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 273, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 261, Short.MAX_VALUE)
                 .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(statusAnimationLabel)

@@ -33,17 +33,17 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="functieComboBox" alignment="0" pref="347" max="32767" attributes="0"/>
+                              <Component id="functieComboBox" alignment="0" pref="306" max="32767" attributes="0"/>
                               <Component id="anulatCheckBox" min="-2" max="-2" attributes="0"/>
-                              <Component id="numarTelefonField" alignment="0" pref="347" max="32767" attributes="0"/>
-                              <Component id="numePrenumeField" alignment="0" pref="347" max="32767" attributes="0"/>
-                              <Component id="deductibilField" alignment="0" pref="347" max="32767" attributes="0"/>
-                              <Component id="localitateComboBox" alignment="0" pref="347" max="32767" attributes="0"/>
+                              <Component id="numarTelefonField" alignment="0" pref="306" max="32767" attributes="0"/>
+                              <Component id="numePrenumeField" alignment="0" pref="306" max="32767" attributes="0"/>
+                              <Component id="deductibilField" alignment="0" pref="306" max="32767" attributes="0"/>
+                              <Component id="localitateComboBox" alignment="0" pref="306" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="masterScrollPane" pref="427" max="32767" attributes="0"/>
+                          <Component id="masterScrollPane" pref="423" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -54,7 +54,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Component id="masterScrollPane" pref="191" max="32767" attributes="0"/>
+                  <Component id="masterScrollPane" pref="155" max="32767" attributes="0"/>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="numarTelefonLabel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -286,6 +286,7 @@
         </Component>
         <Component class="javax.swing.JComboBox" name="functieComboBox">
           <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="functieComboBox" noResource="true"/>
             <Property name="renderer" type="javax.swing.ListCellRenderer" editor="org.netbeans.modules.form.ComponentChooserEditor">
               <ComponentRef name="functionListCellRenderer1"/>
@@ -318,6 +319,7 @@
         </Component>
         <Component class="javax.swing.JComboBox" name="localitateComboBox">
           <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="localitateComboBox" noResource="true"/>
             <Property name="renderer" type="javax.swing.ListCellRenderer" editor="org.netbeans.modules.form.ComponentChooserEditor">
               <ComponentRef name="cityListCellRenderer1"/>
@@ -459,7 +461,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="statusMessageLabel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="273" max="32767" attributes="0"/>
+                  <EmptySpace pref="261" max="32767" attributes="0"/>
                   <Component id="progressBar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="statusAnimationLabel" min="-2" max="-2" attributes="0"/>

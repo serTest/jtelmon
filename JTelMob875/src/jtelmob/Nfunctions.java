@@ -34,6 +34,10 @@ public class Nfunctions implements Serializable {
     private Long functionId;
 
     public Nfunctions() {
+        // U710.2008-07.16
+        // String initFunction = new String("Nfunctions Constructor");
+        // this.setFunctionName(initFunction);
+
     }
 
     public Nfunctions(Long functionId) {

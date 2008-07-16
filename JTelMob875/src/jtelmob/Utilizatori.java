@@ -70,6 +70,9 @@ public class Utilizatori implements Serializable {
     private String zonaN;
 
     public Utilizatori() {
+        // U710.2008-07.16
+        // String initFunction = new String("Utilizatori Constructor");
+        // this.functie.setFunctionName(initFunction);
     }
 
     public Utilizatori(Long numarTelefon) {
