@@ -8,7 +8,7 @@
     <properties>
       <property name="toplink.jdbc.user" value="postgres"/>
       <property name="toplink.jdbc.password" value="telinit"/>
-      <property name="toplink.jdbc.url" value="jdbc:postgresql://system32.drivers.local:5432/telefoane_mobile"/>
+      <property name="toplink.jdbc.url" value="jdbc:postgresql://system32.drivers.local:5432/telmob0804"/>
       <property name="toplink.jdbc.driver" value="org.postgresql.Driver"/>
     </properties>
   </persistence-unit>
