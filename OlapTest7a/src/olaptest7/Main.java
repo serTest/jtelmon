@@ -1,7 +1,10 @@
 package olaptest7;
-/**
- * @author netlander
+/*
+ *  auntaru
+ *  http://jtelmon.googlecode.com/svn/trunk
+ *  Licence Type : GPL v3
  */
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.ArrayList;
