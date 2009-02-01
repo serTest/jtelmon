@@ -1,6 +1,6 @@
 package olaptest7;
 /*
- *  auntaru
+ *  auntaru @ 2009-02.01
  *  http://jtelmon.googlecode.com/svn/trunk
  *  Licence Type : GPL v3
  */
