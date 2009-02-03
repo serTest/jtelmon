@@ -1,6 +1,11 @@
 package olaptest7;
 /*
  *  auntaru @ 2009-02.01
+ *  http://pantestmb.wiki.zoho.com/Subversion.html
+ *  http://www.flickr.com/photos/24834074@N04/3244400077/sizes/o/
+ *  http://www.flickr.com/photos/24834074@N04/3245228168/sizes/o/
+ *  http://www.flickr.com/photos/24834074@N04/3249769952/sizes/o/
+ *  http://www.flickr.com/photos/24834074@N04/3249770060/sizes/o/
  *  http://jtelmon.googlecode.com/svn/
  *  OlapTest7a, JTelMob875, RubyApplication1
  *  http://subversion.netbeans.org/
