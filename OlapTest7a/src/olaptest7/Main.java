@@ -1,6 +1,8 @@
 package olaptest7;
 /*
  *  auntaru @ 2009-02.01
+ *  Licence Type : GPL v3
+ *  http://subversion.netbeans.org/
  *  http://pantestmb.wiki.zoho.com/Subversion.html
  *  http://www.flickr.com/photos/24834074@N04/3244400077/sizes/o/
  *  http://www.flickr.com/photos/24834074@N04/3245228168/sizes/o/
@@ -8,8 +10,7 @@ package olaptest7;
  *  http://www.flickr.com/photos/24834074@N04/3249770060/sizes/o/
  *  http://jtelmon.googlecode.com/svn/
  *  OlapTest7a, JTelMob875, RubyApplication1
- *  http://subversion.netbeans.org/
- *  Licence Type : GPL v3
+ *  
  */
 
 import java.sql.DriverManager;
