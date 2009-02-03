@@ -1,6 +1,7 @@
 package olaptest7;
 /*
- *  auntaru @ 2009-02.01
+ *  auntaru @ 2009-02.03
+ *  Test Subversion 
  *  Licence Type : GPL v3
  *  http://subversion.netbeans.org/
  *  http://pantestmb.wiki.zoho.com/Subversion.html
