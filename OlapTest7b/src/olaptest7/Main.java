@@ -22,9 +22,7 @@ import org.palo.api.Connection;
 import org.palo.api.Database;
 import org.palo.api.Dimension;
 import org.palo.api.Hierarchy;
-import org.palo.api.Cube;
 import org.palo.api.ConnectionFactory;
-import org.palo.api.ConnectionConfiguration;
 import org.palo.api.Element;
 import org.palo.api.Consolidation;
 
@@ -267,8 +265,6 @@ try {
     String SQL_Sursa = SQL_Customer;
     List<Client> CustomerList = new ArrayList<Client>();
     CustomerList  =  getCustomerListBySQL (SQL_Sursa);
-    // SetDimDepoAgByList(DepoAgList, "DepoAg");
-    // ToDo: 2009-01.27 @ 23:01
     SetDimCustomerByList(CustomerList, "Customer");
 }
 
@@ -278,6 +274,8 @@ try {
     Database odb = conn_dest.addDatabase("testu_olap7b");
 try {
     Iterator vItr2 = CustomerList.iterator();
+    Integer iNoCust = new Integer(CustomerList.size());
+    // Integer iIndex = new Integer(1);
     Dimension[] dimensions = new Dimension[1];
     Dimension dim1 = odb.addDimension(mS_dimensiune);
     Hierarchy hie1 = dim1.getDefaultHierarchy();
@@ -287,23 +285,24 @@ try {
     String mS_denumire;
     String mS_id;
     Element parent, child;
-    int index2=0, size=0;
+    int index1=0, size=0;
     Consolidation[] consolidations ;
     Iterator vItr = null;
     // 2008-02.08 ~ new variable iClient;
+    System.out.println("   NR.Clienti =  " + iNoCust.toString());
     while (vItr2.hasNext()){
+        index1=index1+1;
         Client iClient;
         iClient = (Client) vItr2.next();
         mS_denumire = iClient.getDenumire();
         mS_id= iClient.getID();
-        if(!mS_denumire.substring(0, 1).equals("0")){
+        //if(!mS_denumire.substring(0, 1).equals("0")){
             mS_denumire = mS_denumire.replaceAll(illegal_char, legal_char);
             mS_id = mS_id.replaceAll(illegal_char, legal_char);
-            System.out.println(" __Client__ " + mS_denumire);
-            // mS_denumire = mS_denumire + mS_id;
+            System.out.println(" __Client_" + index1 + "  " + mS_denumire);
             mS_denumire = mS_denumire.concat(mS_id);
             hie1.addElement( mS_denumire , Element.ELEMENTTYPE_NUMERIC);
-        }
+        //}
     }
 } catch (Exception e) {
     System.err.println("An error has occurred during transfer");
