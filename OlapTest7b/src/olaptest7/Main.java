@@ -79,6 +79,7 @@ static class Produs{
 }
 
 static class Client{
+    private String id;
     private String denumire;
     private String clasa;
     private String grupa;
@@ -89,15 +90,19 @@ static class Client{
         this.categorie=null;
         this.grupa=null;
     }
-    public Client(String denCli, String denCls, String denCat, String denGru){
+    public Client(String sid, String denCli, String denCls, String denCat, String denGru){
         this.denumire=denCli;
         this.clasa=denCls;
         this.categorie=denCat;
         this.grupa=denGru;
+        this.id=sid;
     }
 
     public void rename(String denDep){
         this.denumire=denDep;
+    }
+    String getID(){
+        return this.id;
     }
     String getDenumire(){
         return this.denumire;
@@ -155,7 +160,6 @@ try {
     String illegal_char = " ";
     String legal_char = "";
     String mS_denumire;
-    //ArrayList <String> listOfAgents;
     ArrayList <String> listOfProducts;
     Element parent, child;
     int index2=0, size=0;
@@ -271,7 +275,7 @@ try {
 
   static void SetDimCustomerByList( List<Client> CustomerList, String mS_dimensiune ){
     Connection conn_dest = ConnectionFactory.getInstance().newConnection("127.0.0.1", "7777", "admin", "admin");
-    Database odb = conn_dest.addDatabase("testu_olap7a");
+    Database odb = conn_dest.addDatabase("testu_olap7b");
 try {
     Iterator vItr2 = CustomerList.iterator();
     Dimension[] dimensions = new Dimension[1];
@@ -281,6 +285,7 @@ try {
     String illegal_char = " ";
     String legal_char = "";
     String mS_denumire;
+    String mS_id;
     Element parent, child;
     int index2=0, size=0;
     Consolidation[] consolidations ;
@@ -290,9 +295,13 @@ try {
         Client iClient;
         iClient = (Client) vItr2.next();
         mS_denumire = iClient.getDenumire();
+        mS_id= iClient.getID();
         if(!mS_denumire.substring(0, 1).equals("0")){
             mS_denumire = mS_denumire.replaceAll(illegal_char, legal_char);
+            mS_id = mS_id.replaceAll(illegal_char, legal_char);
             System.out.println(" __Client__ " + mS_denumire);
+            // mS_denumire = mS_denumire + mS_id;
+            mS_denumire = mS_denumire.concat(mS_id);
             hie1.addElement( mS_denumire , Element.ELEMENTTYPE_NUMERIC);
         }
     }
@@ -332,15 +341,16 @@ try {
     rs_sursa = stmt_sursa.executeQuery(SQL_sursa);
     String illegal_char = " ";
     String legal_char = "";
-    String mS_denCli =" ", mS_denCls =" ", mS_denCat =" ", mS_denGru =" ";
+    String mS_iD= " ", mS_denCli =" ", mS_denCls =" ", mS_denCat =" ", mS_denGru =" ";
     Client iClient = null;
     while (rs_sursa.next()) {
+        mS_iD = rs_sursa.getString("tert_id").replaceAll(illegal_char, legal_char);
         mS_denCli = rs_sursa.getString("client").replaceAll(illegal_char, legal_char);
         mS_denCat = rs_sursa.getString("categorie").replaceAll(illegal_char, legal_char);
         mS_denGru = rs_sursa.getString("grupa").replaceAll(illegal_char, legal_char);
         mS_denCls = rs_sursa.getString("clasa").replaceAll(illegal_char, legal_char);
         System.out.println(mS_denCli + "  " + mS_denCls + "  " + mS_denGru + "  " + mS_denCat);
-        iClient = new Client(mS_denCli,mS_denCls,mS_denCat,mS_denGru);
+        iClient = new Client(mS_iD,mS_denCli,mS_denCls,mS_denCat,mS_denGru);
         CustomerList.add(iClient);
     }
     System.out.println("Transfer OK");
