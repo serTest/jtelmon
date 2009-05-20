@@ -129,3 +129,51 @@ catch (Exception e) {
 
 }
 
+/*CREATE DATABASE pangram_warehouse_2009
+  WITH OWNER = postgres
+       ENCODING = 'SQL_ASCII';
+
+-- Table: sales_details
+-- DROP TABLE sales_details;
+
+CREATE TABLE sales_details
+(
+  fact_id character(10),
+  nrdoc character(16),
+  data_f date,
+  tiparit character(1),
+  verstor numeric(1),
+  valoare_vn numeric(13,2),
+  val_disc_incl numeric(12,2),
+  val_disc_expl numeric(12,2),
+  val_tva_c_nor numeric(12,2),
+  tert_id character(9),
+  nrlc_id character(7),
+  gestiune_id character(7),
+  gest character(30),
+  client character(1),
+  agent character(10),
+  stoc_id character(10),
+  simbol character(13),
+  produs character(45),
+  cantitate numeric(10,3),
+  pret_vanzare numeric(12,2),
+  pr_disc_incl numeric(6,2),
+  pr_disc_expl numeric(6,2),
+  masa numeric(11,2),
+  categ_produs character(35),
+  categ_tert character(35),
+  categ_agent character(35),
+  grupa_produs character(35),
+  grupa_tert character(35),
+  grupa_agent character(35),
+  clasa_produs character(35),
+  clasa_tert character(35),
+  clasa_agent character(35),
+  loc character(40),
+  judet character(20)
+)
+WITH (OIDS=FALSE);
+ALTER TABLE sales_details OWNER TO postgres;
+*/
+
