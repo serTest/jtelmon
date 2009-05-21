@@ -105,10 +105,6 @@ String legal_char = "`";
         mS_client = mS_client.replaceAll(illegal_char, legal_char);
         mS_produs = mS_produs.replaceAll(illegal_char, legal_char);
         //System.out.println(mS_denmat);
-//        SQL_destinatie = "insert into sales_details(fact_id,nrdoc, data_f, " +
-//                "tiparit, verstor, valoare_vn ) values "+
-//            "('" +mS_fact_id+"', '"  +mS_nrdoc+ "', '" +mS_data_f+ "' , '" +mS_tiparit +
-//            "'," +md_verstor+ "," + md_valoare_vn +")";
           SQL_destinatie = "insert into sales_details(fact_id,nrdoc, data_f, " +
                 "tiparit, verstor, valoare_vn, val_disc_incl, val_disc_expl, val_tva_c_nor, " +
                 "tert_id,nrlc_id,gestiune_id,gest, client, agent, stoc_id, simbol, produs, " +
