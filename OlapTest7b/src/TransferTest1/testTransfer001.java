@@ -117,7 +117,8 @@ String legal_char = "`";
                 "('" +mS_fact_id+"', '"  +mS_nrdoc+ "', '" +mS_data_f+ "' , '" +mS_tiparit +
                 "'," +md_verstor+ "," + md_valoare_vn + "," + md_val_disc_incl + "," +
                 md_val_disc_expl + "," + md_val_tva_c_nor +
-                ",'" + mS_tert_id + "', '"  + mS_nrlc_id  + "', '"  + mS_gestiune_id + "', '"  + mS_gest + "', '"  + mS_client + "', '"  + mS_agent + "', '"  + mS_stoc_id + "', '"  + mS_simbol + "', '"  + mS_produs + "', "  +
+                ",'" + mS_tert_id + "', '"  + mS_nrlc_id  + "', '"  + mS_gestiune_id + "', '"  + mS_gest + "', '"  + 
+                mS_client + "', '"  + mS_agent + "', '"  + mS_stoc_id + "', '"  + mS_simbol + "', '"  + mS_produs + "', " +
                 md_cantitate + "," + md_pret_vanzare + "," + md_pr_disc_incl + "," + md_pr_disc_expl + "," + md_masa + 
                 ",'" + mS_categ_produs + "', '"  + mS_categ_tert  + "', '"  + mS_categ_agent +
                 "','" + mS_grupa_produs + "', '"  + mS_grupa_tert  + "', '"  + mS_grupa_agent +
