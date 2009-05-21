@@ -30,6 +30,7 @@ java.sql.Connection conn_destinatie = null;
 Statement stmt_sursa = null;
 Statement stmt_destinatie = null;
 // http://jdbc.postgresql.org/documentation/83/query.html#query-with-cursor
+// http://www.nabble.com/java.sql.Statement-generates-java.lang.OutOfMemoryError-in-big-tabe-td21568763.html
 try {
     conn_sursa = DriverManager.getConnection(url_sursa,username_sursa,password_sursa);
     // make sure autocommit is off
