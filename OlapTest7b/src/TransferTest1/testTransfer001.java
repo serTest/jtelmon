@@ -25,13 +25,19 @@ try {
 }
 
 java.sql.Connection conn_sursa = null;
+
 java.sql.Connection conn_destinatie = null;
 Statement stmt_sursa = null;
 Statement stmt_destinatie = null;
-
+// http://jdbc.postgresql.org/documentation/83/query.html#query-with-cursor
 try {
     conn_sursa = DriverManager.getConnection(url_sursa,username_sursa,password_sursa);
+    // make sure autocommit is off
+    conn_sursa.setAutoCommit(false);
     stmt_sursa = conn_sursa.createStatement();
+
+    // Turn use of the cursor on.
+    stmt_sursa.setFetchSize(50);
     conn_destinatie = DriverManager.getConnection(url_destinatie,username_destinatie,password_destinatie);
     stmt_destinatie = conn_destinatie.createStatement();
     System.out.println("Connection to source PostgreSQL OK");
@@ -52,13 +58,13 @@ String SQL_sursa = " SELECT F.FACT_ID,F.NRDOC,F.DATA_F,f.tiparit,f.verstor,F.VAL
         "INNER JOIN CLASA CLP ON N.CLASA_ID=CLP.CLASA_ID AND CLP.FISIER='nomstoc' INNER JOIN CLASA CLT ON T.CLASA_ID=CLT.CLASA_ID AND CLT.FISIER='terti' inner join clasa cll on nl.clasa_id=cll.clasa_id and cll.fisier='numere_lucru' " +
         "inner join grupa grp on n.grupa_id=grp.grupa_id and grp.fisier='nomstoc' inner join grupa grt on t.grupa_ID=grt.grupa_id and grt.fisier='terti' inner join grupa grl on nl.grupa_id=grl.grupa_id and grl.fisier='numere_lucru' " +
         "inner join categorie cap on n.categorie_id=cap.categ_id and cap.fisier='nomstoc' inner join categorie cat on t.categorie_id=cat.categ_id and cat.fisier='terti' inner join categorie cal " +
-        "on nl.categorie_id=cal.categ_id and cal.fisier='numere_lucru' where f.data_f>'2009-05-18'";
+        "on nl.categorie_id=cal.categ_id and cal.fisier='numere_lucru' where f.data_f>'2009-05-14'";
 
 ResultSet rs_sursa = null;
 rs_sursa = stmt_sursa.executeQuery(SQL_sursa);
 String SQL_destinatie = "";
 String illegal_char = "'";
-String legal_char = " ";
+String legal_char = "`";
     while (rs_sursa.next()) {
         String mS_fact_id = rs_sursa.getString("fact_id");
         String mS_nrdoc = rs_sursa.getString("nrdoc");
@@ -96,12 +102,31 @@ String legal_char = " ";
         String mS_loc = rs_sursa.getString("loc");
         String mS_judet = rs_sursa.getString("judet");
         //String mS_denmat = rs_sursa.getString("denmat");
-        //mS_denmat = mS_denmat.replaceAll(illegal_char, legal_char);
+        mS_client = mS_client.replaceAll(illegal_char, legal_char);
+        mS_produs = mS_produs.replaceAll(illegal_char, legal_char);
         //System.out.println(mS_denmat);
-        SQL_destinatie = "insert into sales_details(fact_id,nrdoc, data_f, " +
-                "tiparit, verstor, valoare_vn ) values "+
-            "('" +mS_fact_id+"', '"  +mS_nrdoc+ "', '" +mS_data_f+ "' , '" +mS_tiparit +
-            "'," +md_verstor+ "," + md_valoare_vn +")";
+//        SQL_destinatie = "insert into sales_details(fact_id,nrdoc, data_f, " +
+//                "tiparit, verstor, valoare_vn ) values "+
+//            "('" +mS_fact_id+"', '"  +mS_nrdoc+ "', '" +mS_data_f+ "' , '" +mS_tiparit +
+//            "'," +md_verstor+ "," + md_valoare_vn +")";
+          SQL_destinatie = "insert into sales_details(fact_id,nrdoc, data_f, " +
+                "tiparit, verstor, valoare_vn, val_disc_incl, val_disc_expl, val_tva_c_nor, " +
+                "tert_id,nrlc_id,gestiune_id,gest, client, agent, stoc_id, simbol, produs, " +
+                " cantitate, pret_vanzare, pr_disc_incl, pr_disc_expl, masa," +
+                " categ_produs, categ_tert, categ_agent, " +
+                " grupa_produs, grupa_tert, grupa_agent, " +
+                " clasa_produs, clasa_tert, clasa_agent, " +
+                " loc, judet) values "+
+                "('" +mS_fact_id+"', '"  +mS_nrdoc+ "', '" +mS_data_f+ "' , '" +mS_tiparit +
+                "'," +md_verstor+ "," + md_valoare_vn + "," + md_val_disc_incl + "," +
+                md_val_disc_expl + "," + md_val_tva_c_nor +
+                ",'" + mS_tert_id + "', '"  + mS_nrlc_id  + "', '"  + mS_gestiune_id + "', '"  + mS_gest + "', '"  + mS_client + "', '"  + mS_agent + "', '"  + mS_stoc_id + "', '"  + mS_simbol + "', '"  + mS_produs + "', "  +
+                md_cantitate + "," + md_pret_vanzare + "," + md_pr_disc_incl + "," + md_pr_disc_expl + "," + md_masa + 
+                ",'" + mS_categ_produs + "', '"  + mS_categ_tert  + "', '"  + mS_categ_agent +
+                "','" + mS_grupa_produs + "', '"  + mS_grupa_tert  + "', '"  + mS_grupa_agent +
+                "','" + mS_clasa_produs + "', '"  + mS_clasa_tert  + "', '"  + mS_clasa_agent +
+                "','" + mS_loc + "', '"  + mS_judet  + "')";
+
         System.out.println(SQL_destinatie);
         stmt_destinatie.execute(SQL_destinatie);
     }
