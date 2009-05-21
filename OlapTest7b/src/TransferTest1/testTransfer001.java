@@ -173,7 +173,7 @@ CREATE TABLE sales_details
   nrlc_id character(7),
   gestiune_id character(7),
   gest character(30),
-  client character(1),
+  client character(90),
   agent character(10),
   stoc_id character(10),
   simbol character(13),
@@ -197,5 +197,6 @@ CREATE TABLE sales_details
 )
 WITH (OIDS=FALSE);
 ALTER TABLE sales_details OWNER TO postgres;
+
 */
 
