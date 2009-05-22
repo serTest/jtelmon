@@ -63,7 +63,7 @@ String SQL_sursa = " SELECT F.FACT_ID,F.NRDOC,F.DATA_F,f.tiparit,f.verstor,F.VAL
         "INNER JOIN CLASA CLP ON N.CLASA_ID=CLP.CLASA_ID AND CLP.FISIER='nomstoc' INNER JOIN CLASA CLT ON T.CLASA_ID=CLT.CLASA_ID AND CLT.FISIER='terti' inner join clasa cll on nl.clasa_id=cll.clasa_id and cll.fisier='numere_lucru' " +
         "inner join grupa grp on n.grupa_id=grp.grupa_id and grp.fisier='nomstoc' inner join grupa grt on t.grupa_ID=grt.grupa_id and grt.fisier='terti' inner join grupa grl on nl.grupa_id=grl.grupa_id and grl.fisier='numere_lucru' " +
         "inner join categorie cap on n.categorie_id=cap.categ_id and cap.fisier='nomstoc' inner join categorie cat on t.categorie_id=cat.categ_id and cat.fisier='terti' inner join categorie cal " +
-        "on nl.categorie_id=cal.categ_id and cal.fisier='numere_lucru' where f.data_f>'2009-05-14'";
+        "on nl.categorie_id=cal.categ_id and cal.fisier='numere_lucru' where f.data_f>'2007-12-31'";
 
 ResultSet rs_sursa = null;
 rs_sursa = stmt_sursa.executeQuery(SQL_sursa);
