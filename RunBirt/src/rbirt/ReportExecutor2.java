@@ -1,8 +1,7 @@
 package rbirt;
 import org.eclipse.birt.core.exception.BirtException;
-import org.eclipse.birt.core.framework.IPlatformContext;
 import org.eclipse.birt.core.framework.Platform;
-import org.eclipse.birt.core.framework.PlatformFileContext;
+import org.eclipse.birt.core.framework.PlatformConfig;
 import org.eclipse.birt.report.engine.api.EngineConfig;
 import org.eclipse.birt.report.engine.api.EngineException;
 import org.eclipse.birt.report.engine.api.HTMLCompleteImageHandler;
@@ -10,36 +9,26 @@ import org.eclipse.birt.report.engine.api.HTMLRenderOption;
 import org.eclipse.birt.report.engine.api.IReportEngine;
 import org.eclipse.birt.report.engine.api.IReportEngineFactory;
 import org.eclipse.birt.report.engine.api.IReportRunnable;
-import org.eclipse.birt.report.engine.api.RenderOptionBase;
 
-@SuppressWarnings("deprecation")
 public class ReportExecutor2 {
-
+	private static String BIRT_HOME = "E:\\BIRT\\birt-runtime-2_3_2_2\\ReportEngine";
 	public static void main(String[] args) {
-		// Create an EngineConfig object.
-		EngineConfig config = new EngineConfig( );
-		// Set up the path to your BIRT home directory.
-		config.setBIRTHome
-		( "E:/BIRT/birt-runtime-2_3_2_2/ReportEngine" );
-		IPlatformContext context = new PlatformFileContext( );
-		config.setEngineContext( context );
-		// Start the platform for a non-RCP application.
+		PlatformConfig platformConfig = new PlatformConfig();
+		platformConfig.setBIRTHome(BIRT_HOME);
 		try {
-			Platform.startup( config );
+			Platform.startup(platformConfig);
 		} catch (BirtException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		IReportEngineFactory factory =
 		( IReportEngineFactory ) Platform.createFactoryObject
 		( IReportEngineFactory.EXTENSION_REPORT_ENGINE_FACTORY );
-		// Set up writing images or charts embedded in HTML output.
+		 EngineConfig engineConfig = new EngineConfig();
+		 engineConfig.setBIRTHome(BIRT_HOME); //will replace with configuration file
+		 IReportEngine engine = factory.createReportEngine(engineConfig);		
+		
 		HTMLRenderOption ho = new HTMLRenderOption( );
 		ho.setImageHandler( new HTMLCompleteImageHandler( ));
-		config.setEmitterConfiguration
-		( RenderOptionBase.OUTPUT_FORMAT_HTML, ho );
-		// Create the engine.
-		IReportEngine engine = factory.createReportEngine( config );
 		
 		String designName = "./SimpleReport.rptdesign";
 		IReportRunnable runnable = null;
