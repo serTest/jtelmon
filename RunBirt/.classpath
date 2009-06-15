@@ -2,8 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="E:/BIRT/birt-runtime-2_3_2_2/ReportEngine/lib/commons-cli-1.0.jar"/>
-	<classpathentry kind="lib" path="E:/BIRT/birt-runtime-2_3_2_2/ReportEngine/plugins/org.eclipse.birt.core_2.3.2.r232_v20090521.jar"/>
-	<classpathentry kind="lib" path="E:/BIRT/birt-runtime-2_3_2_2/ReportEngine/plugins/org.eclipse.birt.report.engine_2.3.2.r232_v20090522.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/workspace/RunBirt/commons-cli-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/workspace/RunBirt/org.eclipse.birt.core_2.3.2.r232_v20090521.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/workspace/RunBirt/org.eclipse.birt.report.engine_2.3.2.r232_v20090522.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
