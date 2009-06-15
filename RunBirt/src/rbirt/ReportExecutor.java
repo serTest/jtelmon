@@ -108,12 +108,11 @@ System.exit(-1);
 private IReportEngine createReportEngine()
 {
 //Create a new report engine factory
-IReportEngineFactory factory = (IReportEngineFactory) Platform.
-createFactoryObject(IReportEngineFactory.EXTENSION_REPORT_ENGINE_FACTORY);
+IReportEngineFactory factory = (IReportEngineFactory) Platform.createFactoryObject(IReportEngineFactory.EXTENSION_REPORT_ENGINE_FACTORY);
 //create a new report engine
 EngineConfig engineConfig = new EngineConfig();
-// engineConfig.setBIRTHome("E:/BIRT/birt-runtime-2_3_2_2/ReportEngine"); 
- engineConfig.setBIRTHome("E:/BIRT/birt-runtime-2_3_2_2");
+engineConfig.setBIRTHome("E:/BIRT/birt-runtime-2_3_2_2/ReportEngine"); 
+//engineConfig.setBIRTHome("E:/BIRT/birt-runtime-2_3_2_2");
 //will replace with configuration file
 return factory.createReportEngine(engineConfig);
 }

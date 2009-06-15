@@ -5,5 +5,6 @@
 	<classpathentry kind="lib" path="C:/Users/User/workspace/RunBirt/commons-cli-1.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/User/workspace/RunBirt/org.eclipse.birt.core_2.3.2.r232_v20090521.jar"/>
 	<classpathentry kind="lib" path="C:/Users/User/workspace/RunBirt/org.eclipse.birt.report.engine_2.3.2.r232_v20090522.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/workspace/RunBirt/com.ibm.icu_3.8.1.v20080530.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
