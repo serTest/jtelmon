@@ -3,6 +3,7 @@
 http://www.packtpub.com/article/deployment-of-reports-with-birt
 http://digiassn.blogspot.com/2008/08/birt-launch-birt-rcp-application.html
 http://opensource.sys-con.com/node/336872?page=0,1
+http://jtelmon.googlecode.com/svn/
 http://sites.google.com/site/inlinuxwetrust/java
 Eclipse Subversive:
 http://www.eclipse.org/subversive/documentation/gettingStarted/aboutSubversive/install.php
