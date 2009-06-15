@@ -2,6 +2,12 @@
 http://www.packtpub.com/article/deployment-of-reports-with-birt
 http://digiassn.blogspot.com/2008/08/birt-launch-birt-rcp-application.html
 http://opensource.sys-con.com/node/336872?page=0,1
+http://sites.google.com/site/inlinuxwetrust/java
+Eclipse Subversive:
+http://www.eclipse.org/subversive/documentation/gettingStarted/aboutSubversive/install.php
+http://www.eclipse.org/subversive/documentation/install_migrate.php
+http://www.eclipse.org/subversive/downloads.php
+http://community.polarion.com/index.php?page=download&project=subversive
 */
 
 package rbirt;
