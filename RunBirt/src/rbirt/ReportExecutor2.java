@@ -11,7 +11,8 @@ import org.eclipse.birt.report.engine.api.IReportEngineFactory;
 import org.eclipse.birt.report.engine.api.IReportRunnable;
 
 public class ReportExecutor2 {
-	private static String BIRT_HOME = "E:\\BIRT\\birt-runtime-2_3_2_2\\ReportEngine";
+	// private static String BIRT_HOME = "E:\\BIRT\\birt-runtime-2_3_2_2\\ReportEngine";
+	private static String BIRT_HOME = "/opt/BIRT/birt-runtime-2_3_2/ReportEngine";
 	public static void main(String[] args) {
 		PlatformConfig platformConfig = new PlatformConfig();
 		platformConfig.setBIRTHome(BIRT_HOME);
@@ -42,7 +43,7 @@ public class ReportExecutor2 {
 			System.exit( -1 );
 		}
 		// Get the value of a simple property.
-		@SuppressWarnings("unused")
+		// @SuppressWarnings("unused")
 		String author = ( String ) runnable.getProperty
 		( IReportRunnable.AUTHOR );
 		
