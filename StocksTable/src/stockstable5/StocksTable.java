@@ -1,4 +1,4 @@
-
+// modificata baza de date : mdb -> postgres
 package stockstable5;
 
 import java.awt.*;
