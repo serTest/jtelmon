@@ -1,3 +1,5 @@
+package tablesamples;
+
 /*
  * SimpleTableDemo.java requires no other files.
  */

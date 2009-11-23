@@ -1,3 +1,5 @@
+package tablesamples;
+
 // jdj.sys-con.com/read/36362.htm
 // photos.sys-con.com/story/res/36362/source.html
 // Listing 4: Code to test the horizontalScrollBarPolicy and vertical

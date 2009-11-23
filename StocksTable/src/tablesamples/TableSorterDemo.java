@@ -1,3 +1,5 @@
+package tablesamples;
+
 /*
  * http://java.sun.com/docs/books/tutorial/uiswing/
  * http://java.sun.com/docs/books/tutorial/uiswing/components/examples/TableSorterDemo.java

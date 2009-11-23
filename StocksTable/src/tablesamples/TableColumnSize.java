@@ -1,3 +1,5 @@
+package tablesamples;
+
 // Listing 3: Code to test the autoResizeMode property of the JTable.
 import javax.swing.*;
 

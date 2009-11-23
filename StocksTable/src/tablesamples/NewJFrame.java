@@ -4,7 +4,7 @@
  * Created on April 1, 2007, 10:33 PM
  */
 
-package tableexample;
+package tablesamples;
 
 /**
  *

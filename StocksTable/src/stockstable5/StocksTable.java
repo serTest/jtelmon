@@ -335,6 +335,7 @@ class StockData
   }
 }
 
+/*
 class ColumnData
 {
   public String  m_title;
@@ -347,6 +348,7 @@ class ColumnData
     m_alignment = alignment;
   }
 }
+*/
 
 class StockTableData extends AbstractTableModel 
 {
@@ -378,7 +380,8 @@ class StockTableData extends AbstractTableModel
 
   public void setDefaultData() {
     try { 
-      m_date = m_frm.parse("07/24/1999");
+      // m_date = m_frm.parse("07/24/1999");
+        m_date = m_frm.parse("07/23/1998");
     }
     catch (java.text.ParseException ex) { 
       m_date = null; 

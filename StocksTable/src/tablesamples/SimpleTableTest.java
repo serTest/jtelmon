@@ -1,3 +1,5 @@
+package tablesamples;
+
 // Java SE 6
 // jdj.sys-con.com/read/36362.htm
 // Meet the Swing JTable

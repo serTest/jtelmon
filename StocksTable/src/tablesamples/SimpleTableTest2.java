@@ -1,3 +1,5 @@
+package tablesamples;
+
 import javax.swing.*;
 import javax.swing.table.*;
 
