@@ -1,4 +1,4 @@
-
+// tabela cu drop-down box; 
 package stockstable5;
 
 import java.awt.*;
