@@ -1,7 +1,6 @@
 // modificata baza de date : mdb -> postgres
 package pgJTable;
 
-import stockstable5.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
@@ -437,7 +436,7 @@ class StockTableData extends AbstractTableModel
   public String getColumnName(int column) {
     String str = m_columns[column].m_title;
     if (column==m_sortCol)
-      str += m_sortAsc ? " �" : " �";
+      str += m_sortAsc ? " A" : " D";
     return str;
   }
  
