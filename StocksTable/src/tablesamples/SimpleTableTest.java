@@ -4,7 +4,7 @@ package tablesamples;
 // jdj.sys-con.com/read/36362.htm
 // Meet the Swing JTable
 // Listing 1: Code for Simple JTable.
-import com.sun.java.swing.*;
+//import com.sun.java.swing.*;
 // import com.sun.java.swing.table.*;
 import javax.swing.JFrame;
 import javax.swing.JTable;
