@@ -1,6 +1,8 @@
 // tabela cu drop-down box; 
 package stockstable5;
 
+import OpenSesame.*;
+import stockstable5.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
@@ -11,6 +13,7 @@ import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.event.*;
 import javax.swing.table.*;
+
 
 public class ExpenseReport extends JFrame 
 {
@@ -154,7 +157,6 @@ public class ExpenseReport extends JFrame
     new ExpenseReport();
   }
 }
-
 class CheckCellRenderer extends JCheckBox implements TableCellRenderer
 {
   protected static Border m_noFocusBorder;
