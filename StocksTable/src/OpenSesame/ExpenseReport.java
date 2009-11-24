@@ -35,18 +35,32 @@ public class ExpenseReport extends JFrame
     // A table model object must implement the TableModel interface
     m_table.setModel(m_data); 
 
-//public abstract class AbstractTableModel
-//extends Object
-//implements TableModel, Serializable
-//This abstract class provides default implementations for most of the methods
-//  in the TableModel interface. It takes care of the management of listeners and provides
-//  some conveniences for generating TableModelEvents and dispatching them to the listeners.
-//  To create a concrete TableModel as a subclass of AbstractTableModel you need only provide
-//  implementations for the following three methods:
-//  public int getRowCount();
-//  public int getColumnCount();
-//  public Object getValueAt(int row, int column);
-
+/*
+public abstract class AbstractTableModel
+extends Object
+implements TableModel, Serializable
+This abstract class provides default implementations for most of the methods
+  in the TableModel interface. It takes care of the management of listeners and provides
+  some conveniences for generating TableModelEvents and dispatching them to the listeners.
+  To create a concrete TableModel as a subclass of AbstractTableModel you need only provide
+  implementations for the following three methods:
+  public int getRowCount();
+  public int getColumnCount();
+  public Object getValueAt(int row, int column);
+ ~ ~ ~ 
+     Instances of TableModel are responsible for storing a table’s data in a 2-dimensional structure
+     such as a 2-dimensional array or a  vector of vectors.
+     A set of methods is declared for use in retrieving data from a table's cells.
+     The getValueAt() method should retrieve  data from a given row and column index as an Object,
+     and setValueAt() should assign the provided
+     data object to the specified  location (if valid).
+     getColumnClass() should return the Class describing the data objects stored
+     in the specified column (used to assign  a default renderer and editor for that column),
+     and getColumnName() should return the String name
+     associated with the specified  column (often used for that column’s header).
+     The getColumnCount() and getRowCount() methods
+     should return the number of contained columns and rows respectively.
+*/
 
 // By default, a table component allows multiple selections.
 // http://www.exampledepot.com/egs/javax.swing.table/MultiSel.html
