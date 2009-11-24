@@ -1,8 +1,8 @@
 // tabela cu drop-down box; 
-package stockstable5;
+package pgJTable;
 
 import OpenSesame.*;
-import stockstable5.*;
+import pgJTable.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;

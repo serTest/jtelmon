@@ -1,6 +1,7 @@
 // modificata baza de date : mdb -> postgres
-package stockstable5;
+package pgJTable;
 
+import stockstable5.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
@@ -481,7 +482,8 @@ class StockTableData extends AbstractTableModel
       " AND extract(day from data.date1)=" +day+
       " AND extract(year from data.date1)=" +year;
 
-    final String  url_sursa = "jdbc:postgresql://192.168.61.200:5432/javamarket";
+    // final String  url_sursa = "jdbc:postgresql://192.168.61.200:5432/javamarket";
+    final String  url_sursa = "jdbc:postgresql://192.168.101.222:5432/javamarket";
     final String username_sursa = "postgres";
     final String password_sursa = "telinit";
 
