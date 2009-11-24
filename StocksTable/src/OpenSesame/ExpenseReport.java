@@ -1,4 +1,5 @@
-// tabela cu drop-down box; 
+// tabela cu drop-down box;
+// http://java.sun.com/docs/books/tutorial/uiswing/components/table.html
 package OpenSesame;
 
 // import stockstable5.*;
@@ -16,19 +17,42 @@ import javax.swing.table.*;
 public class ExpenseReport extends JFrame 
 {
   protected JTable m_table;
+
+  // ExpenseReportData extends AbstractTableModel
   protected ExpenseReportData m_data;
   protected JLabel m_title;
 
   public ExpenseReport() {
     super("Expense Report");
     setSize(570, 200);
-
     m_data = new ExpenseReportData(this);
-
     m_table = new JTable();
+
+    // We are manually creating the columns
     m_table.setAutoCreateColumnsFromModel(false);
+
+    // Every JTable object uses a table model object to manage the actual table data.
+    // A table model object must implement the TableModel interface
     m_table.setModel(m_data); 
+
+//public abstract class AbstractTableModel
+//extends Object
+//implements TableModel, Serializable
+//This abstract class provides default implementations for most of the methods
+//  in the TableModel interface. It takes care of the management of listeners and provides
+//  some conveniences for generating TableModelEvents and dispatching them to the listeners.
+//  To create a concrete TableModel as a subclass of AbstractTableModel you need only provide
+//  implementations for the following three methods:
+//  public int getRowCount();
+//  public int getColumnCount();
+//  public Object getValueAt(int row, int column);
+
+
+// By default, a table component allows multiple selections.
+// http://www.exampledepot.com/egs/javax.swing.table/MultiSel.html
     m_table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    // m_table.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+    // m_table.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         
     for (int k = 0; k < ExpenseReportData.m_columns.length; k++) {
       TableCellRenderer renderer;
