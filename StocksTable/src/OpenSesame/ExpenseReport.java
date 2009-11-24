@@ -1,7 +1,7 @@
 // tabela cu drop-down box; 
 package OpenSesame;
 
-import stockstable5.*;
+// import stockstable5.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
