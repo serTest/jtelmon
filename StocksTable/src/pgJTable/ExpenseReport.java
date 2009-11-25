@@ -1,8 +1,8 @@
 // tabela cu drop-down box; 
 package pgJTable;
 
-import OpenSesame.*;
-import pgJTable.*;
+//import OpenSesame.*;
+//import pgJTable.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;

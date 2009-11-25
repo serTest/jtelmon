@@ -30,6 +30,7 @@ public class ExpenseReport extends JFrame
 
     // We are manually creating the columns
     m_table.setAutoCreateColumnsFromModel(false);
+    // m_table.setAutoCreateColumnsFromModel(true);
 
     // Every JTable object uses a table model object to manage the actual table data.
     // A table model object must implement the TableModel interface
