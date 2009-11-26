@@ -1,7 +1,11 @@
-// http://java.sun.com/docs/books/tutorial/uiswing/components/table.html
-// http://www.pioverpi.net/category/tech/jtables-jdbc/
-// http://www.pioverpi.net/2009/07/02/jtables-jdbc-pt-4-putting-it-all-together/
-    
+/*
+ http://java.sun.com/docs/books/tutorial/uiswing/components/table.html
+ http://www.pioverpi.net/category/tech/jtables-jdbc/
+ http://www.pioverpi.net/2009/07/02/jtables-jdbc-pt-4-putting-it-all-together/
+ http://www.pioverpi.net/2009/06/26/jtables-jdbc-pt-3-connecting-to-your-database-through-jdbc/
+ http://www.pioverpi.net/2009/06/24/jtables-jdbc-pt-2-extending-abstracttablemodel/
+ http://www.pioverpi.net/2009/06/23/jtables-jdbc-introduction/
+ */
 package telemobile08;
 
 import java.awt.*;
@@ -519,16 +523,12 @@ class ExpenseReportData extends AbstractTableModel
 
 /*
 
- // http://www.pioverpi.net/category/tech/jtables-jdbc/
-// http://www.pioverpi.net/2009/07/02/jtables-jdbc-pt-4-putting-it-all-together/
-
+ http://www.pioverpi.net/category/tech/jtables-jdbc/
 
  JFrame myFrame = new JFrame("My Table");
-
 MyTableModel mt = new MyTableModel();
 JTable jt = new JTable(mt);
 JScrollPane jsp = new JScrollPane(jt);
-
 myFrame.add(jsp);
 myFrame.setVisible(true);
 
