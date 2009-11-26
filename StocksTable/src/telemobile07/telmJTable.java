@@ -61,7 +61,7 @@ This abstract class provides default implementations for most of the methods
      data object to the specified  location (if valid).
      getColumnClass() should return the Class describing the data objects stored
      in the specified column (used to assign  a default renderer and editor for that column),
-     and getColumnName() should return the String name
+2     and getColumnName() should return the String name
      associated with the specified  column (often used for that column’s header).
      The getColumnCount() and getRowCount() methods
      should return the number of contained columns and rows respectively.
@@ -75,7 +75,7 @@ This abstract class provides default implementations for most of the methods
         
     for (int k = 0; k < ExpenseReportData.m_columns.length; k++) {
       TableCellRenderer renderer;
-      if (k==ExpenseReportData.COL_4_DEDUCTIBIL)
+      if (k==ExpenseReportData.COL_6_ANULAT)
         renderer = new CheckCellRenderer();
       else {
         DefaultTableCellRenderer textRenderer = 
@@ -87,10 +87,10 @@ This abstract class provides default implementations for most of the methods
 
       TableCellEditor editor;
 
-      if (k==ExpenseReportData.COL_CATEGORY)
+      if (k==ExpenseReportData.COL_3_FUNCTIE)
         editor = new DefaultCellEditor(new JComboBox(
           ExpenseReportData.FUNCTII));
-      else if (k==ExpenseReportData.COL_4_DEDUCTIBIL)
+      else if (k==ExpenseReportData.COL_6_ANULAT)
         editor = new DefaultCellEditor(new JCheckBox());
       else
         editor = new DefaultCellEditor(new JTextField());
@@ -240,19 +240,21 @@ class RowData
   public String  m_functie;
   public String  m_localitate;
   public Double  m_deductibil;
+  public Boolean m_anulat;
 
   public RowData()
   {
   }
 
   public RowData( String numar_telefon, String  nume_prenume,
-          String functie, String  localitate, double deductibil)
+          String functie, String  localitate, double deductibil, Boolean anulat)
   {
     m_numar_telefon = numar_telefon;
     m_nume_prenume  = nume_prenume;
     m_functie       = functie;
     m_localitate    = localitate;
     m_deductibil    = deductibil;
+    m_anulat        = anulat;
   }
 }
 
@@ -276,19 +278,21 @@ class ExpenseReportData extends AbstractTableModel
     new ColumnData( "Nume prenume", 120, JLabel.RIGHT ),
     new ColumnData( "Functie", 120, JLabel.LEFT ),
     new ColumnData( "Localitate", 120, JLabel.LEFT ),
-    new ColumnData( "Deductibil", 80, JLabel.LEFT )
+    new ColumnData( "Deductibil", 80, JLabel.LEFT ),
+    new ColumnData( "Anulat", 80, JLabel.LEFT )
   };
 
   public static final int COL_DATE = 90;
-  public static final int COL_0_NUMAR = 0;
+  public static final int COL_1_NUMAR = 0;
   public static final int COL_AMOUNT = 91;
-  public static final int COL_1_NUME = 1;
+  public static final int COL_2_NUME = 1;
   public static final int COL_CATEGORY = 92;
-  public static final int COL_2_FUNCTIE = 2;
+  public static final int COL_3_FUNCTIE = 2;
   public static final int COL_APPROVED = 93;
-  public static final int COL_3_LOCALITATE = 3;
+  public static final int COL_4_LOCALITATE = 3;
   public static final int COL_DESCR = 94;
-  public static final int COL_4_DEDUCTIBIL = 4;
+  public static final int COL_5_DEDUCTIBIL = 4;
+  public static final int COL_6_ANULAT = 5;
 
   public static final String[] CATEGORIES = {
     "Fares", "Logging", "Business meals", "Others"
@@ -315,7 +319,7 @@ class ExpenseReportData extends AbstractTableModel
     // try
     {
       m_vector.addElement(new RowData( "0724353580", "Alex Untaru",
-              "Programator", "Resita", 25));
+              "Programator", "Resita", 25, new Boolean(false) ));
     }
     // catch (java.text.ParseException ex) {}
   }
@@ -342,13 +346,14 @@ class ExpenseReportData extends AbstractTableModel
       return "";
     RowData row = (RowData)m_vector.elementAt(nRow);
     switch (nCol) {
-      case COL_0_NUMAR:    return row.m_numar_telefon;
-      case COL_1_NUME:     return row.m_nume_prenume;
-      case COL_2_FUNCTIE:  return row.m_functie;
-      case COL_3_LOCALITATE:  return row.m_localitate;
+      case COL_1_NUMAR:    return row.m_numar_telefon;
+      case COL_2_NUME:     return row.m_nume_prenume;
+      case COL_3_FUNCTIE:  return row.m_functie;
+      case COL_4_LOCALITATE:  return row.m_localitate;
+      case COL_5_DEDUCTIBIL:  return row.m_deductibil;
+      case COL_6_ANULAT:  return row.m_anulat;
       // case COL_CATEGORY: return CATEGORIES[row.m_category.intValue()];
-      // case COL_APPROVED: return "";
-      case COL_DESCR: return "";
+
     }
     return "";
   }
@@ -398,17 +403,23 @@ class ExpenseReportData extends AbstractTableModel
         //row.m_description = svalue;
         break;
 */
-      case COL_0_NUMAR:
+      case COL_1_NUMAR:
         row.m_numar_telefon = svalue;
         break;
-      case COL_1_NUME:
+      case COL_2_NUME:
         row.m_nume_prenume = svalue;
         break;
-      case COL_2_FUNCTIE:
+      case COL_3_FUNCTIE:
         row.m_functie = svalue;
         break;
-      case COL_3_LOCALITATE:
+      case COL_4_LOCALITATE:
         row.m_localitate = svalue;
+        break;
+      case COL_5_DEDUCTIBIL:
+        row.m_deductibil= new Double(svalue);
+        break;
+      case COL_6_ANULAT:
+        row.m_anulat = new Boolean(svalue);
         break;
 
     }
