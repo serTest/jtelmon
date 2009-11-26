@@ -4,6 +4,10 @@ package telemobile08;
 import java.awt.*;
 import java.awt.event.*;
 // import java.math.BigInteger;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.*;
 // import java.io.*;
 import java.text.SimpleDateFormat;
@@ -312,6 +316,7 @@ class ExpenseReportData extends AbstractTableModel
     m_frm = new SimpleDateFormat("MM/dd/yy");
     m_vector = new Vector();
     setDefaultData();
+    retrieveData();
   }
 
   public void setDefaultData() {
@@ -439,4 +444,72 @@ class ExpenseReportData extends AbstractTableModel
     m_vector.remove(row);
       return true;
   }
+
+    public int retrieveData() {
+    // GregorianCalendar calendar = new GregorianCalendar();
+    // final int m_result = 0;
+       // static int m_result = 0;
+    //calendar.setTime(date);
+    //int month = calendar.get(Calendar.MONTH)+1;
+    //int day = calendar.get(Calendar.DAY_OF_MONTH);
+    //int year = calendar.get(Calendar.YEAR);
+
+    final String query = "SELECT u.numar_telefon, u.nume_prenume, " +
+      " u.functie, u.localitate, u.deductibil, u.anulat " +
+      " FROM utilizatori u" ;
+
+    final String  url_sursa = "jdbc:postgresql://192.168.61.200:5432/telefoane_mobile";
+    // final String  url_sursa = "jdbc:postgresql://192.168.101.222:5432/javamarket";
+    final String username_sursa = "postgres";
+    final String password_sursa = "telinit";
+
+    Thread runner = new Thread() {
+      public void run() {
+        try {
+          Class.forName("org.postgresql.Driver");
+          Connection conn = DriverManager.getConnection(url_sursa,username_sursa,password_sursa);
+
+
+          Statement stmt = conn.createStatement();
+          ResultSet results = stmt.executeQuery(query);
+
+          boolean hasData = false;
+          while (results.next()) {
+            if (!hasData) {
+              m_vector.removeAllElements();
+              hasData = true;
+            }
+            String  rs_numar      = results.getString(1);
+            String  rs_nume       = results.getString(2);
+            String  rs_functie    = results.getString(3);
+            String  rs_localitate = results.getString(4);
+            double  rs_deductibil = results.getDouble(5);
+            boolean rs_anulat     = results.getBoolean(6);
+            m_vector.addElement(new RowData( rs_numar, rs_nume , rs_functie,
+                    rs_localitate, rs_deductibil, new Boolean(rs_anulat) ));
+          }
+          results.close();
+          stmt.close();
+          conn.close();
+
+          if (!hasData){
+              // We've got nothing
+              // m_result = 1;
+          }
+        }
+        catch (Exception e) {
+          e.printStackTrace();
+          System.err.println("Load data error: "+e.toString());
+          // m_result = -1;
+        }
+        // m_date = date;
+        // Collections.sort(m_vector, new StockComparator(m_sortCol, m_sortAsc));
+        //m_result = 0;
+      }
+    };
+    runner.start();
+    // return m_result;
+    return 1;
+  }
+
 }
