@@ -1,9 +1,13 @@
 // Fig. 25.32: JdbcRowSetTest.java
 // Displaying the contents of the authors table using JdbcRowSet.
+
+package telemobile08;
+
+
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import javax.sql.rowset.JdbcRowSet;
-import com.sun.rowset.JdbcRowSetImpl; // Sun’s JdbcRowSet implementation
+import com.sun.rowset.JdbcRowSetImpl; // Sunï¿½s JdbcRowSet implementation
 
 public class JdbcRowSetTest 
 {
@@ -66,19 +70,3 @@ public class JdbcRowSetTest
       JdbcRowSetTest window = new JdbcRowSetTest();      
    } // end main
 } // end class JdbcRowSetTest
-
-
-/**************************************************************************
- * (C) Copyright 1992-2005 by Deitel & Associates, Inc. and               *
- * Pearson Education, Inc. All Rights Reserved.                           *
- *                                                                        *
- * DISCLAIMER: The authors and publisher of this book have used their     *
- * best efforts in preparing the book. These efforts include the          *
- * development, research, and testing of the theories and programs        *
- * to determine their effectiveness. The authors and publisher make       *
- * no warranty of any kind, expressed or implied, with regard to these    *
- * programs or to the documentation contained in these books. The authors *
- * and publisher shall not be liable in any event for incidental or       *
- * consequential damages in connection with, or arising out of, the       *
- * furnishing, performance, or use of these programs.                     *
- *************************************************************************/
