@@ -1,4 +1,7 @@
 // http://java.sun.com/docs/books/tutorial/uiswing/components/table.html
+// http://www.pioverpi.net/category/tech/jtables-jdbc/
+// http://www.pioverpi.net/2009/07/02/jtables-jdbc-pt-4-putting-it-all-together/
+    
 package telemobile08;
 
 import java.awt.*;
@@ -513,3 +516,196 @@ class ExpenseReportData extends AbstractTableModel
   }
 
 }
+
+/*
+
+ // http://www.pioverpi.net/category/tech/jtables-jdbc/
+// http://www.pioverpi.net/2009/07/02/jtables-jdbc-pt-4-putting-it-all-together/
+
+
+ JFrame myFrame = new JFrame("My Table");
+
+MyTableModel mt = new MyTableModel();
+JTable jt = new JTable(mt);
+JScrollPane jsp = new JScrollPane(jt);
+
+myFrame.add(jsp);
+myFrame.setVisible(true);
+
+
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import javax.swing.table.AbstractTableModel;
+
+public class MyTableModel extends AbstractTableModel{
+
+	private Object[][] content;
+	private String[] colNames;
+
+	public MyTableModel () {
+		try {
+			Connection conn = DatabaseData.connect();
+
+			content = getTableContent(conn, "TABLE_NAME");
+			colNames = getTableColumnNames(conn, "TABLE_NAME");
+
+			disconnect(conn);
+		}
+		catch (SQLException sqx) {
+			content = new Object [][] {{""}};
+			colNames = new String [] {"Error"};
+			System.err.println("Could not pull data from database");
+		}
+	}
+
+	public int getColumnCount() {
+		return colNames.length;
+	}
+
+	public int getRowCount() {
+		return content.length;
+	}
+
+	public Object getValueAt(int arg0, int arg1) {
+		return content[arg0][arg1];
+	}
+
+	public boolean isCellEditable(int row, int col) {
+		return true;
+	}
+	public void setValueAt(Object aValue, int row, int col) {
+		content[row][col] = aValue;
+	}
+
+	public String getColumnName(int col) {
+		return colNames[col];
+	}
+}
+
+
+
+
+public void Connection connect() {
+	String url = "jdbc:postgresql://localhost:5432/myDatabase";
+	String user = "username";
+	String pass = "password";
+
+	try {
+		Class.forName("org.postgresql.Driver");
+		Connection db = DriverManager.getConnection(url, user, pass);
+
+		return db;
+	} catch (ClassNotFoundException e) {
+		System.err.println("Could not find PostgreSQL driver");
+	} catch (SQLException e) {
+		System.err.println("Failed to establish connection with db");
+	}
+	return null;
+}
+  
+ public void disconnect(Connection conn) {
+	try {
+		conn.close();
+	}
+	catch (SQLException sqx) {
+		System.err.println("Could not disconnect from db, trying again");
+	}
+}
+ *
+ public String[] getTableColumnNames(Connection conn, String tableName)
+                                                          throws SQLException {
+	Statement st = conn.createStatement();
+	ResultSet rs = st.executeQuery("SELECT * FROM " + tableName + ";");
+
+	ResultSetMetaData rsMeta = rs.getMetaData();
+
+	String [] colNames = new String[rsMeta.getColumnCount()];
+
+	for (int i = 0; i < rsMeta.getColumnCount(); i++) {
+	    colNames[i] = rsMeta.getColumnName(i+1);
+	}
+
+	rs.close();
+	st.close();
+	return colNames;
+}
+ * 
+ * 
+  
+ public String[] getTableColumnClasses(Connection conn, String tableName)
+                                                        throws SQLException {
+	Statement st = conn.createStatement();
+        ResultSet rs = st.executeQuery("SELECT * FROM " + tableName + ";");
+
+	ResultSetMetaData rsMeta = rs.getMetaData();
+
+	String [] colClasses = new String [rsMeta.getColumnCount()];
+
+	for (int i = 0; i < rsMeta.getColumnCount(); i++) {
+	    colClasses[i] = rsMeta.getColumnClassName(i + 1);
+	}
+
+	rs.close();
+	st.close();
+	return colClasses;
+} 
+ 
+   
+ public static Object[][] getTableContent(Connection conn, String tableName)
+                                                         throws SQLException {
+	String [] colNames = DatabaseData.getTableColumnNames(conn, tableName);
+	String [] colClasses = DatabaseData.getTableColumnClasses(conn,
+                                                                 tableName);
+
+	Statement st = conn.createStatement();
+	ResultSet rs = st.executeQuery("SELECT * FROM " + tableName + ";");
+
+	ArrayList< Object[] > rowList = new ArrayList< Object[] >();
+	while (rs.next()) {
+		ArrayList< Object> cellList = new ArrayList< Object >();
+		for (int i = 0; i < colClasses.length; i++) {
+			Object cellValue = null;
+
+			if (colClasses[i].equals(String.class.getName())) {
+				cellValue = rs.getString (colNames[i]);
+			}
+			else if (colClasses[i].equals(Integer.class.getName())) {
+				cellValue = new Integer
+                                                  (rs.getInt (colNames[i]));
+			}
+			else if (colClasses[i].equals(Double.class.getName())) {
+				cellValue = new Double
+                                                (rs.getDouble (colNames[i]));
+			}
+			else if (colClasses[i].equals(Date.class.getName())) {
+				cellValue = rs.getDate (colNames[i]);
+			}
+			else if (colClasses[i].equals(Float.class.getName())) {
+				cellValue = rs.getFloat(colNames[i]);
+			}
+			else {
+				System.out.println("PSQL Read Warning: "
+                                  + "Unknown type encountered, "
+                                  + "attempting to read as String");
+				cellValue = rs.getString(colNames[i]);
+			}
+			cellList.add (cellValue);
+		}
+		Object[] cells = cellList.toArray();
+		rowList.add(cells);
+	}
+
+	rs.close();
+	st.close();
+
+	Object [][] content = new Object[rowList.size()] [];
+	for (int i=0; i< content.length; i++) {
+		content[i] = rowList.get(i);
+	}
+
+	return content;
+}
+ 
+ */
