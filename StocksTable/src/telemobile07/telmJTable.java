@@ -272,11 +272,11 @@ class ColumnData
 class ExpenseReportData extends AbstractTableModel 
 {
   public static final ColumnData m_columns[] = {
-    new ColumnData( "Nr Tel", 80, JLabel.LEFT ),
-    new ColumnData( "Nume prenume", 80, JLabel.RIGHT ),
-    new ColumnData( "Functie", 130, JLabel.LEFT ),
-    new ColumnData( "Localitate", 80, JLabel.LEFT ),
-    new ColumnData( "Deductibil", 180, JLabel.LEFT )
+    new ColumnData( "Nr Tel", 120, JLabel.LEFT ),
+    new ColumnData( "Nume prenume", 120, JLabel.RIGHT ),
+    new ColumnData( "Functie", 120, JLabel.LEFT ),
+    new ColumnData( "Localitate", 120, JLabel.LEFT ),
+    new ColumnData( "Deductibil", 80, JLabel.LEFT )
   };
 
   public static final int COL_DATE = 90;
