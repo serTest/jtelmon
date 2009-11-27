@@ -313,7 +313,7 @@ class ExpenseReportData extends AbstractTableModel
     "Director", "Sef", "MZ", "KA", "AG.COM"
   };
 
-
+  protected String[] nfunctions;
   protected pgTelmTable01 m_parent;
   protected SimpleDateFormat m_frm;
   protected Vector m_vector;
@@ -322,7 +322,7 @@ class ExpenseReportData extends AbstractTableModel
     m_parent = parent;
     m_frm = new SimpleDateFormat("MM/dd/yy");
     m_vector = new Vector();
-    setDefaultData();
+    // setDefaultData();
     retrieveData();
   }
 
@@ -464,8 +464,9 @@ class ExpenseReportData extends AbstractTableModel
     final String query = "SELECT u.numar_telefon, u.nume_prenume, " +
       " u.functie, u.localitate, u.deductibil, u.anulat " +
       " FROM utilizatori u" ;
+    final String query2 = "Select nf.function_name from nfunctions nf" ;
 
-    final String  url_sursa = "jdbc:postgresql://192.168.61.200:5432/telefoane_mobile";
+    final String  url_sursa = "jdbc:postgresql://192.168.61.3:5432/telefoane_mobile";
     // final String  url_sursa = "jdbc:postgresql://192.168.101.222:5432/javamarket";
     final String username_sursa = "postgres";
     final String password_sursa = "telinit";
@@ -495,6 +496,10 @@ class ExpenseReportData extends AbstractTableModel
             m_vector.addElement(new RowData( rs_numar, rs_nume , rs_functie,
                     rs_localitate, rs_deductibil, new Boolean(rs_anulat) ));
           }
+
+          results = stmt.executeQuery(query2);
+
+
           results.close();
           stmt.close();
           conn.close();
