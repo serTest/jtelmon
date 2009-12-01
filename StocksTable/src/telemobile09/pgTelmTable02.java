@@ -5,6 +5,10 @@
  http://www.pioverpi.net/2009/06/26/jtables-jdbc-pt-3-connecting-to-your-database-through-jdbc/
  http://www.pioverpi.net/2009/06/24/jtables-jdbc-pt-2-extending-abstracttablemodel/
  http://www.pioverpi.net/2009/06/23/jtables-jdbc-introduction/
+ *
+ *   vs. 01 : are posibilitatea de alegere FUNCTIE prin SELECT from pgDB
+ *
+ *
  */
 package telemobile09;
 
@@ -113,6 +117,7 @@ This abstract class provides default implementations for most of the methods
         m_table.addColumn(column);   
     }
 
+
     JTableHeader header = m_table.getTableHeader();
     header.setUpdateTableInRealTime(false);
 
@@ -192,7 +197,9 @@ This abstract class provides default implementations for most of the methods
       }
     };
     addWindowListener(wndCloser);
-    
+
+    // REPAINT la initializare !
+    m_table.repaint();
     setVisible(true);
   }
 
@@ -256,6 +263,13 @@ class RowData
 
   public RowData()
   {
+    m_numar_telefon = new String("072");
+    m_nume_prenume  = new String(" ");
+    m_functie       = new String(" ");
+    m_localitate    = new String(" ");
+    m_deductibil    = new Double(0);
+    m_anulat        = new Boolean(false);
+
   }
 
   public RowData( String numar_telefon, String  nume_prenume,
@@ -306,9 +320,9 @@ class ExpenseReportData extends AbstractTableModel
   public static final int COL_5_DEDUCTIBIL = 4;
   public static final int COL_6_ANULAT = 5;
 
-  public static final String[] CATEGORIES = {
-    "Fares", "Logging", "Business meals", "Others"
-  };
+  //public static final String[] CATEGORIES = {
+  //  "Fares", "Logging", "Business meals", "Others"
+  //};
 
   public static final String[] FUNCTII = {
     "Director", "Sef", "MZ", "KA", "AG.COM"
@@ -449,6 +463,8 @@ class ExpenseReportData extends AbstractTableModel
   }
 
   public boolean delete(int row) {
+    System.out.println(m_vector.size());
+    System.out.println(row);
     if (row < 0 || row >= m_vector.size())
       return false;
     m_vector.remove(row);
@@ -456,13 +472,6 @@ class ExpenseReportData extends AbstractTableModel
   }
 
     public int retrieveData() {
-    // GregorianCalendar calendar = new GregorianCalendar();
-    // final int m_result = 0;
-       // static int m_result = 0;
-    //calendar.setTime(date);
-    //int month = calendar.get(Calendar.MONTH)+1;
-    //int day = calendar.get(Calendar.DAY_OF_MONTH);
-    //int year = calendar.get(Calendar.YEAR);
 
     final String query = "SELECT u.numar_telefon, u.nume_prenume, " +
       " u.functie, u.localitate, u.deductibil, u.anulat " +
@@ -496,8 +505,11 @@ class ExpenseReportData extends AbstractTableModel
             String  rs_localitate = results.getString(4);
             double  rs_deductibil = results.getDouble(5);
             boolean rs_anulat     = results.getBoolean(6);
+            System.out.println(rs_nume);
+            System.out.println(m_vector.size());
             m_vector.addElement(new RowData( rs_numar, rs_nume , rs_functie,
                     rs_localitate, rs_deductibil, new Boolean(rs_anulat) ));
+
           }
 
           results = stmt.executeQuery(query2);
@@ -508,15 +520,11 @@ class ExpenseReportData extends AbstractTableModel
             String rs_functie   = results.getString(1);
             fnCBx.addItem(rs_functie);
             //nfunctions[i]= rs_functie;
-
             i=i+1;
           }
-
-
           results.close();
           stmt.close();
           conn.close();
-
           if (!hasData){
               // We've got nothing
               // m_result = 1;
