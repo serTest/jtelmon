@@ -100,8 +100,8 @@ This abstract class provides default implementations for most of the methods
       TableCellEditor editor;
 
       if (k==ExpenseReportData.COL_3_FUNCTIE)
-        editor = new DefaultCellEditor(new JComboBox( ExpenseReportData.FUNCTII));
-        // editor = new DefaultCellEditor(fnCBx);
+        // editor = new DefaultCellEditor(new JComboBox( ExpenseReportData.FUNCTII));
+        editor = new DefaultCellEditor(ExpenseReportData.fnCBx);
       else if (k==ExpenseReportData.COL_6_ANULAT)
         editor = new DefaultCellEditor(new JCheckBox());
       else
@@ -315,7 +315,8 @@ class ExpenseReportData extends AbstractTableModel
   };
 
   public static String[] nfunctions;
-  JComboBox fnCBx = new JComboBox();
+  public static JComboBox fnCBx = new JComboBox();
+
   protected pgTelmTable02 m_parent;
   protected SimpleDateFormat m_frm;
   protected Vector m_vector;
