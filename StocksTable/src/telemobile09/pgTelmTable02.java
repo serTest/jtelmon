@@ -6,6 +6,7 @@
  http://www.pioverpi.net/2009/06/24/jtables-jdbc-pt-2-extending-abstracttablemodel/
  http://www.pioverpi.net/2009/06/23/jtables-jdbc-introduction/
  *
+ *   2009-12.01
  *   vs. 01 : are posibilitatea de alegere FUNCTIE prin SELECT from pgDB
  *   Bug : de ce nu afiseaza decad dupa un INSERT ?!
  *
