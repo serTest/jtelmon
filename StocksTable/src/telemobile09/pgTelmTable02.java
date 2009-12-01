@@ -9,8 +9,10 @@
  *   2009-12.01
  *   vs. 01 : are posibilitatea de alegere FUNCTIE prin SELECT from pgDB
  *   Bug : de ce nu afiseaza decad dupa un INSERT ?!
- *
- */
+ *   ToDo
+ *        - LOCALITATE prin SELECT from pgDB
+ *        - UPDATE pgDB
+  */
 package telemobile09;
 
 import java.awt.*;
