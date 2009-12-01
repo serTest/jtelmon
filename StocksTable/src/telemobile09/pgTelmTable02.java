@@ -7,7 +7,7 @@
  http://www.pioverpi.net/2009/06/23/jtables-jdbc-introduction/
  *
  *   vs. 01 : are posibilitatea de alegere FUNCTIE prin SELECT from pgDB
- *
+ *   Bug : de ce nu afiseaza decad dupa un INSERT ?!
  *
  */
 package telemobile09;
@@ -329,6 +329,8 @@ class ExpenseReportData extends AbstractTableModel
   };
 
   public static String[] nfunctions;
+
+  // http://java.sun.com/docs/books/tutorial/java/javaOO/classvars.html
   public static JComboBox fnCBx = new JComboBox();
 
   protected pgTelmTable02 m_parent;
