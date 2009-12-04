@@ -204,21 +204,32 @@ This abstract class provides default implementations for most of the methods
 
     // REPAINT la initializare ->
     // m_table.repaint();
-    //this.repaint();
-    // setVisible(true);
-    // this.setExtendedState(MAXIMIZED_BOTH);
-    
-    // m_table.updateUI();
-    // ps.repaint();
-    // p.repaint();
-    // this.pack();
-    // this.repaint();
-    //((AbstractTableModel) m_table.getModel()).fireTableDataChanged();
-    m_table.invalidate();
-    m_table.repaint();
+    this.repaint();
     this.setExtendedState(MAXIMIZED_BOTH);
+    this.repaint();
+    ps.invalidate();
+    ps.revalidate();
+    ps.repaint();
+
+    p.invalidate();
+    p.revalidate();
+    p.repaint();
+    
+    // ((AbstractTableModel) m_table.getModel()).fireTableDataChanged();
+    
+    m_table.invalidate();
+    m_table.revalidate();
+    m_table.repaint();
+    m_table.updateUI();
+
+    this.pack();
+    this.invalidate();
+    this.repaint();
+    this.setExtendedState(MAXIMIZED_BOTH);
+    this.invalidate();
+    this.repaint();
     // <- REPAINT la initializare
-    setVisible(true);
+    this.setVisible(true);
   }
 
   public void calcTotal() {
