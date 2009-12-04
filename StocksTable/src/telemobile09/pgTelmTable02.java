@@ -9,6 +9,7 @@
  *   2009-12.01
  *   vs. 01 : are posibilitatea de alegere FUNCTIE prin SELECT from pgDB
  *   Bug : de ce nu afiseaza decad dupa un INSERT ?!
+ *                                     sau daca se mareste fereastra !!!
  *   ToDo
  *        - LOCALITATE prin SELECT from pgDB
  *        - UPDATE pgDB
@@ -201,8 +202,22 @@ This abstract class provides default implementations for most of the methods
     };
     addWindowListener(wndCloser);
 
-    // REPAINT la initializare !
+    // REPAINT la initializare ->
+    // m_table.repaint();
+    //this.repaint();
+    // setVisible(true);
+    // this.setExtendedState(MAXIMIZED_BOTH);
+    
+    // m_table.updateUI();
+    // ps.repaint();
+    // p.repaint();
+    // this.pack();
+    // this.repaint();
+    //((AbstractTableModel) m_table.getModel()).fireTableDataChanged();
+    m_table.invalidate();
     m_table.repaint();
+    this.setExtendedState(MAXIMIZED_BOTH);
+    // <- REPAINT la initializare
     setVisible(true);
   }
 
