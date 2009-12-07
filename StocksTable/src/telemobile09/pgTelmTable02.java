@@ -110,6 +110,8 @@ This abstract class provides default implementations for most of the methods
       if (k==ExpenseReportData.COL_3_FUNCTIE)
         // editor = new DefaultCellEditor(new JComboBox( ExpenseReportData.FUNCTII));
         editor = new DefaultCellEditor(ExpenseReportData.fnCBx);
+      else if (k==ExpenseReportData.COL_4_LOCALITATE)
+          editor = new DefaultCellEditor(ExpenseReportData.loCBx);
       else if (k==ExpenseReportData.COL_6_ANULAT)
         editor = new DefaultCellEditor(new JCheckBox());
       else
@@ -361,6 +363,7 @@ class ExpenseReportData extends AbstractTableModel
 
   // http://java.sun.com/docs/books/tutorial/java/javaOO/classvars.html
   public static JComboBox fnCBx = new JComboBox();
+  public static JComboBox loCBx = new JComboBox();
 
   protected pgTelmTable02 m_parent;
   protected SimpleDateFormat m_frm;
@@ -508,6 +511,8 @@ class ExpenseReportData extends AbstractTableModel
       " u.functie, u.localitate, u.deductibil, u.anulat " +
       " FROM utilizatori u" ;
     final String query2 = "Select nf.function_name from nfunctions nf" ;
+    final String query3 = "select nc.city_name as localitate from ncities nc" ;
+
 
     final String  url_sursa = "jdbc:postgresql://192.168.61.3:5432/telefoane_mobile";
     // final String  url_sursa = "jdbc:postgresql://192.168.101.222:5432/javamarket";
@@ -544,15 +549,16 @@ class ExpenseReportData extends AbstractTableModel
           }
 
           results = stmt.executeQuery(query2);
-          int i=0;
-          //nfunctions = new String[results];
-
+          while (results.next()) {
+            String rs_localitate   = results.getString(1);
+            fnCBx.addItem(rs_localitate);
+          }
+          results = stmt.executeQuery(query3);
           while (results.next()) {
             String rs_functie   = results.getString(1);
-            fnCBx.addItem(rs_functie);
-            //nfunctions[i]= rs_functie;
-            i=i+1;
+            loCBx.addItem(rs_functie);
           }
+
           results.close();
           stmt.close();
           conn.close();
