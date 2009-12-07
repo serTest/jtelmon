@@ -12,6 +12,7 @@
  *   Bug : de ce nu afiseaza decad dupa un INSERT ?!
  *                                     sau daca se mareste fereastra !!!
  *   ToDo
+ *        - JSpinner la DEDUCTIBIL 
  *        - UPDATE pgDB
   */
 package telemobile10;

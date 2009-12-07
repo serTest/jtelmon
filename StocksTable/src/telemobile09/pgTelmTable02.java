@@ -11,8 +11,6 @@
  *          + LOCALITATE prin SELECT from pgDB
  *   Bug : de ce nu afiseaza decad dupa un INSERT ?!
  *                                     sau daca se mareste fereastra !!!
- *   ToDo
- *        - UPDATE pgDB
   */
 package telemobile09;
 
