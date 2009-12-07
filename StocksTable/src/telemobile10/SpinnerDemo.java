@@ -1,6 +1,6 @@
 /*
  * http://java.sun.com/docs/books/tutorial/uiswing/examples/components/SpinnerDemoProject/src/components/SpinnerDemo.java
- * 
+ * http://java.sun.com/docs/books/tutorial/uiswing/components/spinner.html
  */
 
 package telemobile10;
