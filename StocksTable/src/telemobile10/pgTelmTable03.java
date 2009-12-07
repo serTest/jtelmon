@@ -18,13 +18,11 @@ package telemobile10;
 
 import java.awt.*;
 import java.awt.event.*;
-// import java.math.BigInteger;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.*;
-// import java.io.*;
 import java.text.SimpleDateFormat;
 
 import javax.swing.*;
