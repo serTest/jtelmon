@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * http://java.sun.com/docs/books/tutorial/uiswing/examples/components/SpinnerDemoProject/src/components/SpinnerDemo.java
+ * 
  */
 
 package telemobile10;
