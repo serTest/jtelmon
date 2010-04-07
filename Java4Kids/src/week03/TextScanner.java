@@ -22,8 +22,7 @@ import java.io.File;
        String file = new String();
        file = "D:\\Java\\Temp\\TextSample.txt";
        if (args.length != 1) {
-         System.err.println("usage: java TextScanner1"
-           + "file location");
+         System.err.println("usage: java TextScanner1" + "file location");
          // System.exit(0);
        }
        // readFile(args[0]);
