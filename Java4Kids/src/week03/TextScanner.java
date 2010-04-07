@@ -1,3 +1,5 @@
+// Date: 26 March 2010 22:49
+// Java Day 014, Week 04 - fisier SCANNER tastatura
 package week03;
 import java.io.File;
    import java.io.FileNotFoundException;
