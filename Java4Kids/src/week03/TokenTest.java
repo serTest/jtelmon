@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Java: Day 014, String Manipulation (TokenTest)
+ * 26 March 2010 23:05
  */
 
 package week03;
