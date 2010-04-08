@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * http://leepoint.net/notes-java/data/strings/96string_examples/example_SortWords.html
+ * 
  */
 
 package week03;
