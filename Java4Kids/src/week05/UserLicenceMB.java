@@ -13,13 +13,13 @@ public class UserLicenceMB {
       String user =new String();
     try {
       File file = new File(fileName);
-      Scanner  fisier = new Scanner(file);
-      Scanner tastatura=new Scanner(System.in);
+      Scanner fisier    = new Scanner(file);
+      Scanner tastatura = new Scanner(System.in);
       fisier.useDelimiter(System.getProperty("line.separator"));
       user = tastatura.next();
       while (fisier.hasNext()) {
           temp = fisier.next();
-            if(temp.indexOf(user)  !=-1){
+            if(temp.indexOf(user) !=-1){
                 System.out.println(temp);
                 temp = fisier.next();
             }
