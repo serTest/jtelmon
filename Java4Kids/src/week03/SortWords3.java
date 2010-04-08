@@ -1,6 +1,6 @@
 /*
  * http://leepoint.net/notes-java/data/strings/96string_examples/example_SortWords.html
- * 
+ * http://leepoint.net/notes-java/index.html
  */
 
 package week03;
