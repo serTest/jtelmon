@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class UserLicenceMB {
+public class UserLicence {
   private static void readFile(String fileName) {
       String temp =new String();
       String user =new String();
@@ -32,10 +32,6 @@ public class UserLicenceMB {
   }
 
   public static void main(String[] args) throws Exception{
-        //String color = "Nomenclator aplicatii utilitare ";
-        //int index = color.indexOf("");
-        //System.out.println(index);
-        //Scanner myScanner = null;
         Scanner myScanner = new Scanner(System.in);
         String Da = new String();
         Da="da";
