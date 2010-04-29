@@ -1,6 +1,6 @@
 /*
  * http://java.sun.com/docs/books/tutorial/uiswing/examples/components/MenuDemoProject/src/components/MenuDemo.java
- * and open the template in the editor.
+ * http://java.sun.com/docs/books/tutorial/uiswing/examples/components/index.html
  */
 
 package week07;

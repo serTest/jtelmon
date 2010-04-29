@@ -39,6 +39,7 @@ public class ListDemo extends JPanel
         list = new JList(listModel);
         list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         list.setSelectedIndex(0);
+        // list.addListSelectionListener(this);
         list.addListSelectionListener(this);
         list.setVisibleRowCount(5);
         JScrollPane listScrollPane = new JScrollPane(list);

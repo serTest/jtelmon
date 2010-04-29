@@ -32,7 +32,7 @@ public class JList_addSelectionListener_Demo extends JFrame {
     data.add("Hi");
     data.add("Hello");
     data.add("Goodbye");
-     list = new JList(data.toArray());
+    list = new JList(data.toArray());
     list.addListSelectionListener(new ListSelectionListener() {
       public void valueChanged(ListSelectionEvent evt) {
         if (evt.getValueIsAdjusting())
