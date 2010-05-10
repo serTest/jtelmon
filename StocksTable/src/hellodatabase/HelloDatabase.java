@@ -1,4 +1,4 @@
-//  SQLiteJDBC
+//  SQLiteJDBC 
 // http://www.zentus.com/sqlitejdbc/
 // http://sqlitebrowser.sourceforge.net/
 // http://plugins.netbeans.org/
