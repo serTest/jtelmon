@@ -42,8 +42,9 @@ public class LicenseDao {
             "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         private static final String strGetListEntries =
-            "SELECT user_id, user_first_name, user_last_name, user_ip FROM utilizatori_licente "  +
-            "ORDER BY user_id ASC";
+            "SELECT user_id, user_first_name, user_last_name, user_ip " +
+            "FROM utilizatori_licente "  +
+            "ORDER BY user_id ASC ";
 
         private static final String strUpdate =
             "UPDATE APP.ADDRESS " +
