@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+  <persistence-unit name="AddressBookDBPU" transaction-type="RESOURCE_LOCAL">
+    <provider>oracle.toplink.essentials.PersistenceProvider</provider>
+    <class>license.LicenseAgreements</class>
+    <class>license.Users</class>
+    <class>license.UserLicense</class>
+    <class>license.NewEntity</class>
+    <properties>
+      <property name="toplink.jdbc.user" value="postgres"/>
+      <property name="toplink.jdbc.password" value="telinit"/>
+      <property name="toplink.jdbc.url" value="jdbc:postgresql://192.168.61.205:5432/license"/>
+      <property name="toplink.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="toplink.ddl-generation" value="drop-and-create-tables"/>
+    </properties>
+  </persistence-unit>
+</persistence>
