@@ -5,7 +5,6 @@
 
 package license;
 
-import addressbook.ListEntry;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -43,8 +42,8 @@ public class LicenseDao {
             "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         private static final String strGetListEntries =
-            "SELECT ID, LASTNAME, FIRSTNAME, MIDDLENAME FROM APP.ADDRESS "  +
-            "ORDER BY LASTNAME ASC";
+            "SELECT user_id, user_first_name, user_last_name, user_ip FROM utilizatori_licente "  +
+            "ORDER BY user_id ASC";
 
         private static final String strUpdate =
             "UPDATE APP.ADDRESS " +
@@ -137,8 +136,8 @@ public class LicenseDao {
                 String fName = results.getString(3);
                 String mName = results.getString(4);
 
-                ListEntry entry = new ListEntry(lName, fName, mName, id);
-                listEntries.add(entry);
+                // ListEntry entry = new ListEntry(lName, fName, mName, id);
+                // listEntries.add(entry);
             }
 
         } catch (SQLException sqle) {
