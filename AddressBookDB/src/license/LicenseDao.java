@@ -67,8 +67,7 @@ public class LicenseDao {
 
     public static void main(String[] args) {
         LicenseDao db = new LicenseDao();
-        //System.out.println(db.getDatabaseLocation());
-        //System.out.println(db.getDatabaseUrl());
+
         db.connect();
         db.disconnect();
     }
@@ -124,8 +123,8 @@ public class LicenseDao {
     }
 
 
-        public List<ListEntry> getListEntries() {
-        List<ListEntry> listEntries = new ArrayList<ListEntry>();
+        public List<UtilizatorLicente> getListEntries() {
+        List<UtilizatorLicente> listEntries = new ArrayList<UtilizatorLicente>();
         Statement queryStatement = null;
         ResultSet results = null;
 
