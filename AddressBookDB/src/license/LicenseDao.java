@@ -77,7 +77,7 @@ public class LicenseDao {
    public LicenseDao() {
         // this("DefaultAddressBook");
        this.dbName="license";
-       this.dbProperties.setProperty("url", "jdbc:postgresql://192.168.61.205:5432/");
+       // this.dbProperties.setProperty("url", "jdbc:postgresql://192.168.61.205:5432/");
        this.dbProperties.setProperty("url", "jdbc:postgresql://ftp.pangram.ro:5432/");
    }
 
