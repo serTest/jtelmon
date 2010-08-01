@@ -66,34 +66,6 @@ public class AddressDao {
     }
     
     
-    private boolean createTables(Connection dbConnection) {
-        boolean bCreatedTables = false;
-        Statement statement = null;
-        try {
-            statement = dbConnection.createStatement();
-            statement.execute(strCreateAddressTable);
-            bCreatedTables = true;
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        
-        return bCreatedTables;
-    }
-    private boolean createDatabase() {
-        boolean bCreated = false;
-        Connection dbConnection = null;
-        
-        String dbUrl = getDatabaseUrl();
-        dbProperties.put("create", "true");
-        
-        try {
-            dbConnection = DriverManager.getConnection(dbUrl, dbProperties);
-            bCreated = createTables(dbConnection);
-        } catch (SQLException ex) {
-        }
-        dbProperties.remove("create");
-        return bCreated;
-    }
     
     
     public boolean connect() {
@@ -287,21 +259,6 @@ public class AddressDao {
     private PreparedStatement stmtGetAddress;
     private PreparedStatement stmtDeleteAddress;
     
-    private static final String strCreateAddressTable =
-            "create table APP.ADDRESS (" +
-            "    ID          INTEGER NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)," +
-            "    LASTNAME    VARCHAR(30), " +
-            "    FIRSTNAME   VARCHAR(30), " +
-            "    MIDDLENAME  VARCHAR(30), " +
-            "    PHONE       VARCHAR(20), " +
-            "    EMAIL       VARCHAR(30), " +
-            "    ADDRESS1    VARCHAR(30), " +
-            "    ADDRESS2    VARCHAR(30), " +
-            "    CITY        VARCHAR(30), " +
-            "    STATE       VARCHAR(30), " +
-            "    POSTALCODE  VARCHAR(20), " +
-            "    COUNTRY     VARCHAR(30) " +
-            ")";
     
     private static final String strGetAddress =
             "SELECT * FROM APP.ADDRESS " +
