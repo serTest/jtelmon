@@ -71,9 +71,9 @@ public class AddressFrame
      */
     // <editor-fold defaultstate="collapsed" desc=" Generated Code ">//GEN-BEGIN:initComponents
     private void initComponents() {
-        addressActionPanel = new addressbook.AddressActionPanel();
-        addressPanel = new addressbook.AddressPanel();
-        addressListPanel = new addressbook.AddressListPanel();
+        addressActionPanel = new AddressActionPanel();
+        addressPanel = new AddressPanel();
+        addressListPanel = new AddressListPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Address Book Demo");
@@ -206,9 +206,9 @@ public class AddressFrame
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private addressbook.AddressActionPanel addressActionPanel;
-    private addressbook.AddressListPanel addressListPanel;
-    private addressbook.AddressPanel addressPanel;
+    private AddressActionPanel addressActionPanel;
+    private AddressListPanel addressListPanel;
+    private AddressPanel addressPanel;
     // End of variables declaration//GEN-END:variables
     
     private int selectedEntry = -1;
