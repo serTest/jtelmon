@@ -79,8 +79,8 @@ public class AddressDao {
     
     private Properties loadDBProperties() {
         InputStream dbPropInputStream = null;
-        dbPropInputStream = AddressDao.class.getResourceAsStream("Configuration.properties");
-        // dbPropInputStream = AddressDao.class.getResourceAsStream("Config2.properties");
+        // dbPropInputStream = AddressDao.class.getResourceAsStream("Configuration.properties");
+        dbPropInputStream = AddressDao.class.getResourceAsStream("Config2.properties");
         dbProperties = new Properties();
         try {
             dbProperties.load(dbPropInputStream);
@@ -363,3 +363,45 @@ public class AddressDao {
             "WHERE ID = ?";
     
 }
+
+
+
+/*
+-- DROP DATABASE "DefaultAddressBook";
+CREATE DATABASE "DefaultAddressBook"
+  WITH OWNER = postgres
+       ENCODING = 'UTF8'
+       LC_COLLATE = 'en_US.UTF-8'
+       LC_CTYPE = 'en_US.UTF-8'
+       CONNECTION LIMIT = -1;
+-- DROP SCHEMA app;
+CREATE SCHEMA app
+  AUTHORIZATION postgres;
+CREATE SEQUENCE APP.address_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 1
+  CACHE 1;
+ALTER TABLE address_seq OWNER TO postgres;
+CREATE TABLE APP.address
+(
+  id integer NOT NULL DEFAULT nextval('address_seq'::regclass),
+  lastname character varying(30),
+  firstname character varying(30),
+  middlename character varying(30),
+  phone character varying(20),
+  email character varying(30),
+  address1 character varying(30),
+  address2 character varying(30),
+  city character varying(30),
+  state character varying(30),
+  postalcode character varying(20),
+  country character varying(30),
+  CONSTRAINT address_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE address OWNER TO postgres;
+ */
