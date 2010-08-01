@@ -36,7 +36,7 @@ public class AddressDao {
         this.dbName = addressBookName;
         
         dbProperties = loadDBProperties();
-        String driverName = dbProperties.getProperty("derby.driver"); 
+        String driverName = dbProperties.getProperty("driver"); 
         loadDatabaseDriver(driverName);
         
     }
@@ -84,10 +84,7 @@ public class AddressDao {
         return isConnected;
     }
     
-    private String getHomeDir() {
-        return System.getProperty("user.home");
-    }
-    
+   
     public void disconnect() {
         if(isConnected) {
             String dbUrl = getDatabaseUrl();
@@ -100,13 +97,9 @@ public class AddressDao {
         }
     }
     
-    public String getDatabaseLocation() {
-        String dbLocation = System.getProperty("derby.system.home") + "/" + dbName;
-        return dbLocation;
-    }
-    
+
     public String getDatabaseUrl() {
-        String dbUrl = dbProperties.getProperty("derby.url") + dbName;
+        String dbUrl = dbProperties.getProperty("url") + dbName;
         return dbUrl;
     }
     
@@ -242,7 +235,6 @@ public class AddressDao {
     
     public static void main(String[] args) {
         AddressDao db = new AddressDao();
-        System.out.println(db.getDatabaseLocation());
         System.out.println(db.getDatabaseUrl());
         db.connect();
         db.disconnect();
