@@ -103,6 +103,17 @@ public class LicenseDao {
         String dbUrl = getDatabaseUrl();
         try {
             dbConnection = DriverManager.getConnection(dbUrl, dbProperties);
+
+            // String url = "jdbc:postgresql://localhost/test?user=fred&password=secret&ssl=true";
+            // Connection conn = DriverManager.getConnection(url);
+            // ~ ~ ~
+            // String url = "jdbc:postgresql://localhost/test";
+            // Properties props = new Properties();
+            // props.setProperty("user","fred");
+            // props.setProperty("password","secret");
+            // props.setProperty("ssl","true");
+            // Connection conn = DriverManager.getConnection(url, props);
+
             stmtSaveNewRecord = dbConnection.prepareStatement(strSave, Statement.RETURN_GENERATED_KEYS);
             stmtUpdateExistingRecord = dbConnection.prepareStatement(strUpdate);
             stmtGetAddress = dbConnection.prepareStatement(strGet);
