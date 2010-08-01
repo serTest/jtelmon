@@ -79,8 +79,7 @@ public class AddressDao {
     
     private Properties loadDBProperties() {
         InputStream dbPropInputStream = null;
-        // dbPropInputStream = AddressDao.class.getResourceAsStream("Configuration.properties");
-        dbPropInputStream = AddressDao.class.getResourceAsStream("Config2.properties");
+        dbPropInputStream = AddressDao.class.getResourceAsStream("Configuration.properties");
         dbProperties = new Properties();
         try {
             dbProperties.load(dbPropInputStream);
