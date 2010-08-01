@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * http://jdbc.postgresql.org/documentation/80/connect.html
+ * 
  */
 
 package license;
@@ -79,6 +79,9 @@ public class LicenseDao {
        this.dbName="license";
        // this.dbProperties.setProperty("url", "jdbc:postgresql://192.168.61.205:5432/");
        this.dbProperties.setProperty("url", "jdbc:postgresql://ftp.pangram.ro:5432/");
+       this.dbProperties.setProperty("user", "postgres");
+       this.dbProperties.setProperty("password", "telinit");
+
    }
 
    private void loadDatabaseDriver(String driverName) {
