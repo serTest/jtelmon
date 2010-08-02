@@ -328,5 +328,28 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE address OWNER TO postgres;
+ *
+ *  SERIAL
+NOTICE:  CREATE TABLE will create implicit sequence "address_id_seq" for serial column "address.id"
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "address_pkey" for table "address"
+ *
+ * CREATE TABLE APP.address
+(
+  id serial NOT NULL,
+  lastname character varying(30),
+  firstname character varying(30),
+  middlename character varying(30),
+  phone character varying(20),
+  email character varying(30),
+  address1 character varying(30),
+  address2 character varying(30),
+  city character varying(30),
+  state character varying(30),
+  postalcode character varying(20),
+  country character varying(30),
+  CONSTRAINT address_pkey PRIMARY KEY (id)
+)
+ *
+ *
  */
 
