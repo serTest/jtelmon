@@ -18,10 +18,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 
-/**
- *
- * @author John O'Conner
- */
+
 public class AddressDao {
     
     /** Creates a new instance of AddressDao */
