@@ -18,6 +18,7 @@ import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 
@@ -237,6 +238,13 @@ public class AddressDao {
         AddressDao db = new AddressDao();
         System.out.println(db.getDatabaseUrl());
         db.connect();
+        List<ListEntry> entries = db.getListEntries();
+        Iterator it=entries.iterator();
+        while(it.hasNext())
+        {
+          ListEntry value= (ListEntry) it.next();
+          System.out.println("Value :"+value.getFirstName()+value.getLastName());
+        }
         db.disconnect();
     }
     
