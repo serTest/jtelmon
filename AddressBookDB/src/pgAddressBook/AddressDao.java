@@ -234,12 +234,12 @@ public class AddressDao {
         AddressDao db = new AddressDao();
         System.out.println(db.getDatabaseUrl());
         db.connect();
-        List<ListEntry> entries = db.getListEntries();
-        Iterator it=entries.iterator();
-        while(it.hasNext())
+        List<ListEntry> entries1 = db.getListEntries();
+        Iterator it1=entries1.iterator();
+        while(it1.hasNext())
         {
-          ListEntry value= (ListEntry) it.next();
-          System.out.println("Value :"+value.getFirstName()+value.getLastName());
+          ListEntry value1= (ListEntry) it1.next();
+          System.out.println("Value :"+value1.getFirstName()+value1.getLastName());
         }
         db.disconnect();
     }
