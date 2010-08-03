@@ -14,11 +14,7 @@ import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 import javax.swing.DefaultListCellRenderer;
 
-/**
- *
- * @author John O'Conner
- *
- */
+
 public class ListEntryRenderer extends DefaultListCellRenderer {
     
     /**

@@ -14,10 +14,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
 import javax.swing.event.ListSelectionListener;
 
-/**
- *
- * @author  John O'Conner
- */
+
 public class AddressListPanel extends javax.swing.JPanel {
     
     /** Creates new form AddressListPanel */

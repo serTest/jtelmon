@@ -14,10 +14,7 @@ import javax.swing.event.EventListenerList;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- *
- * @author  John O'Conner
- */
+
 public class AddressActionPanel extends javax.swing.JPanel  {
     
     /**

@@ -21,10 +21,8 @@ import javax.swing.JList;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-/**
- *
- * @author  John O'Conner
- */
+
+
 public class AddressFrame 
         extends javax.swing.JFrame 
         implements ActionListener, ListSelectionListener {

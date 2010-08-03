@@ -10,10 +10,7 @@
 package pgAddressBook;
 
 
-/**
- *
- * @author John O'Conner
- */
+
 public class ListEntry {
     
     /** Creates a new instance of ListEntry */

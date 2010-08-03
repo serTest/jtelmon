@@ -10,10 +10,7 @@
 package pgAddressBook;
 //import java.awt.event.ActionListener;
 
-/**
- *
- * @author  John O'Conner
- */
+
 public class AddressPanel extends javax.swing.JPanel {
     
     /** Creates new form AddressPanel */
