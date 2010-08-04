@@ -27,7 +27,7 @@ public class TemplateDao {
     }
     
     public TemplateDao(String addressBookName) {
-        this.dbName = addressBookName;
+        // this.dbName = addressBookName;
         dbUrl = "jdbc:postgresql://192.168.61.205/DefaultAddressBook?user=postgres&password=telinit";
         String driverName = "org.postgresql.Driver";
         loadDatabaseDriver(driverName);
