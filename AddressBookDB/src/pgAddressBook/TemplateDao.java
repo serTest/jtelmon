@@ -19,6 +19,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+// ex.printStackTrace();
+@SuppressWarnings("CallToThreadDumpStack")
+
 public class TemplateDao {
     
     /** Creates a new instance of TemplateDao */
@@ -33,6 +36,7 @@ public class TemplateDao {
         loadDatabaseDriver(driverName);
     }
         
+
     private void loadDatabaseDriver(String driverName) {
         try {
             Class.forName(driverName);
