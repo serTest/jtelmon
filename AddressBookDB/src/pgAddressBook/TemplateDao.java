@@ -1,6 +1,6 @@
 /*
 code.google.com/p/jtelmon/source/browse/AddressBookDB/src/pgAddressBook/TemplateDao.java
-TemplateDao :  Sablon DataAccessObject
+Template DAO =  Sablon DataAccessObject
  */
 
 package pgAddressBook;
