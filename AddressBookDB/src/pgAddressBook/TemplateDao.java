@@ -5,8 +5,6 @@ Template DAO =  Sablon DataAccessObject
 
 package pgAddressBook;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,38 +19,30 @@ public class TemplateDao {
     
     /** Creates a new instance of TemplateDao */
     public TemplateDao() {
-        this("DefaultAddressBook");
+       this("DefaultAddressBook");
     }
     
     public TemplateDao(String addressBookName) {
         this.dbName = addressBookName;
-        
-        dbProperties = loadDBProperties();
-        String driverName = dbProperties.getProperty("driver"); 
+        dbUrl = "jdbc:postgresql://192.168.61.205/DefaultAddressBook?user=postgres&password=telinit";
+        String driverName = "org.postgresql.Driver";
         loadDatabaseDriver(driverName);
-        
     }
-    
-   
-    
+        
     private void loadDatabaseDriver(String driverName) {
-        // load Derby driver
         try {
             Class.forName(driverName);
         } catch (ClassNotFoundException ex) {
             ex.printStackTrace();
         }
-        
     }
-    
    
-    
-    
     public boolean connect() {
         try {
-            String url = "jdbc:postgresql://192.168.61.205/DefaultAddressBook?user=postgres&password=telinit";
-            dbConnection = DriverManager.getConnection(url);
-
+            // jdbc.postgresql.org/documentation/84/index.html
+            
+            dbConnection = DriverManager.getConnection(dbUrl);
+            System.out.println ("Database connection established");
             stmtSaveNewRecord = dbConnection.prepareStatement(strSaveAddress, Statement.RETURN_GENERATED_KEYS);
             stmtUpdateExistingRecord = dbConnection.prepareStatement(strUpdateAddress);
             stmtGetAddress = dbConnection.prepareStatement(strGetAddress);
@@ -60,6 +50,7 @@ public class TemplateDao {
             
             isConnected = dbConnection != null;
         } catch (SQLException ex) {
+            System.out.println ("Database connection couldn't be established");
             isConnected = false;
         }
         return isConnected;
@@ -68,10 +59,11 @@ public class TemplateDao {
    
     public void disconnect() {
         if(isConnected) {
-            dbProperties.put("shutdown", "true");
             try {
-                DriverManager.getConnection(dbUrl, dbProperties);
+                DriverManager.getConnection(dbUrl).close() ;
+                System.out.println ("Database connection terminated");
             } catch (SQLException ex) {
+                //
             }
             isConnected = false;
         }
@@ -177,6 +169,7 @@ public class TemplateDao {
         return listEntries;
     }
     
+    // @SuppressWarnings("CallToThreadDumpStack")
     public Address getAddress(int index) {
         Address address = null;
         try {
@@ -221,6 +214,7 @@ public class TemplateDao {
     private Properties dbProperties;
     private boolean isConnected;
     private String dbName;
+    private String dbUrl;
     private PreparedStatement stmtSaveNewRecord;
     private PreparedStatement stmtUpdateExistingRecord;
     private PreparedStatement stmtGetListEntries;
