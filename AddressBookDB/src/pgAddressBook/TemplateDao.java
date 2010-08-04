@@ -1,6 +1,8 @@
 /*
 code.google.com/p/jtelmon/source/browse/AddressBookDB/src/pgAddressBook/TemplateDao.java
 Template DAO =  Sablon DataAccessObject
+Initial article :
+   java.sun.com/developer/technicalArticles/J2SE/Desktop/javadb/
  */
 
 package pgAddressBook;
@@ -203,24 +205,21 @@ public class TemplateDao {
     public static void main(String[] args) {
         TemplateDao db = new TemplateDao();
         db.connect();
-        List<ListEntry> entries1 = db.getListEntries();
-        Iterator it1=entries1.iterator();
-        while(it1.hasNext())
+        List<ListEntry> entries = db.getListEntries();
+        Iterator i = entries.iterator();
+        while(i.hasNext())
         {
-          ListEntry value1= (ListEntry) it1.next();
-          System.out.println("Value :"+value1.getFirstName()+value1.getLastName());
+          ListEntry value= (ListEntry) i.next();
+          System.out.println("Value :"+value.getFirstName()+value.getLastName());
         }
         db.disconnect();
     }
     
     private Connection dbConnection;
-    
     private boolean isConnected;
-    private String dbName;
     private String dbUrl;
     private PreparedStatement stmtSaveNewRecord;
     private PreparedStatement stmtUpdateExistingRecord;
-    private PreparedStatement stmtGetListEntries;
     private PreparedStatement stmtGetAddress;
     private PreparedStatement stmtDeleteAddress;
     
