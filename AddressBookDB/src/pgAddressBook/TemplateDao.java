@@ -17,10 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-/**
- *
- * @author John O'Conner
- */
 public class TemplateDao {
     
     /** Creates a new instance of TemplateDao */
@@ -49,25 +45,14 @@ public class TemplateDao {
         
     }
     
-    private Properties loadDBProperties() {
-        InputStream dbPropInputStream = null;
-        dbPropInputStream = TemplateDao.class.getResourceAsStream("Config2.properties");
-        dbProperties = new Properties();
-        try {
-            dbProperties.load(dbPropInputStream);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        return dbProperties;
-    }
-    
-    
+   
     
     
     public boolean connect() {
-        String dbUrl = getDatabaseUrl();
         try {
-            dbConnection = DriverManager.getConnection(dbUrl, dbProperties);
+            String url = "jdbc:postgresql://192.168.61.205/DefaultAddressBook?user=postgres&password=telinit";
+            dbConnection = DriverManager.getConnection(url);
+
             stmtSaveNewRecord = dbConnection.prepareStatement(strSaveAddress, Statement.RETURN_GENERATED_KEYS);
             stmtUpdateExistingRecord = dbConnection.prepareStatement(strUpdateAddress);
             stmtGetAddress = dbConnection.prepareStatement(strGetAddress);
@@ -83,7 +68,6 @@ public class TemplateDao {
    
     public void disconnect() {
         if(isConnected) {
-            String dbUrl = getDatabaseUrl();
             dbProperties.put("shutdown", "true");
             try {
                 DriverManager.getConnection(dbUrl, dbProperties);
@@ -93,13 +77,7 @@ public class TemplateDao {
         }
     }
     
-
-    public String getDatabaseUrl() {
-        String dbUrl = dbProperties.getProperty("url") + dbName;
-        return dbUrl;
-    }
-    
-    
+   
     public int saveRecord(Address record) {
         int id = -1;
         try {
@@ -231,8 +209,10 @@ public class TemplateDao {
     
     public static void main(String[] args) {
         TemplateDao db = new TemplateDao();
-        System.out.println(db.getDatabaseUrl());
+
         db.connect();
+
+
         db.disconnect();
     }
     
