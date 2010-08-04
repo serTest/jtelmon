@@ -5,15 +5,15 @@ Template DAO =  Sablon DataAccessObject
 
 package pgAddressBook;
 
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Connection;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import java.util.Properties;
 
 public class TemplateDao {
     
@@ -40,7 +40,7 @@ public class TemplateDao {
     public boolean connect() {
         try {
             // jdbc.postgresql.org/documentation/84/index.html
-            
+           
             dbConnection = DriverManager.getConnection(dbUrl);
             System.out.println ("Database connection established");
             stmtSaveNewRecord = dbConnection.prepareStatement(strSaveAddress, Statement.RETURN_GENERATED_KEYS);
@@ -202,16 +202,19 @@ public class TemplateDao {
     
     public static void main(String[] args) {
         TemplateDao db = new TemplateDao();
-
         db.connect();
-
-
+        List<ListEntry> entries1 = db.getListEntries();
+        Iterator it1=entries1.iterator();
+        while(it1.hasNext())
+        {
+          ListEntry value1= (ListEntry) it1.next();
+          System.out.println("Value :"+value1.getFirstName()+value1.getLastName());
+        }
         db.disconnect();
     }
     
-    
     private Connection dbConnection;
-    private Properties dbProperties;
+    
     private boolean isConnected;
     private String dbName;
     private String dbUrl;
