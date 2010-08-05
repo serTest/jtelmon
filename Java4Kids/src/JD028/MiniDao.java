@@ -1,16 +1,7 @@
-
-/*
- *
- * code.google.com/p/jtelmon/source/browse/AddressBookDB/src/pgAddressBook/TemplateDao.java
- * Template DAO =  Sablon DataAccessObject
- * Initial article :
- *   java.sun.com/developer/technicalArticles/J2SE/Desktop/javadb/
- *
+/* code.google.com/p/jtelmon/source/browse/AddressBookDB/src/pgAddressBook/TemplateDao.java
+ * java.sun.com/developer/technicalArticles/J2SE/Desktop/javadb/
  */
-
-
 package JD028;
-
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -26,14 +17,14 @@ import java.util.List;
 @SuppressWarnings("CallToThreadDumpStack")
 //
 
-public class TemplateDao {
+public class MiniDao {
 
     /** Creates a new instance of TemplateDao */
-    public TemplateDao() {
+    public MiniDao() {
        this("DefaultAddressBook");
     }
 
-    public TemplateDao(String addressBookName) {
+    public MiniDao(String addressBookName) {
         // this.dbName = addressBookName;
         dbUrl = "jdbc:postgresql://192.168.61.205/DefaultAddressBook?user=postgres&password=telinit";
         String driverName = "org.postgresql.Driver";
@@ -140,7 +131,7 @@ public class TemplateDao {
     }
 
     public static void main(String[] args) {
-        TemplateDao db = new TemplateDao();
+        MiniDao db = new MiniDao();
         db.connect();
         List<ListEntry> entries = db.getListEntries();
         Iterator i = entries.iterator();
