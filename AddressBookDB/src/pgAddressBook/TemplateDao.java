@@ -1,9 +1,9 @@
 /*
- *
  * code.google.com/p/jtelmon/source/browse/AddressBookDB/src/pgAddressBook/TemplateDao.java
  * Template DAO =  Sablon DataAccessObject
- * Initial article :
- *   java.sun.com/developer/technicalArticles/J2SE/Desktop/javadb/
+ * 
+ * Initial article : Using Java DB in Desktop Applications
+ * java.sun.com/developer/technicalArticles/J2SE/Desktop/javadb/
  *
  */
 
