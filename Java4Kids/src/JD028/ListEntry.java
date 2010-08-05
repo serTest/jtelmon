@@ -1,5 +1,5 @@
 /*
- * http://code.google.com/p/jtelmon/source/browse/Java4Kids/src/JD028/ListEntry.java
+ * code.google.com/p/jtelmon/source/browse/Java4Kids/src/JD028/ListEntry.java
  */
 
 package JD028;

@@ -1,4 +1,7 @@
-/* code.google.com/p/jtelmon/source/browse/AddressBookDB/src/pgAddressBook/TemplateDao.java
+/* 
+ * code.google.com/p/jtelmon/source/browse/AddressBookDB/src/pgAddressBook/TemplateDao.java
+ * code.google.com/p/jtelmon/source/browse/Java4Kids/src/JD028/MiniDao.java
+ * Using Java DB in Desktop Applications
  * java.sun.com/developer/technicalArticles/J2SE/Desktop/javadb/
  */
 package JD028;
