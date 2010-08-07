@@ -8,7 +8,6 @@ package JD028;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -51,7 +50,7 @@ public class MiniDao {
             System.out.println ("Database connection established");
             //stmtSaveNewRecord = dbConnection.prepareStatement(strSaveAddress, Statement.RETURN_GENERATED_KEYS);
             //stmtUpdateExistingRecord = dbConnection.prepareStatement(strUpdateAddress);
-            stmtGetAddress = dbConnection.prepareStatement(strGetAddress);
+            //stmtGetAddress = dbConnection.prepareStatement(strGetAddress);
             //stmtDeleteAddress = dbConnection.prepareStatement(strDeleteAddress);
 
             isConnected = dbConnection != null;
@@ -102,37 +101,6 @@ public class MiniDao {
         return listEntries;
     }
 
-    // @SuppressWarnings("CallToThreadDumpStack")
-    public Address getAddress(int index) {
-        Address address = null;
-        try {
-            stmtGetAddress.clearParameters();
-            stmtGetAddress.setInt(1, index);
-            ResultSet result = stmtGetAddress.executeQuery();
-            if (result.next()) {
-                String lastName = result.getString("LASTNAME");
-                String firstName = result.getString("FIRSTNAME");
-                String middleName = result.getString("MIDDLENAME");
-                String phone = result.getString("PHONE");
-                String email = result.getString("EMAIL");
-                String add1 = result.getString("ADDRESS1");
-                String add2 = result.getString("ADDRESS2");
-                String city = result.getString("CITY");
-                String state = result.getString("STATE");
-                String postalCode = result.getString("POSTALCODE");
-                String country = result.getString("COUNTRY");
-                int id = result.getInt("ID");
-                address = new Address(lastName, firstName, middleName, phone,
-                        email, add1, add2, city, state, postalCode,
-                        country, id);
-            }
-        } catch(SQLException sqle) {
-            sqle.printStackTrace();
-        }
-
-        return address;
-    }
-
     public static void main(String[] args) {
         MiniDao db = new MiniDao();
         db.connect();
@@ -149,20 +117,9 @@ public class MiniDao {
     private Connection dbConnection;
     private boolean isConnected;
     private String dbUrl;
-    private PreparedStatement stmtSaveNewRecord;
-    private PreparedStatement stmtUpdateExistingRecord;
-    private PreparedStatement stmtGetAddress;
-    private PreparedStatement stmtDeleteAddress;
-
-
-    private static final String strGetAddress =
-            "SELECT * FROM APP.ADDRESS " +
-            "WHERE ID = ?";
-
 
     private static final String strGetListEntries =
             "SELECT ID, LASTNAME, FIRSTNAME, MIDDLENAME FROM APP.ADDRESS "  +
             "ORDER BY LASTNAME ASC";
-
 
 }
