@@ -21,13 +21,7 @@ import java.util.List;
 
 public class MiniDao {
 
-    /** Creates a new instance of TemplateDao */
     public MiniDao() {
-       this("DefaultAddressBook");
-    }
-
-    public MiniDao(String addressBookName) {
-        // this.dbName = addressBookName;
         dbUrl = "jdbc:postgresql://192.168.61.205/DefaultAddressBook?user=postgres&password=telinit";
         String driverName = "org.postgresql.Driver";
         loadDatabaseDriver(driverName);
@@ -45,14 +39,8 @@ public class MiniDao {
     public boolean connect() {
         try {
             // jdbc.postgresql.org/documentation/84/index.html
-
             dbConnection = DriverManager.getConnection(dbUrl);
             System.out.println ("Database connection established");
-            //stmtSaveNewRecord = dbConnection.prepareStatement(strSaveAddress, Statement.RETURN_GENERATED_KEYS);
-            //stmtUpdateExistingRecord = dbConnection.prepareStatement(strUpdateAddress);
-            //stmtGetAddress = dbConnection.prepareStatement(strGetAddress);
-            //stmtDeleteAddress = dbConnection.prepareStatement(strDeleteAddress);
-
             isConnected = dbConnection != null;
         } catch (SQLException ex) {
             System.out.println ("Database connection couldn't be established");
