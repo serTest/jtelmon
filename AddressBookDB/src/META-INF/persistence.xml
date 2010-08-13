@@ -3,11 +3,11 @@
   <persistence-unit name="AddressBookDBPU" transaction-type="RESOURCE_LOCAL">
     <provider>oracle.toplink.essentials.PersistenceProvider</provider>
     <class>license.LicenseAgreements</class>
-    <class>license.Users</class>
     <class>license.UserLicense</class>
     <class>license.NewEntity</class>
     <class>license.UtilizatoriLicente1</class>
     <class>license.UtilizatorLicente</class>
+    <class>JD028.Users</class>
     <properties>
       <property name="toplink.jdbc.user" value="postgres"/>
       <property name="toplink.jdbc.password" value="telinit"/>
