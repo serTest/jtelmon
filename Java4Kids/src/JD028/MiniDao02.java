@@ -1,4 +1,6 @@
-/* 
+/*
+ * http://code.google.com/p/jtelmon/source/browse/Java4Kids/src/JD028/MiniDao02.java
+ * http://code.google.com/p/jtelmon/source/browse/Java4Kids/src/JD028/User.java
  * code.google.com/p/jtelmon/source/browse/AddressBookDB/src/pgAddressBook/TemplateDao.java
  * code.google.com/p/jtelmon/source/browse/Java4Kids/src/JD028/MiniDao.java
  * Using Java DB in Desktop Applications

@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * http://code.google.com/p/jtelmon/source/browse/Java4Kids/src/JD028/MiniDao02.java
+ * http://code.google.com/p/jtelmon/source/browse/Java4Kids/src/JD028/User.java
  */
 
 package JD028;
