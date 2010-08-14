@@ -324,16 +324,13 @@ public class ListTableModel extends RowTableModel<List>
             model.addRow(r1);
             model.addRow(r2);
             JTable table = new JTable(model);
-            JScrollPane scrollPane = new JScrollPane(table);
 
+            JScrollPane scrollPane = new JScrollPane(table);
             JFrame frame = new JFrame("JFrame and JTable example 2");
             frame.setSize(300, 100);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // Action when window closes
-
-             frame.getContentPane().add(scrollPane, BorderLayout.CENTER);
-             frame.setVisible(true);
-
-
+            frame.getContentPane().add(scrollPane, BorderLayout.CENTER);
+            frame.setVisible(true);
         }
 }
 
