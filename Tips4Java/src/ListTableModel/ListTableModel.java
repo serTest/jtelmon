@@ -1,12 +1,18 @@
 /*
  * http://www.camick.com/java/source/ListTableModel.java
+ * http://code.google.com/p/jtelmon/source/browse/Tips4Java/src/ListTableModel/ListTableModel.java
+ *
  * 
  */
 
 package ListTableModel;
 
+import java.awt.BorderLayout;
 import java.util.*;
 import java.sql.*;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 
 public class ListTableModel extends RowTableModel<List>
@@ -306,6 +312,29 @@ public class ListTableModel extends RowTableModel<List>
 
 		return model;
 	}
+
+        public static void main(String[] args) {
+
+            String[] cn = {"First Name", "Last Name", "Age"};
+            ListTableModel model = new ListTableModel(Arrays.asList(cn));
+            model.setColumnClass(2, Integer.class);
+            model.setColumnEditable(2, false);
+            Object[] r1 = {"Homer", "Simpson", new Integer(40)};
+            Object[] r2 = {"Marge", "Simpson", new Integer(35)};
+            model.addRow(r1);
+            model.addRow(r2);
+            JTable table = new JTable(model);
+            JScrollPane scrollPane = new JScrollPane(table);
+
+            JFrame frame = new JFrame("JFrame and JTable example 2");
+            frame.setSize(300, 100);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // Action when window closes
+
+             frame.getContentPane().add(scrollPane, BorderLayout.CENTER);
+             frame.setVisible(true);
+
+
+        }
 }
 
 /*
