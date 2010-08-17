@@ -19,9 +19,9 @@ import java.util.List;
 @SuppressWarnings("CallToThreadDumpStack")
 //
 
-public class MiniDao {
+public class MiniDao01 {
 
-    public MiniDao() {
+    public MiniDao01() {
         dbUrl = "jdbc:postgresql://192.168.61.205/DefaultAddressBook?user=postgres&password=telinit";
         String driverName = "org.postgresql.Driver";
         loadDatabaseDriver(driverName);
@@ -90,7 +90,7 @@ public class MiniDao {
     }
 
     public static void main(String[] args) {
-        MiniDao db = new MiniDao();
+        MiniDao01 db = new MiniDao01();
         db.connect();
         List<ListEntry> entries = db.getListEntries();
         Iterator i = entries.iterator();
