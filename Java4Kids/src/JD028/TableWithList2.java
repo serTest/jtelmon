@@ -29,7 +29,7 @@ import java.util.*;
  * @author mrityunjoy_saha
  * @version 1.0
  */
-public class TableWithList {
+public class TableWithList2 {
 
     private JFrame frame = new JFrame("TableWithList");
     private JTable table = null;
@@ -70,7 +70,7 @@ public class TableWithList {
     	list.add(o2);
     	list.add(o3);
     	table.setModel(new MyTableModel(list));
-        frame.getContentPane().add(table, BorderLayout.CENTER);
+        frame.getContentPane().add(new JScrollPane(table), BorderLayout.CENTER);
         frame.setSize(200, 200);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
@@ -99,6 +99,6 @@ public class TableWithList {
     }
 
     public static void main(String args[]) throws Exception{
-        new TableWithList().test();
+        new TableWithList2().test();
     }
 }
