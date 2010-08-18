@@ -1,6 +1,6 @@
 /*
  * http://www-acad.sheridanc.on.ca/~jollymor/prog24178/swing3d.html
- * KO? ToDo!
+ * KO! ToDo: FixIt...
  */
 
 package JD031;
