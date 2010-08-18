@@ -1,6 +1,6 @@
 /*
- * http://download.oracle.com/javase/tutorial/uiswing/examples/components/SimpleTableDemoProject/src/components/SimpleTableDemo.java
- * http://download.oracle.com/javase/tutorial/uiswing/components/table.html
+ * download.oracle.com/javase/tutorial/uiswing/examples/components/SimpleTableDemoProject/src/components/SimpleTableDemo.java
+ * download.oracle.com/javase/tutorial/uiswing/components/table.html
  */
 
 package JD028;
