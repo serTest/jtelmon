@@ -1,5 +1,6 @@
 /*
  * code.google.com/p/jtelmon/source/browse/Java4Kids/src/JD028/AddressListPanel1.java
+ * academicjava.com/JavaTutorial/JPanelExample.html
  */
 
 package JD028;
@@ -16,42 +17,31 @@ public class AddressListPanel1 {
     private static javax.swing.JList addressList;
     private static javax.swing.JScrollPane scrollPane;
     private static ListEntryRenderer renderer;
-    private static DefaultListModel model;
-    private static JPanel jpanel1;
+    private static DefaultListModel theModel;
+    private static JPanel thePanel;
 
     public static void main(String[] args) {
 
-        JFrame frame = new JFrame("JTable With ArrayList");
-        jpanel1 = new JPanel(new GridLayout(0,1));
-        frame.getContentPane().add(jpanel1);
+        JFrame theFrame = new JFrame("JTable With ArrayList");
+        thePanel = new JPanel(new GridLayout(0,1));
+        theFrame.getContentPane().add(thePanel);
         renderer = new ListEntryRenderer();
-        model = new DefaultListModel();
+        theModel = new DefaultListModel();
         scrollPane = new javax.swing.JScrollPane();
         addressList = new javax.swing.JList();
-        addressList.setModel(model);
+        addressList.setModel(theModel);
         addressList.setCellRenderer(renderer);
         scrollPane.setViewportView(addressList);
-        jpanel1.add(scrollPane);
-
+        thePanel.add(scrollPane);
         db = new MiniDao01();
         db.connect();
         List<ListEntry> entries = db.getListEntries();
-        addListEntries(entries);
-        frame.pack();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
+        for(ListEntry entry: entries) {
+            theModel.addElement(entry);
+        }
+        theFrame.pack();
+        theFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        theFrame.setVisible(true);
         db.disconnect();
     }
-
-
-    public static void addListEntry(ListEntry entry) {
-        model.addElement(entry);
-    }
-
-    public static void addListEntries(List<ListEntry> list) {
-        for(ListEntry entry: list) {
-            addListEntry(entry);
-        }
-    }
-
 }
