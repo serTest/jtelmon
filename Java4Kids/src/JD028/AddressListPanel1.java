@@ -1,5 +1,5 @@
- /*
- * 
+/*
+ * code.google.com/p/jtelmon/source/browse/Java4Kids/src/JD028/AddressListPanel1.java
  */
 
 package JD028;
@@ -21,7 +21,7 @@ public class AddressListPanel1 {
 
     public static void main(String[] args) {
 
-        JFrame frame = new JFrame("TableWithList");
+        JFrame frame = new JFrame("JTable With ArrayList");
         jpanel1 = new JPanel(new GridLayout(0,1));
         frame.getContentPane().add(jpanel1);
         renderer = new ListEntryRenderer();
