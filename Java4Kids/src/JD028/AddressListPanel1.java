@@ -28,12 +28,11 @@ public class AddressListPanel1 {
         model = new DefaultListModel();
         scrollPane = new javax.swing.JScrollPane();
         addressList = new javax.swing.JList();
-        scrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         addressList.setModel(model);
-        addressList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         addressList.setCellRenderer(renderer);
         scrollPane.setViewportView(addressList);
         jpanel1.add(scrollPane);
+
         db = new MiniDao01();
         db.connect();
         List<ListEntry> entries = db.getListEntries();
@@ -41,7 +40,7 @@ public class AddressListPanel1 {
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
-
+        db.disconnect();
     }
 
 
