@@ -42,9 +42,9 @@ try
     while(rs.next())
     {
         String sResult = rs.getString("Nume")
-                +" "+ rs.getString("Prenume")
-                +" "+ rs.getString("UtilizatorID")
-                +" "+ rs.getString("Parola");
+                   +" "+ rs.getString("Prenume")
+                   +" "+ rs.getString("UtilizatorID")
+                   +" "+ rs.getString("Parola");
         System.out.println(sResult);
     }
 }
