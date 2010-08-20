@@ -1,5 +1,6 @@
 /*
  SQLS JDBC
+ code.google.com/p/jtelmon/source/browse/Java4Kids/src/JD031/HelloSQLS.java
  wiki.netbeans.org/DatabasesAndDrivers
  sourceforge.net/projects/jtds/files/
  en.wikibooks.org/wiki/An_Introduction_to_Java_JDBC_using_SqLite/Connecting
