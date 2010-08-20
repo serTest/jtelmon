@@ -43,8 +43,10 @@ try
     ResultSet rs = stmt.executeQuery(sMakeSelect);
     while(rs.next())
     {
-        String sResult = rs.getString("Nume")+" "+ rs.getString("Prenume")+
-                " "+ rs.getString("UtilizatorID")+" "+ rs.getString("Parola");
+        String sResult = rs.getString("Nume")
+                +" "+ rs.getString("Prenume")
+                +" "+ rs.getString("UtilizatorID")
+                +" "+ rs.getString("Parola");
         System.out.println(sResult);
     }
 }
