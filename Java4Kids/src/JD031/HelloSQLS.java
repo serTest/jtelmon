@@ -36,8 +36,8 @@ String sMakeSelect = "select Nume, Prenume, UtilizatorID, Parola "
         + " order by Nume ";
 try
 { 
-    Connection conn = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.61.28:1433;" +
-            "databaseName=pangram;user=sa;password=wy7c1kqt_+");
+    Connection conn = DriverManager.getConnection("jdbc:jtds:sqlserver:"
+        + "//192.168.61.28:1433;databaseName=pangram;user=sa;password=wy7c1kqt_+");
     Statement stmt = conn.createStatement();
     stmt.setQueryTimeout(iTimeout);
     ResultSet rs = stmt.executeQuery(sMakeSelect);
