@@ -14,7 +14,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
 public class HelloSQLS
 {
 public static void main (String[] args)
@@ -28,7 +27,6 @@ try
 {
     System.err.println(e);
 }
-
 int iTimeout = 30;
 String sMakeSelect = "select Nume, Prenume, UtilizatorID, Parola " 
         + " from PersoanaFizica,Utilizator "
@@ -68,4 +66,3 @@ try
     jTDS is a complete implementation of the JDBC 3.0 spec and the fastest JDBC driver for MS SQL Server.
     For more information see jtds.sourceforge.net
  */
-
