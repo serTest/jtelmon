@@ -1,10 +1,7 @@
-/*  SQLS JDBC
+/*
+ SQLS JDBC
  wiki.netbeans.org/DatabasesAndDrivers
  sourceforge.net/projects/jtds/files/
- www.zentus.com/sqlitejdbc/
- sqlitebrowser.sourceforge.net/
- plugins.netbeans.org/
- blog.code-purity.com/archives/2009/2/15/sqlite_jdbc_driver_for_netbeans/
  en.wikibooks.org/wiki/An_Introduction_to_Java_JDBC_using_SqLite/Connecting
 */
 
@@ -21,7 +18,6 @@ public class HelloSQLS
 {
 public static void main (String[] args)
 {
-  //String sDriverName = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     String sDriverName = "net.sourceforge.jtds.jdbc.Driver";
 try
 {
@@ -53,3 +49,16 @@ try
 }
 }
 }
+
+/*
+    jTDS driver for the SQL Server database
+    Driver Location 	jTDS
+    Driver Version 	jTDS 1.2.1 jtds-1.2.1-dist.zip
+    Driver JAR File 	jtds-1.2.1.jar
+    Driver Classname 	net.sourceforge.jtds.jdbc.Driver
+    Example URL 	jdbc:jtds:sqlserver://rave-cheetah.sfbay.sun.com:1433/travel
+    Open source JDBC 3.0 type 4 driver for Microsoft SQL Server (6.5 up to 2008) and Sybase ASE.
+    jTDS is a complete implementation of the JDBC 3.0 spec and the fastest JDBC driver for MS SQL Server.
+    For more information see jtds.sourceforge.net
+ */
+
