@@ -30,7 +30,7 @@ try
 }
 
 int iTimeout = 30;
-String sMakeSelect = "select * from PersoanaFizica,Utilizator where " +
+String sMakeSelect = "select Nume, Prenume, UtilizatorID, Parola from PersoanaFizica,Utilizator where " +
  " PersoanaFizica.PersoanaFizica_ID=Utilizator.UtilizatorID order by Nume";
 try
 { 
@@ -40,7 +40,8 @@ try
     ResultSet rs = stmt.executeQuery(sMakeSelect);
     while(rs.next())
     {
-        String sResult = rs.getString("nume");
+        String sResult = rs.getString("Nume")+" "+ rs.getString("Prenume")+
+                " "+ rs.getString("UtilizatorID")+" "+ rs.getString("Parola");
         System.out.println(sResult);
     }
 }
