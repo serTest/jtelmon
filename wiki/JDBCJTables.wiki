@@ -1,0 +1,42 @@
+#summary One-sentence summary of this page.
+
+Consider this: you have a running Java application with a Swing front-end and a PostgreSQL database managing the data in the backend.  You want to let your users view and modify the data in your database, but they don’t know a smidgen of SQL.  Perhaps there is a way to (easily?) draw a GUI front-end using Swing components on the Java side.
+
+= Introduction =
+
+But before you go off  tearing through the API, make sure you take a look at the JTable tutorial on the sun website.  You don’t have to study it like the Bible, but read it over to get a good handle on how JTables work.  In order to display our database entries, we’ll need to extend the AbstractTableModel class to create our own TableModel object.  This will give us a greater degree of control over how our JTable behaves when we start to fill it with more information.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
+
+
+A TableModel represents the underlying data of the JTable. It manages everything from the name of the column headers to the actual contents of the table itself.
+
+The easiest way to create a custom TableMode is to extend the AbstractTableModel class.
+
+When you extend the AbstractTableModel, it will require you to implement the following methods:
+
+public int getColumnCount() {}  
+public int getRowCount() {}  
+public Object getValueAt(int arg0, int arg1) {}  
+On top of those, we will also need to implement:
+
+public boolean isCellEditable{}  
+public void setValueAt(Object aValue, int row, int col) {}  
+public String getColumnName(int col) {}  
+Fundamentally, your TableModel will need to keep track of two things: the titles or names of your columns and the actual content itself.
+
+The titles of each column can be retrieved from the database (that is, when we actually connect to it). Ideally this information will be stored in a String array.
+
+How you store the actual content is up in the air. Take careful note of the method signatures: the getValueAt() method returns an Object, and the setValueAt() method takes an Object.
+
+The easiest way to go would be to store everything as a 2D Object array (Object[][]). This makes it easier to address elements in the table(for the programmer that is), but makes it harder to adjust the size of the table later on. Alternatively, you could create a 2D ArrayList of Objects; this makes it harder for the programmer to access various elements, but makes it easier to adjust the size of the table.
+
+There are trade-offs to consider, so take some time to decide on what your system needs before you proceed. As for my own implementation, I chose to store everything in a 2D Object array.
+
+The next step is to connect to your database and populate the column names and content arrays with the relevant data. Once we have populated the column name array, implementing getColumnCount() and getColumnName() will be trivial. Similarly, implementing getRowCount(), getValueAt(), setValueAt() and isCellEditable() will be a lot easier once we’ve populated our content array.
