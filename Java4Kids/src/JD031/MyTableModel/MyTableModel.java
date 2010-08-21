@@ -1,11 +1,12 @@
 /*
+code.google.com/p/jtelmon/source/browse/Java4Kids/src/JD031/MyTableModel/MyTableModel.java
 www.pioverpi.net/2009/06/23/jtables-jdbc-introduction/
 www.pioverpi.net/2009/06/24/jtables-jdbc-pt-2-extending-abstracttablemodel/
 www.pioverpi.net/2009/06/26/jtables-jdbc-pt-3-connecting-to-your-database-through-jdbc/
 www.pioverpi.net/2009/07/02/jtables-jdbc-pt-4-putting-it-all-together/
- onjava.com/pub/a/onjava/excerpt/swinghks_hack24/index.html?page=1
- onjava.com/pub/a/onjava/excerpt/swinghks_hack24/index.html?page=2
- onjava.com/pub/a/onjava/excerpt/swinghks_hack24/index.html?page=3
+onjava.com/pub/a/onjava/excerpt/swinghks_hack24/index.html?page=1
+onjava.com/pub/a/onjava/excerpt/swinghks_hack24/index.html?page=2
+onjava.com/pub/a/onjava/excerpt/swinghks_hack24/index.html?page=3
 */
 
 package JD031.MyTableModel;
