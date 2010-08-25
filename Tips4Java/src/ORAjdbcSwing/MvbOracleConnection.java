@@ -26,7 +26,7 @@
          Edition creates one database instance called XE.
  */
 
-// package ORAjdbcSwing;
+package ORAjdbcSwing;
 
 import java.sql.*; 
 
