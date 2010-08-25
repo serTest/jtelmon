@@ -1,4 +1,7 @@
-// File: LoginWindow.java
+/*
+    private MvbOracleConnection mvb = MvbOracleConnection.getInstance();
+    private MvbPostgresConnection mvb = MvbPostgresConnection.getInstance();
+*/
 
 package ORAjdbcSwing;
 
@@ -13,7 +16,9 @@ import java.awt.event.*;
 public class LoginWindow extends JDialog implements ActionListener
 {
     // MvbOracleConnection represents a connection to an Oracle database
-    private MvbOracleConnection mvb = MvbOracleConnection.getInstance();
+
+    // private MvbOracleConnection mvb = MvbOracleConnection.getInstance();
+    private MvbPostgresConnection mvb = MvbPostgresConnection.getInstance();
 
     // user is allowed 3 login attempts
     private int loginAttempts = 0;

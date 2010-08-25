@@ -1,4 +1,9 @@
-// File: BranchModel.java
+/*
+ 
+   con = MvbOracleConnection.getInstance().getConnection();
+   con = MvbPostgresConnection.getInstance().getConnection();
+
+*/
 
 package ORAjdbcSwing;
 
@@ -45,7 +50,8 @@ public class BranchModel
      */ 
     public BranchModel()
     {
-	con = MvbOracleConnection.getInstance().getConnection();
+	// con = MvbOracleConnection.getInstance().getConnection();
+        con = MvbPostgresConnection.getInstance().getConnection();
     }
  
 
