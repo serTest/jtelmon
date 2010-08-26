@@ -42,6 +42,7 @@ public class JDBCRowSetBeanInfo extends SimpleBeanInfo {
         return properties;
     }
 
+    @Override
     public synchronized PropertyDescriptor[] getPropertyDescriptors() {
         if (pds == null) {
             try {
