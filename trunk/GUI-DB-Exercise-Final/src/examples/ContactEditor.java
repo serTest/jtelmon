@@ -13,7 +13,7 @@ public class ContactEditor extends javax.swing.JFrame {
         initComponents();
 
         try {
-            jDBCRowSet1.setCommand("select * from CONTACTS");
+            jDBCRowSet1.setCommand("select * from contacts");
         } catch (java.sql.SQLException e1) {
             e1.printStackTrace();
         }
@@ -72,6 +72,7 @@ public class ContactEditor extends javax.swing.JFrame {
         okButton = new javax.swing.JButton();
         jDBCRowSet1 = new examples.JDBCRowSet();
         contactsModel = new examples.ContactsModel();
+        rowSetTableModel1 = new examples.RowSetTableModel();
         contactsLabel = new javax.swing.JLabel();
         contactTablePane = new javax.swing.JScrollPane();
         contactTable = new javax.swing.JTable();
@@ -310,6 +311,15 @@ public class ContactEditor extends javax.swing.JFrame {
         jDBCRowSet1.setDriver("");
         jDBCRowSet1.setUsername("");
 
+        contactsModel.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                contactsModelPropertyChange(evt);
+            }
+        });
+
+        rowSetTableModel1.setRowSet(jDBCRowSet1);
+        rowSetTableModel1.setVisibleColumns(new String[] {"NICKNAME", "FIRST_NAME", "LAST_NAME"});
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("E-mail Contacts");
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -321,6 +331,7 @@ public class ContactEditor extends javax.swing.JFrame {
         contactsLabel.setFont(new java.awt.Font("Tahoma", 1, 18));
         contactsLabel.setText("Contacts");
 
+        contactTable.setModel(rowSetTableModel1);
         contactTable.setSelectionModel(contactsModel.getContactSelection());
         contactTablePane.setViewportView(contactTable);
 
@@ -522,6 +533,7 @@ public class ContactEditor extends javax.swing.JFrame {
     private javax.swing.JRadioButton plainTextChoice;
     private javax.swing.JButton removeContact;
     private javax.swing.JButton removeEmail;
+    private examples.RowSetTableModel rowSetTableModel1;
     private javax.swing.JTextField titleField;
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
