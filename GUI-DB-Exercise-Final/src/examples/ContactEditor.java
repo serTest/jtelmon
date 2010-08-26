@@ -1,11 +1,14 @@
 
 package examples;
 
+@SuppressWarnings("CallToThreadDumpStack")
+
 public class ContactEditor extends javax.swing.JFrame {
     
     /**
      * Creates new form ContactEditor
      */
+
     public ContactEditor() {
         initComponents();
 
