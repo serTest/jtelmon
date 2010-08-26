@@ -119,17 +119,17 @@ public class ContactEditor extends javax.swing.JFrame {
                 .add(namePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(namePanelLayout.createSequentialGroup()
                         .add(namePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(titleField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, firstNameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
+                            .add(titleField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, firstNameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(namePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                             .add(lastNameLabel)
                             .add(nicknameLabel))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(namePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(lastNameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                            .add(nicknameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)))
-                    .add(displayFormat, 0, 331, Short.MAX_VALUE))
+                            .add(lastNameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                            .add(nicknameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)))
+                    .add(displayFormat, 0, 335, Short.MAX_VALUE))
                 .addContainerGap())
         );
         namePanelLayout.setVerticalGroup(
@@ -224,8 +224,8 @@ public class ContactEditor extends javax.swing.JFrame {
                             .add(emailPanelLayout.createSequentialGroup()
                                 .add(emailLabel)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(emailField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE))
-                            .add(listScrollPane, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE))
+                                .add(emailField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE))
+                            .add(listScrollPane, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(emailPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(editEmail)
@@ -307,17 +307,7 @@ public class ContactEditor extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        try {
-            jDBCRowSet1.setCommand("null");
-        } catch (java.sql.SQLException e1) {
-            e1.printStackTrace();
-        }
         jDBCRowSet1.setDriver("");
-        try {
-            jDBCRowSet1.setUrl("null");
-        } catch (java.sql.SQLException e1) {
-            e1.printStackTrace();
-        }
         jDBCRowSet1.setUsername("");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
