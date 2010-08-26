@@ -69,8 +69,8 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="titleField" pref="120" max="32767" attributes="2"/>
-                                  <Component id="firstNameField" alignment="1" pref="120" max="32767" attributes="2"/>
+                                  <Component id="titleField" pref="136" max="32767" attributes="2"/>
+                                  <Component id="firstNameField" alignment="1" pref="136" max="32767" attributes="2"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
@@ -79,11 +79,11 @@
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lastNameField" alignment="0" pref="121" max="32767" attributes="0"/>
-                                  <Component id="nicknameField" alignment="0" pref="121" max="32767" attributes="0"/>
+                                  <Component id="lastNameField" alignment="0" pref="137" max="32767" attributes="0"/>
+                                  <Component id="nicknameField" alignment="0" pref="137" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="displayFormat" pref="331" max="32767" attributes="2"/>
+                          <Component id="displayFormat" pref="335" max="32767" attributes="2"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -203,9 +203,9 @@
                                   <Group type="102" attributes="0">
                                       <Component id="emailLabel" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                                      <Component id="emailField" pref="246" max="32767" attributes="0"/>
+                                      <Component id="emailField" pref="259" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="listScrollPane" pref="357" max="32767" attributes="2"/>
+                                  <Component id="listScrollPane" pref="337" max="32767" attributes="2"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -374,9 +374,7 @@
     </Container>
     <Component class="examples.JDBCRowSet" name="jDBCRowSet1">
       <Properties>
-        <Property name="command" type="java.lang.String" value="null"/>
         <Property name="driver" type="java.lang.String" value=""/>
-        <Property name="url" type="java.lang.String" value="null"/>
         <Property name="username" type="java.lang.String" value=""/>
       </Properties>
     </Component>
