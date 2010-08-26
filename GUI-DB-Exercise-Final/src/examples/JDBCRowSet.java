@@ -9,6 +9,8 @@ import com.sun.rowset.JdbcRowSetImpl;
  *
  * @author Jan Stola
  */
+
+@SuppressWarnings("CallToThreadDumpStack")
 public class JDBCRowSet extends JdbcRowSetImpl {
     /** Class name of the driver used to load this row set. */
     private String driver;
@@ -18,6 +20,7 @@ public class JDBCRowSet extends JdbcRowSetImpl {
      *
      * @param userName user name used by the rowSet to connect to the database.
      */
+    @Override
     public void setUsername(String userName) {
         super.setUsername(userName);
         executeIfPossible();
@@ -28,6 +31,7 @@ public class JDBCRowSet extends JdbcRowSetImpl {
      *
      * @param password password used by the rowSet to connect to the database.
      */
+    @Override
     public void setPassword(String password) {
         super.setPassword(password);
         executeIfPossible();
@@ -38,6 +42,7 @@ public class JDBCRowSet extends JdbcRowSetImpl {
      *
      * @param command SQL command used by this rowSet to populate its data.
      */
+    @Override
     public void setCommand(String command) throws SQLException {
         super.setCommand(command);
         executeIfPossible();
@@ -48,6 +53,7 @@ public class JDBCRowSet extends JdbcRowSetImpl {
      *
      * @param url database URL.
      */
+    @Override
     public void setUrl(String url) throws SQLException {
         super.setUrl(url);
         executeIfPossible();
@@ -74,6 +80,7 @@ public class JDBCRowSet extends JdbcRowSetImpl {
     // Helper method called when some important property is changed.
     // Checks whether all important properties are set and if so
     // then loads/reloads the row set.
+
     private void executeIfPossible() {
         try {
             if ((getUsername() != null)
@@ -99,6 +106,7 @@ public class JDBCRowSet extends JdbcRowSetImpl {
     }
     
     // Returns connection object used by this row set.
+    @Override
     protected Connection getConnection() {
         return super.getConnection();
     }
