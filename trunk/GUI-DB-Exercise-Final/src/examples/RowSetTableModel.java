@@ -10,6 +10,9 @@ import javax.swing.table.AbstractTableModel;
  *
  * @author Jan Stola
  */
+
+@SuppressWarnings("CallToThreadDumpStack")
+
 public class RowSetTableModel extends AbstractTableModel implements RowSetListener {
     // RowSet with the data
     private RowSet rowSet;
@@ -52,6 +55,7 @@ public class RowSetTableModel extends AbstractTableModel implements RowSetListen
      *
      * @return name of the specified column.
      */
+    @Override
     public String getColumnName(int column) {
         String name = super.getColumnName(column);
         if (visibleColumns != null) {
@@ -163,14 +167,14 @@ public class RowSetTableModel extends AbstractTableModel implements RowSetListen
 
     // Helper method that updates <code>rowCount</code> field.
     private void updateRowCount() {
-        int rowCount = 0;
+        int rowCount1 = 0;
         try {
             rowSet.beforeFirst();
-            while (rowSet.next()) rowCount++;
+            while (rowSet.next()) rowCount1++;
         } catch (SQLException sqlex) {
             sqlex.printStackTrace();
         }
-        this.rowCount = rowCount;
+        this.rowCount = rowCount1;
     }
 
     // Implementation of RowSetListener
