@@ -38,7 +38,8 @@ public class MvbPostgresConnection
 	{
 	    // change the url if the branch table is located somewhere else
 	    // String url = "jdbc:oracle:thin:@192.168.61.3:1521:XE";
-            String url = "jdbc:postgresql://192.168.61.205:5432/license";
+            // String url = "jdbc:postgresql://192.168.61.205:5432/license";
+            String url = "jdbc:postgresql://ftp.pangram.ro:5432/license";
             // jdbc:postgresql://localhost:5432/DefaultAddressBook
 
 
