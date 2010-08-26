@@ -642,7 +642,8 @@ public class BranchController implements ActionListener, ExceptionListener
 	    setResizable(false);
 
 	    JPanel contentPane = new JPanel(new BorderLayout());
-	    setContentPane(contentPane);
+            // setContentPane(contentPane);
+            this.setContentPane(contentPane);
 	    contentPane.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
 	    // this panel contains the text field labels and the text fields.
