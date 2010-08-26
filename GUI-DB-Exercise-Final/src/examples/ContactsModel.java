@@ -12,6 +12,8 @@ import javax.swing.event.*;
  *
  * @author Jan Stola
  */
+
+@SuppressWarnings("CallToThreadDumpStack")
 public class ContactsModel implements ListSelectionListener {
     // Constants for database objects
     private static final String CONTACTS_TABLE = "contacts";
@@ -240,6 +242,7 @@ public class ContactsModel implements ListSelectionListener {
 
     // Helper method that encodes email addresses into one string
     private String encodeEmails(Object[] emails) {
+        @SuppressWarnings("StringBufferMayBeStringBuilder")
         StringBuffer sb = new StringBuffer();
         for (int i=0; i<emails.length; i++) sb.append('|').append(emails[i].toString());
         return sb.toString();
