@@ -222,7 +222,14 @@ public class MvbView extends JFrame
    
     public static void main(String[] args) 
     {
-	MvbView mvb = new MvbView();
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+            // UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+        MvbView mvb = new MvbView();
 
 	// we will not call pack() on the main frame 
 	// because the size set by setSize() will be ignored

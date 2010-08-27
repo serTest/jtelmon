@@ -87,26 +87,20 @@ public class PersistentRegionEditor extends JFrame implements ActionListener {
    * @param args  command line arguments
    */
     @SuppressWarnings({"ResultOfObjectAllocationIgnored", "CallToThreadDumpStack"})
-	public static void main(String[] args) {
+    public static void main(String[] args) {
     try {
-      UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+        // UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
     }
     catch(Exception e) {
-      e.printStackTrace();
+        e.printStackTrace();
     }
-/*
-    String server = args[0];
-    String db = args[1];
-    String user = args[2];
-    String pw = args[3];
-*/
     String server = "192.168.61.205";
     String db = "contact_database";
     String user = "postgres";
     String pw = "telinit";
-
-		new PersistentRegionEditor(server, db, user, pw);
-	}
+    new PersistentRegionEditor(server, db, user, pw);
+}
 
   /**
    * construct a tree that has all the enhancements described in the article this 

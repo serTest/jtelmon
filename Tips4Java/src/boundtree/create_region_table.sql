@@ -1,3 +1,4 @@
+-- MySQL 
 CREATE DATABASE samples;
 USE samples;
 
