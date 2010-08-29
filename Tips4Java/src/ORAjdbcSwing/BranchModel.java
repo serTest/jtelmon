@@ -182,7 +182,8 @@ public class BranchModel
 
 	    ps.setInt(1, bid);
 
-	    ps.executeQuery();
+	    // ps.executeQuery();
+            ps.execute();
 
 	    con.commit();
 
