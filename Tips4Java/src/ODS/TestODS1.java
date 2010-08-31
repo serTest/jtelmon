@@ -25,7 +25,7 @@ public class TestODS1 {
         try {
             // Load the file.
             // Load the file.
-            File file = new File("template/invoice.ods");
+            File file = new File("invoice.ods");
             final Sheet sheet = SpreadSheet.createFromFile(file).getSheet(0);
             // Change date.
             sheet.getCellAt("I10").setValue(new Date());
@@ -36,8 +36,7 @@ public class TestODS1 {
             sheet.getCellAt("F24").setValue(3);
             // Or better yet use a named range
             // (relative to the first cell of the range, wherever it might be).
-            sheet.getSpreadSheet().getTableModel("Products").setValueAt(1, 5, 4);
-            // Save to file and open it.
+            // sheet.getSpreadSheet().getTableModel("Products").setValueAt(1, 5, 4);
             // Save to file and open it.
             File outputFile = new File("fillingTest.ods");
             OOUtils.open(sheet.getSpreadSheet().saveAs(outputFile));
