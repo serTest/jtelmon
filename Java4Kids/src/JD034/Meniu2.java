@@ -106,11 +106,11 @@ return menuItem;
 }
 public void actionPerformed( ActionEvent event )
 {
-System.out.println( event );
+    System.out.println( event );
 }
 public static void main( String args[] )
 {
-Meniu2 mainFrame = new Meniu2();
-mainFrame.setVisible( true );
+    Meniu2 mainFrame = new Meniu2();
+    mainFrame.setVisible( true );
 }
 }
