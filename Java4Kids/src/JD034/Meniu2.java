@@ -74,17 +74,16 @@ public JMenuItem CreateMenuItem( JMenu menu, int iType,String sText, ImageIcon i
 {
 // Creeaza optiunea meniului
 JMenuItem menuItem;
-switch( iType )
-{
-case ITEM_RADIO:
-menuItem = new JRadioButtonMenuItem();
-break;
-case ITEM_CHECK:
-menuItem = new JCheckBoxMenuItem();
-break;
-default:
-menuItem = new JMenuItem();
-break;
+switch( iType ){
+    case ITEM_RADIO:
+        menuItem = new JRadioButtonMenuItem();
+        break;
+    case ITEM_CHECK:
+        menuItem = new JCheckBoxMenuItem();
+        break;
+    default:
+        menuItem = new JMenuItem();
+        break;
 }
 // Adauga textul optiunii
 menuItem.setText( sText );
