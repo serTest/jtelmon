@@ -91,8 +91,7 @@ public class DriverController implements ActionListener, ExceptionListener
 
             JPanel contentPane = new JPanel(new BorderLayout());
             setContentPane(contentPane);
-            contentPane.setBorder(BorderFactory.createEmptyBorder(10, 10, 10,
-                                                                  10));
+            contentPane.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
             JPanel inputPane = new JPanel();
             inputPane.setBorder(BorderFactory.createCompoundBorder(
                          new TitledBorder(new EtchedBorder(), "Branch Fields"),

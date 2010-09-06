@@ -236,9 +236,9 @@ public class MvbView extends JFrame
 	    menuItem.addActionListener(bc);
 	}
         DriverController dc = new DriverController(this);
-	for (int i = 0; i < branchAdmin.getItemCount(); i++)
+	for (int j = 0; j < branchAdmin.getItemCount(); j++)
 	{
-	    menuItem = driverAdmin.getItem(i);
+	    menuItem = driverAdmin.getItem(j);
 	    menuItem.addActionListener(dc);
 	}
     }
