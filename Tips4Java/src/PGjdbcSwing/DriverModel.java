@@ -71,7 +71,7 @@ public class DriverModel
     {
         try
         {
-            ps = con.prepareStatement("SELECT d.* FROM driver d",
+            ps = con.prepareStatement("SELECT * FROM driver d",
                                       ResultSet.TYPE_SCROLL_INSENSITIVE,
                                       ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = ps.executeQuery();

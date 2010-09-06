@@ -228,14 +228,18 @@ public class MvbView extends JFrame
     public void registerControllers()
     {
 	JMenuItem menuItem; 
-
 	// BranchController handles events on the branch admin menu items (i.e. when they are clicked)
 	BranchController bc = new BranchController(this);
-	
 	for (int i = 0; i < branchAdmin.getItemCount(); i++)
 	{
 	    menuItem = branchAdmin.getItem(i);
 	    menuItem.addActionListener(bc);
+	}
+        DriverController dc = new DriverController(this);
+	for (int i = 0; i < branchAdmin.getItemCount(); i++)
+	{
+	    menuItem = driverAdmin.getItem(i);
+	    menuItem.addActionListener(dc);
 	}
     }
 
