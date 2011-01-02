@@ -1,3 +1,9 @@
+/*
+ * 
+ *   https://code.google.com/p/jtelmon/source/browse/trunk/Database1Android/src/net/learn2develop/Databases/DBAdapter.java
+ * 
+ */
+
 package net.learn2develop.Databases;
 
 import android.content.ContentValues;

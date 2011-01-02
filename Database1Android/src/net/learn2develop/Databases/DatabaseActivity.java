@@ -3,7 +3,8 @@
  *  http://www.devx.com/wireless/Article/40842/1954
  *  http://developer.android.com/sdk/installing.html
  *  http://developer.android.com/resources/tutorials/hello-world.html
- *  
+ *  https://code.google.com/p/jtelmon/source/browse/trunk/Database1Android/src/net/learn2develop/Databases/DatabaseActivity.java
+ *    
  */
 
 package net.learn2develop.Databases;
