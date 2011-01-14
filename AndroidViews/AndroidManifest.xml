@@ -15,5 +15,9 @@
         <activity android:name=".BasicViewsExample"
                   android:label="@string/app_name" />
  
+         <activity android:name=".AutoCompleteExample"
+                  android:label="@string/app_name" />
+ 
+ 
     </application>
 </manifest>
