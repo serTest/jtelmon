@@ -13,7 +13,10 @@ public class ViewsActivity extends Activity
         setContentView(R.layout.main);        
  
         //---load the BasicViewsExample activity---
-        startActivity(new Intent(this, BasicViewsExample.class));
- 
+        // startActivity(new Intent(this, BasicViewsExample.class));
+        
+        startActivity(new Intent(this, AutoCompleteExample.class));
+
+        
     }
 }
