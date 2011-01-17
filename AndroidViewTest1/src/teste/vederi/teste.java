@@ -12,7 +12,9 @@ public class teste extends Activity {
         setContentView(R.layout.main);
 
         //---load the BasicViewsExample activity---
-        startActivity(new Intent(this, Vederi.class));
+        // startActivity(new Intent(this, Vederi.class));
+        
+        startActivity(new Intent(this, ListviewExample.class));
         
         
     }
