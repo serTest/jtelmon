@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout
+android:id="@+id/widget31"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+xmlns:android="http://schemas.android.com/apk/res/android"
+>
+<Button
+android:id="@+id/widget37"
+android:layout_width="208px"
+android:layout_height="35px"
+android:text="Selectie Ruta"
+android:layout_x="51px"
+android:layout_y="189px"
+>
+</Button>
+<Button
+android:id="@+id/widget38"
+android:layout_width="208px"
+android:layout_height="35px"
+android:text="Selectie Client"
+android:layout_x="51px"
+android:layout_y="219px"
+>
+</Button>
+<Button
+android:id="@+id/widget39"
+android:layout_width="208px"
+android:layout_height="35px"
+android:text="Cauta Produs"
+android:layout_x="52px"
+android:layout_y="249px"
+>
+</Button>
+<Button
+android:id="@+id/widget40"
+android:layout_width="208px"
+android:layout_height="35px"
+android:text="Comenzi Netrimise"
+android:layout_x="52px"
+android:layout_y="278px"
+>
+</Button>
+<Button
+android:id="@+id/widget41"
+android:layout_width="208px"
+android:layout_height="35px"
+android:text="Vizualizare Sarcini"
+android:layout_x="52px"
+android:layout_y="307px"
+>
+</Button>
+<TextView
+android:id="@+id/widget36"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="MONTE BANATO"
+android:textSize="20sp"
+android:textStyle="bold"
+android:layout_x="72px"
+android:layout_y="52px"
+>
+</TextView>
+<TextView
+android:id="@+id/widget37"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="PANGRAM S.A"
+android:layout_x="102px"
+android:layout_y="81px"
+>
+</TextView>
+<TextView
+android:id="@+id/widget38"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="JL SOFT"
+android:textStyle="bold"
+android:layout_x="244px"
+android:layout_y="405px"
+>
+</TextView>
+<DigitalClock
+android:id="@+id/widget85"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="19:10"
+android:textSize="16sp"
+android:layout_x="111px"
+android:layout_y="358px"
+>
+</DigitalClock>
+</AbsoluteLayout>
