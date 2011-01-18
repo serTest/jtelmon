@@ -14,7 +14,9 @@ public class teste extends Activity {
         //---load the BasicViewsExample activity---
         // startActivity(new Intent(this, Vederi.class));
         
-        startActivity(new Intent(this, ListviewExample.class));
+        // startActivity(new Intent(this, ListviewExample.class));
+        
+        startActivity(new Intent(this, CustomListView.class));
         
         
     }
