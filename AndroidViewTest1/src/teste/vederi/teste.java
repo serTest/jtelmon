@@ -16,8 +16,8 @@ public class teste extends Activity {
         
         // startActivity(new Intent(this, ListviewExample.class));
         
-        startActivity(new Intent(this, CustomListView.class));
+        // startActivity(new Intent(this, CustomListView.class));
         
-        
+        startActivity(new Intent(this, PgJDBCAndroid.class));
     }
 }
