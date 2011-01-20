@@ -1,0 +1,15 @@
+POST /rs2007/sincronizare2008.asmx HTTP/1.1
+Host: 192.168.61.28
+Content-Type: text/xml; charset=utf-8
+Content-Length: length
+SOAPAction: "http://tempuri.org/GetClienti"
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <GetClienti xmlns="http://tempuri.org/">
+      <agentId>1</agentId>
+      <lastVersion>1</lastVersion>
+    </GetClienti>
+  </soap:Body>
+</soap:Envelope>
