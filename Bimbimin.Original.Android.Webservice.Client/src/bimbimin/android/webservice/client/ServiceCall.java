@@ -1,3 +1,8 @@
+
+/*
+ * http://bimbim.in/post/2010/10/08/Android-Calling-Web-Service-with-complex-types.aspx
+ */
+
 package bimbimin.android.webservice.client;
 
 import java.io.IOException;
@@ -6,6 +11,7 @@ import org.ksoap2.serialization.Marshal;
 import org.ksoap2.serialization.MarshalDate;
 import org.ksoap2.serialization.MarshalFloat;
 import org.ksoap2.serialization.SoapObject;
+import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 import org.xmlpull.v1.XmlPullParserException;
@@ -13,17 +19,30 @@ import bimbimin.android.webservice.dto.Person;
 
 public class ServiceCall
 {
-	private static final String SOAP_ACTION = 
-		"http://tempuri.org/";
-	private static final String NAMESPACE = 
-		"http://tempuri.org/";
-	private static final String URL = 
-		"http://bimbim.in/Sample/TestService.asmx";
+	private static final String SOAP_ACTION1 = "http://tempuri.org/";
+	private static final String NAMESPACE1   = "http://tempuri.org/";
+	private static final String URL1         = "http://bimbim.in/Sample/TestService.asmx";
 
+    private static final String SOAP_ACTION2 = "http://tempuri.org/";
+    private static final String NAMESPACE2   = "http://tempuri.org/";
+    private static final String URL2         = "http://www.pangram.ro/TestWeb/HelloWorld.asmx";
+ 
+    private static final String SOAP_ACTION3 = "http://tempuri.org/";
+    private static final String NAMESPACE3   = "http://tempuri.org/";
+    private static final String URL3         = "http://bimbim.in/Sample/TestService.asmx";
+
+    private static final String SOAP_ACTION4 = "http://tempuri.org/";
+    private static final String NAMESPACE4   = "http://tempuri.org/";
+    private static final String URL4         = "http://192.168.61.28/TestWeb/HelloWorld.asmx";
+    
+    private static final String SOAP_ACTION5 = "http://localhost/";
+    private static final String NAMESPACE5   = "http://localhost/";
+    private static final String URL5         = "http://localhost/TestWeb/PersonPassport.asmx";
+
+    
 	private boolean isResultVector = false;
 
-	protected Object call(String soapAction, 
-			SoapSerializationEnvelope envelope)
+	protected Object call(String soapAction, SoapSerializationEnvelope envelope , String URL)
 	{
 		Object result = null;
 		
@@ -58,13 +77,48 @@ public class ServiceCall
 		return result;
 	}
 
+    public String CallHelloWorld()
+    {
+           //final String sGetMethod2 = "HelloWorldMethod";
+    	   //final String sGetMethod3 = "HelloWorld";
+    	   //final String sGetMethod4 = "HelloWorldMethod";
+    	   final String sGetMethod5 = "HelloWorld";
+
+            // Create the outgoing message
+            final SoapObject requestObject = 
+                    new SoapObject(NAMESPACE5, sGetMethod5);
+            // Create soap envelop .use version 1.1 of soap
+            final SoapSerializationEnvelope envelope = 
+                    new SoapSerializationEnvelope(
+                            SoapEnvelope.VER11);
+            envelope.dotNet = true;
+            // add the outgoing object as the request
+            envelope.setOutputSoapObject(requestObject);
+            // envelope.addMapping(NAMESPACE2, String.class.getSimpleName(), String.class);
+
+            // call and Parse Result.
+            final Object response = this.call(SOAP_ACTION5 + sGetMethod5, envelope, URL5);
+            SoapPrimitive sp1= (SoapPrimitive) response;  
+            //Person result = null;
+            //if (response != null)
+            //{
+            //      result = new Person((SoapObject) response);
+            //}
+    
+            String result = sp1.toString(); 
+                    //              ((SoapObject) response).getProperty(0).toString();
+
+            return result;
+    }
+	
+	
 	public Person CallGetSingle()
 	{
 		final String sGetSingle = "GetSingle";
 
 		// Create the outgoing message
 		final SoapObject requestObject = 
-			new SoapObject(NAMESPACE, sGetSingle);
+			new SoapObject(NAMESPACE1, sGetSingle);
 		// Create soap envelop .use version 1.1 of soap
 		final SoapSerializationEnvelope envelope = 
 			new SoapSerializationEnvelope(
@@ -72,13 +126,13 @@ public class ServiceCall
 		envelope.dotNet = true;
 		// add the outgoing object as the request
 		envelope.setOutputSoapObject(requestObject);
-		envelope.addMapping(NAMESPACE, 
+		envelope.addMapping(NAMESPACE1, 
 				Person.PERSON_CLASS.getSimpleName(),
 				Person.PERSON_CLASS);
 
 		// call and Parse Result.
 		final Object response = this.call(
-				SOAP_ACTION + sGetSingle, envelope);
+				SOAP_ACTION1 + sGetSingle, envelope,URL1);
 		Person result = null;
 		if (response != null)
 		{
@@ -94,7 +148,7 @@ public class ServiceCall
 		final String svalue = "value";
 		// Create the outgoing message
 		final SoapObject requestObject = 
-			new SoapObject(NAMESPACE, sSetValue);
+			new SoapObject(NAMESPACE1, sSetValue);
 		// Set Parameter type String
 		requestObject.addProperty(svalue, param);
 		// Create soap envelop .use version 1.1 of soap
@@ -104,7 +158,7 @@ public class ServiceCall
 		envelope.dotNet = true;
 		// add the outgoing object as the request
 		envelope.setOutputSoapObject(requestObject);
-		envelope.addMapping(NAMESPACE, 
+		envelope.addMapping(NAMESPACE1, 
 				Person.PERSON_CLASS.getSimpleName(),
 				Person.PERSON_CLASS);
 		// Register Marshaler
@@ -116,7 +170,7 @@ public class ServiceCall
 		floatMarshal.register(envelope);
 		// call and Parse Result.
 		final Object response = this.call(
-				SOAP_ACTION + sSetValue, envelope);
+				SOAP_ACTION1 + sSetValue, envelope, URL1);
 		Boolean result = null;
 		if (response != null)
 		{
