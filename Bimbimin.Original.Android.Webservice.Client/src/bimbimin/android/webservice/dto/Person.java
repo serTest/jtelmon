@@ -1,6 +1,7 @@
-/**
- * 
+/*
+ * http://bimbim.in/post/2010/10/08/Android-Calling-Web-Service-with-complex-types.aspx
  */
+
 package bimbimin.android.webservice.dto;
 
 import java.util.Date;
@@ -9,10 +10,6 @@ import org.ksoap2.serialization.KvmSerializable;
 import org.ksoap2.serialization.PropertyInfo;
 import org.ksoap2.serialization.SoapObject;
 
-/**
- * @author Bimbim
- * 
- */
 public class Person implements KvmSerializable
 {
 	public static Class PERSON_CLASS = Person.class;
