@@ -26,3 +26,16 @@ public class Main extends Activity {
         Boolean res = call.CallSetValue(out);
     }
 }
+
+/* HelloWorld.asmx ->
+<%@ WebService Language="C#" class="HelloWorld"%>
+using System.Web.Services;
+public class HelloWorld : WebService
+{
+[WebMethod]
+public string HelloWorldMethod()
+{
+return "Hello World";
+}
+}
+*/
