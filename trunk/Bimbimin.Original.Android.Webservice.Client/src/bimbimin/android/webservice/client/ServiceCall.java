@@ -1,7 +1,9 @@
 
 /*
  * http://bimbim.in/post/2010/10/08/Android-Calling-Web-Service-with-complex-types.aspx
- * http://code.google.com/p/jtelmon/source/browse/trunk/Bimbimin.Original.Android.Webservice.Client/src/bimbimin/android/webservice/client/ServiceCall.java
+ * http://code.google.com/p/jtelmon/source/browse/trunk/
+ * Bimbimin.Original.Android.Webservice.Client/src/bimbimin/android/webservice/client/ServiceCall.java
+ * 
  */
 
 package bimbimin.android.webservice.client;
