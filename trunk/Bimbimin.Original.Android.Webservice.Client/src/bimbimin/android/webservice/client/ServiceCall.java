@@ -42,6 +42,10 @@ public class ServiceCall
     private static final String NAMESPACE5   = "http://tempuri.org/";
     private static final String URL5         = "http://localhost/TestWeb/HelloWorld.asmx";
 
+    private static final String SOAP_ACTION6 = "http://tempuri.org/";
+    private static final String NAMESPACE6   = "http://tempuri.org/";
+    private static final String URL6         = "http://192.168.61.3/TestWeb/HelloWorld.asmx";
+    
     
 	private boolean isResultVector = false;
 
@@ -85,11 +89,12 @@ public class ServiceCall
            //final String sGetMethod2 = "HelloWorldMethod";
     	   //final String sGetMethod3 = "HelloWorld";
     	   //final String sGetMethod4 = "HelloWorldMethod";
-    	   final String sGetMethod5 = "HelloWorldMethod";
+    	   //final String sGetMethod5 = "HelloWorldMethod";
+    	   final String sGetMethod6 = "HelloWorldMethod";
 
             // Create the outgoing message
             final SoapObject requestObject = 
-                    new SoapObject(NAMESPACE5, sGetMethod5);
+                    new SoapObject(NAMESPACE6, sGetMethod6);
             // Create soap envelop .use version 1.1 of soap
             final SoapSerializationEnvelope envelope = 
                     new SoapSerializationEnvelope(
@@ -100,7 +105,7 @@ public class ServiceCall
             // envelope.addMapping(NAMESPACE2, String.class.getSimpleName(), String.class);
 
             // call and Parse Result.
-            final Object response = this.call(SOAP_ACTION5 + sGetMethod5, envelope, URL5);
+            final Object response = this.call(SOAP_ACTION6 + sGetMethod6, envelope, URL6);
             SoapPrimitive sp1= (SoapPrimitive) response;  
             //Person result = null;
             //if (response != null)
