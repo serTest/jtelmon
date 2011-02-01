@@ -1,6 +1,7 @@
 
 /*
  * http://bimbim.in/post/2010/10/08/Android-Calling-Web-Service-with-complex-types.aspx
+ * http://code.google.com/p/jtelmon/source/browse/trunk/Bimbimin.Original.Android.Webservice.Client/src/bimbimin/android/webservice/client/ServiceCall.java
  */
 
 package bimbimin.android.webservice.client;
@@ -35,9 +36,9 @@ public class ServiceCall
     private static final String NAMESPACE4   = "http://tempuri.org/";
     private static final String URL4         = "http://192.168.61.28/TestWeb/HelloWorld.asmx";
     
-    private static final String SOAP_ACTION5 = "http://localhost/";
-    private static final String NAMESPACE5   = "http://localhost/";
-    private static final String URL5         = "http://localhost/TestWeb/PersonPassport.asmx";
+    private static final String SOAP_ACTION5 = "http://tempuri.org/";
+    private static final String NAMESPACE5   = "http://tempuri.org/";
+    private static final String URL5         = "http://localhost/TestWeb/HelloWorld.asmx";
 
     
 	private boolean isResultVector = false;
@@ -82,7 +83,7 @@ public class ServiceCall
            //final String sGetMethod2 = "HelloWorldMethod";
     	   //final String sGetMethod3 = "HelloWorld";
     	   //final String sGetMethod4 = "HelloWorldMethod";
-    	   final String sGetMethod5 = "HelloWorld";
+    	   final String sGetMethod5 = "HelloWorldMethod";
 
             // Create the outgoing message
             final SoapObject requestObject = 
