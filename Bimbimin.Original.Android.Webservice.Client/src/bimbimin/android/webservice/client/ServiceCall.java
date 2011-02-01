@@ -44,7 +44,12 @@ public class ServiceCall
 
     private static final String SOAP_ACTION6 = "http://tempuri.org/";
     private static final String NAMESPACE6   = "http://tempuri.org/";
-    private static final String URL6         = "http://192.168.61.3/TestWeb/HelloWorld.asmx";
+    // private static final String URL6         = "http://192.168.61.3/TestWeb/HelloWorld.asmx";
+    private static final String URL6         = "http://192.168.61.3/TestWeb/PersonPassport2.asmx";
+
+    private static final String SOAP_ACTION7 = "http://tempuri.org/";
+    private static final String NAMESPACE7   = "http://tempuri.org/";
+    private static final String URL7         = "http://127.0.0.1/TestWeb/HelloWorld.asmx";
     
     
 	private boolean isResultVector = false;
@@ -90,7 +95,8 @@ public class ServiceCall
     	   //final String sGetMethod3 = "HelloWorld";
     	   //final String sGetMethod4 = "HelloWorldMethod";
     	   //final String sGetMethod5 = "HelloWorldMethod";
-    	   final String sGetMethod6 = "HelloWorldMethod";
+    	   final String sGetMethod6 = "HelloWorld";
+    	   //final String sGetMethod7 = "HelloWorldMethod";
 
             // Create the outgoing message
             final SoapObject requestObject = 
@@ -126,7 +132,7 @@ public class ServiceCall
 
 		// Create the outgoing message
 		final SoapObject requestObject = 
-			new SoapObject(NAMESPACE1, sGetSingle);
+			new SoapObject(NAMESPACE6, sGetSingle);
 		// Create soap envelop .use version 1.1 of soap
 		final SoapSerializationEnvelope envelope = 
 			new SoapSerializationEnvelope(
@@ -134,13 +140,13 @@ public class ServiceCall
 		envelope.dotNet = true;
 		// add the outgoing object as the request
 		envelope.setOutputSoapObject(requestObject);
-		envelope.addMapping(NAMESPACE1, 
+		envelope.addMapping(NAMESPACE6, 
 				Person.PERSON_CLASS.getSimpleName(),
 				Person.PERSON_CLASS);
 
 		// call and Parse Result.
 		final Object response = this.call(
-				SOAP_ACTION1 + sGetSingle, envelope,URL1);
+				SOAP_ACTION6 + sGetSingle, envelope,URL6);
 		Person result = null;
 		if (response != null)
 		{
