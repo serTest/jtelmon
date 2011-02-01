@@ -19,11 +19,11 @@ public class Main extends Activity {
 
         String Result1 = call.CallHelloWorld();
         Toast.makeText(this, "Result: " + Result1 + "\n", Toast.LENGTH_LONG).show() ;
-        
-        Person out = call.CallGetSingle();
-        String Result2 = out.get_name();
-        Toast.makeText(this, "Result: " + Result2 + "\n", Toast.LENGTH_LONG).show(); 
-        Boolean res = call.CallSetValue(out);
+        System.out.println ("The Result is :"+Result1);
+        // Person out = call.CallGetSingle();
+        // String Result2 = out.get_name();
+        // Toast.makeText(this, "Result: " + Result2 + "\n", Toast.LENGTH_LONG).show(); 
+        // Boolean res = call.CallSetValue(out);
     }
 }
 
