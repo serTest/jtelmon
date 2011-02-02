@@ -10,7 +10,7 @@ import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 import org.xmlpull.v1.XmlPullParserException;
 
-public class ServiceCall
+public class ServiceLPCall
 {
 	private static final String SOAP_ACTION = "http://localhost/";
 	private static final String NAMESPACE   = "http://localhost/";
