@@ -23,17 +23,18 @@ public class MainLP extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        ServiceLPCall call = new ServiceLPCall();
+        // ServiceLPCall call = new ServiceLPCall();
         // Passport out = call.CallGetSingle();
-        String Result2 = new String("bau"); 
-        //Result2 = out.get_name();
-        Toast.makeText(this, "Result: " + Result2 + "\n", Toast.LENGTH_LONG).show() ;
-        //Boolean res = call.CallSetValue(out);
+        // Result2 = out.get_name();
+        // Boolean res = call.CallSetValue(out);
         String URL = "http://192.168.61.3/TestWeb/PersonPassport2.asmx";
         String MethodName = "ReturnAll";
         String NAMESPACE = "http://tempuri.org/";
         Passport[] allPassports;
         allPassports = GetAllPassports(URL, MethodName, NAMESPACE );
+        String Result1 = new String("bau");
+        Result1 = allPassports[1].get_name();
+        Toast.makeText(this, "Result: " + Result1 + "\n", Toast.LENGTH_LONG).show() ;
         
     }
 
@@ -46,7 +47,7 @@ public class MainLP extends Activity {
 
     public static SoapObject InvokeMethod(String URL, String MethodName, String NAMESPACE)
     {
-        SoapObject request = GetSoapObject(MethodName);
+        SoapObject request = GetSoapObject(MethodName,NAMESPACE);
         SoapSerializationEnvelope envelope = GetEnvelope(request);
         return  MakeCall(URL,envelope,NAMESPACE,MethodName);
     }    
@@ -58,44 +59,17 @@ public class MainLP extends Activity {
         Passport[] passports  = new Passport[soap.getPropertyCount()];
         for (int i = 0; i < categories.length; i++) {
             SoapObject pii = (SoapObject)soap.getProperty(i);
-            Category category = new Category();
+            //Category category = new Category();
             Passport passport = new Passport();
-            category.CategoryId = Integer.parseInt(pii.getProperty(0).toString());
-            category.Name = pii.getProperty(1).toString();
-            category.Description = pii.getProperty(2).toString();
-            categories[i] = category;
+            //category.CategoryId = Integer.parseInt(pii.getProperty(0).toString());
+            passport.set_name( pii.getProperty(0).toString()) ;
+            //categories[i] = category;
+            passports[i]  = passport;
         }
         // return categories;
         return passports;
     }
     
-    
-/*    
-    public static Category[] GetAllCategories(String URL, String MethodName)
-    {
-        String MethodName = "GetAllCategories";
-        SoapObject response = InvokeMethod(URL,MethodName);
-        return RetrieveFromSoap(response);
-        
-    }
-*/
-    
-    
-    
-    public static Category[] RetrieveFromSoap(SoapObject soap)
-    {
-        Category[] categories = new Category[soap.getPropertyCount()];
-        for (int i = 0; i < categories.length; i++) {
-            SoapObject pii = (SoapObject)soap.getProperty(i);
-            Category category = new Category();
-            category.CategoryId = Integer.parseInt(pii.getProperty(0).toString());
-            category.Name = pii.getProperty(1).toString();
-            category.Description = pii.getProperty(2).toString();
-            categories[i] = category;
-        }
-        return categories;
-    }
-
     
     public static SoapObject GetSoapObject(String MethodName, String NAMESPACE)
     {
@@ -125,6 +99,20 @@ public class MainLP extends Activity {
              
          }
          return null;
+    }
+
+    public static Category[] RetrieveFromSoap(SoapObject soap)
+    {
+        Category[] categories = new Category[soap.getPropertyCount()];
+        for (int i = 0; i < categories.length; i++) {
+            SoapObject pii = (SoapObject)soap.getProperty(i);
+            Category category = new Category();
+            category.CategoryId = Integer.parseInt(pii.getProperty(0).toString());
+            category.Name = pii.getProperty(1).toString();
+            category.Description = pii.getProperty(2).toString();
+            categories[i] = category;
+        }
+        return categories;
     }
     
 }
