@@ -14,7 +14,7 @@ public class ServiceLPCall
 {
 	private static final String SOAP_ACTION = "http://localhost/";
 	private static final String NAMESPACE   = "http://localhost/";
-	private static final String URL         = "http://localhost/TestWeb/PersonPassport2.asmx";
+	private static final String URL         = "http://192.168.61.3/TestWeb/PersonPassport2.asmx";
 
 	
 	private boolean isResultVector = false;

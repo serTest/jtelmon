@@ -106,8 +106,7 @@ public class Passport implements KvmSerializable
 	}
 
 	@Override
-	public void getPropertyInfo(int index, Hashtable arg1,
-			PropertyInfo propertyInfo)
+	public void getPropertyInfo(int index, Hashtable arg1, PropertyInfo propertyInfo)
 	{
 		switch (index)
 		{
