@@ -29,7 +29,8 @@ public class ApacheSoapProxy {
 
   /** Default No argument constructor */
   public ApacheSoapProxy () throws MalformedURLException {
-    this.url_ = new URL ("http://192.168.61.28/TestWeb/HelloWorld.asmx");
+    // this.url_ = new URL ("http://192.168.61.28/TestWeb/HelloWorld.asmx");
+    this.url_ = new URL ("http://localhost/TestWeb/TestService.asmx");
   }
 
   /** Set the End Point URL */
@@ -58,7 +59,8 @@ public class ApacheSoapProxy {
     // Get this from the soapAction attribute on the
     // soap:operation element that is found within the SOAP
     // binding information in the WSDL
-    this.soapActionUri_ = "http://tempuri.org/HelloWorldMethod";
+    //this.soapActionUri_ = "http://tempuri.org/HelloWorldMethod";
+    this.soapActionUri_ = "localhost/HelloWorld";
     ApacheMessageBody ourBody = new ApacheMessageBody ();
 
     // Set the argument
@@ -76,7 +78,8 @@ public class ApacheSoapProxy {
       XMLReader reader = (XMLReader)Class.forName("org.apache.xerces.parsers.SAXParser").newInstance();
       SAXHandler handler = new SAXHandler();
       // handler.setElementToSearchFor ("generateOIDResult");
-      handler.setElementToSearchFor ("HelloWorldMethodResult");
+      // handler.setElementToSearchFor ("HelloWorldMethodResult");
+      handler.setElementToSearchFor ("HelloWorldResult");
 
       // Set the Content Handler
       reader.setContentHandler (handler);
