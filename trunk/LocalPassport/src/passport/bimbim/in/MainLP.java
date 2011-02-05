@@ -6,6 +6,7 @@
  * 
  * http://bimbim.in/post/2010/10/08/Android-Calling-Web-Service-with-complex-types.aspx
  * 
+ * http://romenlaw.blogspot.com/2008/08/consuming-web-services-from-android.html
  * 
  */
 
