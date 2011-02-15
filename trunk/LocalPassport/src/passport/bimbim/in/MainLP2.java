@@ -8,6 +8,9 @@
  * 
  * http://romenlaw.blogspot.com/2008/08/consuming-web-services-from-android.html
  * 
+ * http://www.telerik.com/help/aspnet-ajax/combo_loadondemandwebservice.html
+ * http://www.daniweb.com/forums/thread151766.html
+ * 
  */
 
 package passport.bimbim.in;
@@ -53,7 +56,7 @@ public class MainLP2 extends Activity {
         String MethodName = "ReturnArray";
         String NAMESPACE = "http://tempuri.org/";
         Passport[] allPassports;
-        Passport onePassport;
+        // Passport onePassport;
         
         allPassports = GetAllPassports(URL, MethodName, NAMESPACE );
 
