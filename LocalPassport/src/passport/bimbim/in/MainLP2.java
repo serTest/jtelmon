@@ -50,10 +50,12 @@ public class MainLP2 extends Activity {
         // Boolean res = call.CallSetValue(out);
         // String URL = "http://192.168.61.3/TestWeb/PersonPassport2.asmx";
         // String URL = "http://192.168.61.3/TestWeb/PersonPassport3a.asmx";
-        String URL = "http://192.168.61.3/TestWeb/PersonPassport4.asmx";
+        // String URL = "http://192.168.61.3/TestWeb/PersonPassport4.asmx";
+        String URL = "http://192.168.61.3/TestWeb/PersonPassport4a.asmx";
         //String MethodName = "ReturnAll";
         //String MethodName = "ReturnTable";
-        String MethodName = "ReturnArray";
+        // String MethodName = "ReturnArray";
+        String MethodName = "GetPersonArrayList";
         String NAMESPACE = "http://tempuri.org/";
         Passport[] allPassports;
         // Passport onePassport;
