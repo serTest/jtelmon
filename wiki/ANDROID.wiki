@@ -1,5 +1,4 @@
-#summary One-sentence summary of this page.
-Calling C#.NET Web Service on Android with KSOAP2
+#summary Calling C#.NET Web Service on Android with KSOAP2
 
 = Introduction =
 
