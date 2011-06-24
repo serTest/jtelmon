@@ -17,6 +17,13 @@
  
          <activity android:name=".AutoCompleteExample"
                   android:label="@string/app_name" />
+
+         <activity android:name=".DepoziteAutoComplete"
+                  android:label="@string/app_name" />
+
+         <activity android:name=".ListViewExample"
+                  android:label="@string/app_name" />
+
  
  
     </application>

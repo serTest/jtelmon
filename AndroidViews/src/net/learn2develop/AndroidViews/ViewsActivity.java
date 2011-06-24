@@ -15,8 +15,10 @@ public class ViewsActivity extends Activity
         //---load the BasicViewsExample activity---
         // startActivity(new Intent(this, BasicViewsExample.class));
         
-        startActivity(new Intent(this, AutoCompleteExample.class));
-
+        // startActivity(new Intent(this, AutoCompleteExample.class));
+        startActivity(new Intent(this, DepoziteAutoComplete.class));
+        // startActivity(new Intent(this, ListViewExample.class));
+        
         
     }
 }
