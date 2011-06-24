@@ -9,6 +9,7 @@ package net.learn2develop.AndroidViews;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.app.ListActivity; 
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStreamReader;
@@ -18,6 +19,7 @@ import java.util.Vector;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Xml; 
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import org.ksoap2.serialization.KvmSerializable;
@@ -33,12 +35,27 @@ import org.xmlpull.v1.XmlPullParserException;
 
 
 
-public class LateOrdersByZone extends Activity {
+public class LateOrdersByZone extends ListActivity {
+	
+    String[] presidents = { 
+    "Dwight D. Eisenhower",
+    "John F. Kennedy",
+    "Lyndon B. Johnson",
+    "Richard Nixon",
+    "Gerald Ford",
+    "Jimmy Carter",
+    "Ronald Reagan",
+    "George H. W. Bush",
+    "Bill Clinton",
+    "George W. Bush",
+    "Barack Obama"
+};
+	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.listview);
         
         // String URL = "http://192.168.61.3/TestWeb/PersonPassport4a.asmx";
         // String URL = "http://192.168.61.3/TestWeb/Comenzi.asmx";
@@ -60,21 +77,45 @@ public class LateOrdersByZone extends Activity {
         
         Order[] allOrders;
         
+        
+        
         allOrders = GetAllOrdersByZone(URL, MethodName, NAMESPACE, pi );
 
-        String Resultn = new String();
-        String Result0 = new String();
-        String Result1 = new String();
-        String Result2 = new String();
-
-        Result0 = "\n" + allOrders[0].get_name() + "  " + allOrders[0].get_client() + "\n" + allOrders[0].get_control();
-        Result1 = "\n" + allOrders[1].get_name() + "  " + allOrders[1].get_client() + "\n" + allOrders[1].get_control();
-        Result2 = "\n" + allOrders[2].get_name() + "  " + allOrders[2].get_client() + "\n" + allOrders[2].get_control();
-        Resultn = "\n" + Result0 + "\n" + Result1 + "\n" + Result2 ;
+        // nrCmd = allOrders.length;
+        int nrCmd=10;
+        int index1;
         
-        System.out.println(Resultn);
-        System.out.println(Result1);
-        Toast.makeText(this, "ZONA: " + theZone + Resultn + "\n", Toast.LENGTH_LONG).show() ;              
+        //String Resultn = new String();
+        String Result0 = new String();
+        //String Result1 = new String();
+        //String Result2 = new String();
+
+        for ( index1=0 ; index1<nrCmd; index1++) {
+        	presidents[index1] = "\n" + allOrders[index1].get_name() + " : " + allOrders[index1].get_client() + "\n" + allOrders[index1].get_control();
+        	Result0 = allOrders[index1].get_name(); 
+        	// Result0 = "" + allOrders[index1].get_name() + " : " + allOrders[index1].get_client() + "" + allOrders[index1].get_control();
+        	//presidents[index1] = new String(Result0);
+        	System.out.println(Result0);
+        }
+        //Result0 = "\n" + allOrders[0].get_name() + " : " + allOrders[0].get_client() + "\n" + allOrders[0].get_control();
+        //Result1 = "\n" + allOrders[1].get_name() + " : " + allOrders[1].get_client() + "\n" + allOrders[1].get_control();
+        //Result2 = "\n" + allOrders[2].get_name() + " : " + allOrders[2].get_client() + "\n" + allOrders[2].get_control();
+
+        //Resultn = "\n" + Result0 + "\n" + Result1 + "\n" + Result2 ;
+        
+        // System.out.println(Resultn);
+        // System.out.println(Result1);
+
+        //presidents[0]=Result0;
+        //presidents[1]=Result1;
+        //presidents[2]=Result2;
+
+        
+        // Toast.makeText(this, "ZONA: " + theZone + Resultn + "\n", Toast.LENGTH_LONG).show() ; 
+
+        setListAdapter(new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, presidents));
+
     }
 
     
