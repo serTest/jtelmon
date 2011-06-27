@@ -35,11 +35,22 @@ import org.xmlpull.v1.XmlPullParserException;
 
 
 
-public class LateOrdersByZone extends ListActivity {
+public class Copy1OfLateOrdersByZone extends ListActivity {
 	
-
-    
-    
+    String[] presidents = { 
+    "Dwight D. Eisenhower",
+    "John F. Kennedy",
+    "Lyndon B. Johnson",
+    "Richard Nixon",
+    "Gerald Ford",
+    "Jimmy Carter",
+    "Ronald Reagan",
+    "George H. W. Bush",
+    "Bill Clinton",
+    "George W. Bush",
+    "Barack Obama"
+};
+	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,13 +76,13 @@ public class LateOrdersByZone extends ListActivity {
 
         
         Order[] allOrders;
-        Vector<String> vs = new Vector<String>();
+        
         
         
         allOrders = GetAllOrdersByZone(URL, MethodName, NAMESPACE, pi );
 
-        int nrCmd = allOrders.length;
-        //nrCmd=20;
+        // nrCmd = allOrders.length;
+        int nrCmd=10;
         int index1;
         
         //String Resultn = new String();
@@ -80,10 +91,8 @@ public class LateOrdersByZone extends ListActivity {
         //String Result2 = new String();
 
         for ( index1=0 ; index1<nrCmd; index1++) {
-        	Result0  = "\n" + allOrders[index1].get_name() + " : " + allOrders[index1].get_client() + "\n" + allOrders[index1].get_control();
-        	// presidents[index1] = allOrders[index1].get_name();
-        	vs.add(new String(Result0));
-
+        	presidents[index1] = "\n" + allOrders[index1].get_name() + " : " + allOrders[index1].get_client() + "\n" + allOrders[index1].get_control();
+        	Result0 = allOrders[index1].get_name(); 
         	// Result0 = "" + allOrders[index1].get_name() + " : " + allOrders[index1].get_client() + "" + allOrders[index1].get_control();
         	//presidents[index1] = new String(Result0);
         	System.out.println(Result0);
@@ -104,13 +113,6 @@ public class LateOrdersByZone extends ListActivity {
         
         // Toast.makeText(this, "ZONA: " + theZone + Resultn + "\n", Toast.LENGTH_LONG).show() ; 
 
-        
-        int count = vs.size();
-        String[] presidents = new String[count];
-        vs.copyInto(presidents); 
-        
-        // vs.toArray(presidents);
-        
         setListAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, presidents));
 
