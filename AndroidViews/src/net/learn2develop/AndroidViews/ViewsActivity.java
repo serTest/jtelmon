@@ -17,7 +17,7 @@ public class ViewsActivity extends Activity
         
         // startActivity(new Intent(this, AutoCompleteExample.class));
         startActivity(new Intent(this, DepoziteAutoComplete.class));
-        // startActivity(new Intent(this, LateOrdersByZone.class));
+        startActivity(new Intent(this, LateOrdersByZone.class));
         // startActivity(new Intent(this, ListViewExample.class));
         
         
