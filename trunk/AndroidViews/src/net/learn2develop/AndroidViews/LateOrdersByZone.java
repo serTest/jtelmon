@@ -44,7 +44,9 @@ public class LateOrdersByZone extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.listview);
+        // setContentView(R.layout.deporders);
         
         // String URL = "http://192.168.61.3/TestWeb/PersonPassport4a.asmx";
         // String URL = "http://192.168.61.3/TestWeb/Comenzi.asmx";
@@ -59,60 +61,31 @@ public class LateOrdersByZone extends ListActivity {
         // String theZone = "TIMISOARA";
         String theZone = "";
         PropertyInfo pi = new PropertyInfo();
-
         pi.setName("theZone");
         pi.setValue(theZone);
-
         
         Order[] allOrders;
-        Vector<String> vs = new Vector<String>();
-        
+        Vector<String> vectorOfStrings = new Vector<String>();
         
         allOrders = GetAllOrdersByZone(URL, MethodName, NAMESPACE, pi );
-
         int nrCmd = allOrders.length;
-        //nrCmd=20;
-        int index1;
-        
-        //String Resultn = new String();
-        String Result0 = new String();
-        //String Result1 = new String();
-        //String Result2 = new String();
-
-        for ( index1=0 ; index1<nrCmd; index1++) {
-        	Result0  = "\n" + allOrders[index1].get_name() + " : " + allOrders[index1].get_client() + "\n" + allOrders[index1].get_control();
-        	// presidents[index1] = allOrders[index1].get_name();
-        	vs.add(new String(Result0));
-
-        	// Result0 = "" + allOrders[index1].get_name() + " : " + allOrders[index1].get_client() + "" + allOrders[index1].get_control();
-        	//presidents[index1] = new String(Result0);
-        	System.out.println(Result0);
+        int indexf;
+        String tempString = new String();
+        for ( indexf=0 ; indexf<nrCmd; indexf++) {
+        	tempString  = "\n" + allOrders[indexf].get_name() + " : " + allOrders[indexf].get_client() + "\n" + allOrders[indexf].get_control();
+        	vectorOfStrings.add(new String(tempString));
+        	System.out.println(tempString);
         }
-        //Result0 = "\n" + allOrders[0].get_name() + " : " + allOrders[0].get_client() + "\n" + allOrders[0].get_control();
-        //Result1 = "\n" + allOrders[1].get_name() + " : " + allOrders[1].get_client() + "\n" + allOrders[1].get_control();
-        //Result2 = "\n" + allOrders[2].get_name() + " : " + allOrders[2].get_client() + "\n" + allOrders[2].get_control();
+        int orderCount = vectorOfStrings.size();
+        String[] orderTimeStamps = new String[orderCount];
+        vectorOfStrings.copyInto(orderTimeStamps); 
+//        setListAdapter(new ArrayAdapter<String>(this,
+//                android.R.layout.simple_list_item_1, presidents));
 
-        //Resultn = "\n" + Result0 + "\n" + Result1 + "\n" + Result2 ;
-        
-        // System.out.println(Resultn);
-        // System.out.println(Result1);
-
-        //presidents[0]=Result0;
-        //presidents[1]=Result1;
-        //presidents[2]=Result2;
-
-        
-        // Toast.makeText(this, "ZONA: " + theZone + Resultn + "\n", Toast.LENGTH_LONG).show() ; 
-
-        
-        int count = vs.size();
-        String[] presidents = new String[count];
-        vs.copyInto(presidents); 
-        
-        // vs.toArray(presidents);
+        // ListView listView
         
         setListAdapter(new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, presidents));
+                android.R.layout.simple_list_item_1 , orderTimeStamps));
 
     }
 
