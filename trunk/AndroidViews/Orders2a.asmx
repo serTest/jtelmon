@@ -105,7 +105,7 @@ public class SalesAgent
 
 public class ReturnOrders : WebService
 {
-   const string connStr = "server=192.168.61.28;uid=sa;pwd=wy7c1kqt_+;database=Pangram";
+   const string connStr = "server=192.168.61.188;uid=sa;pwd=1qt;database=Pg";
 
 
 [WebMethod(Description = "Method to obtain All User Info")]
