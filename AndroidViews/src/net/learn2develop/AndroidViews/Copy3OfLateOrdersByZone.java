@@ -3,6 +3,11 @@
  * http://stackoverflow.com/questions/2717220/call-webservice-from-android-using-ksoap-simply-returning-error-string
  * http://w3schools.com/webservices/tempconvert.asmx
  * http://w3schools.com/webservices/tempconvert.asmx?op=CelsiusToFahrenheit
+ * 
+ * 
+ * Aduce prin SOAP toate datele referitoare la Comenzi :
+ * zona , nume + prenume , client , timestamp 
+ * 
  */
 
 package net.learn2develop.AndroidViews;
@@ -35,7 +40,7 @@ import org.xmlpull.v1.XmlPullParserException;
 
 
 
-public class LateOrdersByZone extends ListActivity {
+public class Copy3OfLateOrdersByZone extends ListActivity {
 	
 
     
