@@ -1,5 +1,5 @@
 
-// http://www.itcsolutions.eu/2011/08/31/android-tutorial-how-to-create-and-display-a-new-form-window-or-activity/comment-page-1
+// www.itcsolutions.eu/2011/08/31/android-tutorial-how-to-create-and-display-a-new-form-window-or-activity/comment-page-1
 
 package eu.itcsolutions.android.tutorial;
 
