@@ -1,5 +1,10 @@
 
-// www.itcsolutions.eu/2011/08/31/android-tutorial-how-to-create-and-display-a-new-form-window-or-activity/comment-page-1
+/* www.itcsolutions.eu/2011/08/31/android-tutorial-how-to-create-and-display-a-new-form-window-or-activity/comment-page-1
+   http://www.itcsolutions.eu/2011/08/26/android-tutorial-overview-and-contents/
+   http://www.itcsolutions.eu/2011/03/03/how-to-consume-web-services-from-android-applications-using-ksoap2/
+   
+	
+*/
 
 package eu.itcsolutions.android.tutorial;
 
