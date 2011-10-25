@@ -1,8 +1,12 @@
 /*
+ * http://fszlin.dymetis.com/post/2010/05/10/Comsuming-WCF-Services-With-Android.aspx
+ * http://localtone.blogspot.com/2009/07/post-json-using-android-and-httpclient.html
  * http://stackoverflow.com/questions/2559948/android-sending-xml-via-http-post-soap
  * http://www.vogella.de/articles/ApacheHttpClient/article.html
  * http://stackoverflow.com/questions/2559948/android-sending-xml-via-http-post-soap
  * http://code.google.com/p/myspace-android/source/browse/trunk/myspace-android/src/com/msdemo/android/myspaceid/MySpaceRESTClient.java
+ * http://stackoverflow.com/questions/4032349/how-to-send-a-json-string-to-a-net-rest-service-from-java
+ * 
  */
 
 package net.learn2develop.AndroidViews;
