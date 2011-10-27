@@ -14,6 +14,9 @@ package net.learn2develop.AndroidViews;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.util.Log;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import org.apache.http.HttpResponse;
@@ -37,31 +40,42 @@ public class SavePerson extends Activity {
             HttpPost request = new HttpPost(SERVICE_URI + "/json/adduser");
             request.setHeader("Accept", "application/json");
             request.setHeader("Content-type", "application/json");
- 
+            
+            String not = new String(" ");
+            
+            // EditText plateEdit = null;
+            // Editable plate ;
+            // plate =  plateEdit.getText();
+            
             try {
             // Build JSON string
             JSONStringer vehicle = new JSONStringer()
                 .object()
-                    .key("requestdata")
+                    .key("rData")
                         .object()
-                            .key("details").value("barack|bobama|bobaba@house.gov|white")
+                            .key("details").value("bar|bob|b@h.us|why")
                         .endObject()
                     .endObject();
             
             StringEntity entity = new StringEntity(vehicle.toString());
- 
+            
+            Toast.makeText(this, vehicle.toString() + "\n", Toast.LENGTH_LONG).show() ;
+            
             request.setEntity(entity);
- 
+            
             // Send request to WCF service
             DefaultHttpClient httpClient = new DefaultHttpClient();
             HttpResponse response = httpClient.execute(request);
+            // Log.d("WebInvoke", "Saving : " + response.getStatusLine().getStatusCode());
+            Toast.makeText(this, response.getStatusLine().getStatusCode() + "\n", Toast.LENGTH_LONG).show() ;
             
             }catch (Exception e) {
-                // TODO: handle exception
+            	not = "NOT ";
             } 
             
-            Toast.makeText(this, "Gata: " + "\n", Toast.LENGTH_LONG).show() ;
-            // Log.d("WebInvoke", "Saving : " + response.getStatusLine().getStatusCode());
+            Toast.makeText(this, not + " OK ! " + "\n", Toast.LENGTH_LONG).show() ;
+            
+            
 	
 	}    
 }
