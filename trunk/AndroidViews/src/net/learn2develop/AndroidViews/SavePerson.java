@@ -1,4 +1,8 @@
-/*
+/************************************************************************************************************************************************
+ * 
+ * http://code.google.com/p/jtelmon/source/browse/trunk/AndroidViews/src/net/learn2develop/AndroidViews/SavePerson.java
+ * 
+ ************************************************************************************************************************************************
  * http://fszlin.dymetis.com/post/2010/05/10/Comsuming-WCF-Services-With-Android.aspx
  * http://localtone.blogspot.com/2009/07/post-json-using-android-and-httpclient.html
  * http://stackoverflow.com/questions/2559948/android-sending-xml-via-http-post-soap
