@@ -1,8 +1,7 @@
 /*
- * http://pantestmb.blogspot.com/2011/02/web-service-call-with-string-as.html
- * http://stackoverflow.com/questions/2717220/call-webservice-from-android-using-ksoap-simply-returning-error-string
- * http://w3schools.com/webservices/tempconvert.asmx
- * http://w3schools.com/webservices/tempconvert.asmx?op=CelsiusToFahrenheit
+ * 
+ * 
+ * 
  */
 
 package net.learn2develop.AndroidViews;
