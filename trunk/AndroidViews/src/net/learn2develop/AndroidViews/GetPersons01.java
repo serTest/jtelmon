@@ -51,14 +51,14 @@ public class GetPersons01 extends ListActivity {
  
         DefaultHttpClient httpClient = new DefaultHttpClient();
 
-        JSONArray jsaPersons = null ;
+        //JSONArray jsaPersons = null ;
         String theString = new String("");
         
         try {
         	HttpResponse response = httpClient.execute(request);
         	HttpEntity responseEntity = response.getEntity();
         	// Read response data into buffer
-        	char[] buffer = new char[(int)responseEntity.getContentLength()];
+        	// char[] buffer = new char[(int)responseEntity.getContentLength()];
         	InputStream stream = responseEntity.getContent();
         	// InputStreamReader reader = new InputStreamReader(stream);
         	BufferedReader reader = new BufferedReader(
