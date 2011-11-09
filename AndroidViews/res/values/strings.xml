@@ -2,4 +2,16 @@
 <resources>
     <string name="hello">Pangram 2011-11.08</string>
     <string name="app_name">WCF RESTful WebService</string>
+    <string name="weekday">M-F</string>
+    <string name="weekend">S</string>
+    <string name="northbound">Northbound</string>
+    <string name="southbound">Southbound</string>
+    <string name="all">All</string>
+    <string name="locate">Locate</string>
+    <string name="about">About</string>
+    <string name="version">Version {0}</string>
+    <string name="timetable_date">Jan 1, 2009 timetable</string>
+    <string name="ok">OK</string>
+    <string name="wait">Please Wait</string>
+    <string name="locating">Locating the nearest Caltrain station.</string>
 </resources>
