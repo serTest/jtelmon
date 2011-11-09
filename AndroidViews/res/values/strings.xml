@@ -14,4 +14,9 @@
     <string name="ok">OK</string>
     <string name="wait">Please Wait</string>
     <string name="locating">Locating the nearest Caltrain station.</string>
+	<string name="empty">No Contacts in database!</string>
+	<string name="contact_intent">Contact Data</string>
+    <string name="nameDefault">First Name</string>
+    <string name="mobilePhoneDefault">Mobile Phone</string>
+    <string name="emailDefault">Email</string>
 </resources>
