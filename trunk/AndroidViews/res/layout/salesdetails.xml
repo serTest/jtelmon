@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout 
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent" 
+	xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableRow>
+		<TextView
+	    	android:text="  "
+	    	android:layout_column="1" />
+    		<EditText
+    		android:id="@+id/clientName"
+    		android:hint="@string/clientDefault" />
+	</TableRow>
+	<TableRow>
+		<TextView
+	    	android:text="  "
+	    	android:layout_column="1" />
+    		<EditText
+    		android:id="@+id/contactmobile"
+    		android:hint="@string/productDefault"
+	    	android:inputType="phone" /> 
+	</TableRow>
+	<TableRow>
+		<TextView
+	    	android:text="  "
+	    	android:layout_column="1" />
+    		<EditText
+    		android:id="@+id/price"
+    		android:hint="@string/piecesDefault" /> 
+	</TableRow>
+	<TableRow> 
+		<TextView
+	    	android:text="  "
+	    	android:layout_column="1" />
+    		<EditText
+    		android:id="@+id/discount"
+    		android:hint="@string/discountDefault" /> 
+	</TableRow>
+	
+	<TableLayout 
+        android:stretchColumns="0,1"
+		android:layout_width="fill_parent" 
+	    android:layout_height="fill_parent" 
+	<TableRow>
+	    <Button android:id="@+id/cancelbutton" android:text="Cancel" />
+	    <Button android:text="Save" android:id="@+id/savebutton"></Button>
+	</TableRow>
+	</TableLayout>
+</TableLayout>
