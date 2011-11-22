@@ -34,8 +34,8 @@ public class DataCheck extends ListActivity  {
 		String stg;
 
 		for (String[] name : names2) {
-			// stg = name[1]+" - "+name[2]+ " - "+name[3]+" - "+name[4];
-			stg = name[1]+" - "+name[2]+ " - "+name[3];
+			stg = name[0]+" - "+name[1]+ " - "+name[2]+" - "+name[3];
+			// stg = name[1]+" - "+name[2]+ " - "+name[3];
 
 			stg1[x]=stg;
 			x++;

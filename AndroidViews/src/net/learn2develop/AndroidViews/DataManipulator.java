@@ -52,8 +52,7 @@ public class DataManipulator {
 		List<String[]> list = new ArrayList<String[]>();
 		Cursor cursor = db.query(TABLE_NAME, new String[] { "lineOrderId","clientName","productName","piecesNumber","discountNumber" },	null, null, null, null, "clientName asc"); 
 
-//		Cursor cursor = db.query(TABLE_NAME, new String[] { "clientName","productName","piecesNumber","discountNumber" },
-//		null, null, null, null, "name asc"); 
+//		Cursor cursor = db.query(TABLE_NAME, new String[] { "clientName","productName","piecesNumber","discountNumber" }, null, null, null, null, "name asc"); 
 		
 		
 		int x=0;
