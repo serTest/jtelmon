@@ -7,7 +7,7 @@ android:layout_height="fill_parent" >
 android:id="@+id/selection2"
 android:layout_width="fill_parent"
 android:layout_height="wrap_content"
-android:text="NAME - TELPHONE NO - SKYPE ID- ADDRESS"
+android:text="CLIENT - PRODUS - BUCATI - DISCOUNT"
 />
 <TextView
 android:id="@+id/selection"
