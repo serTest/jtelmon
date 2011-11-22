@@ -19,4 +19,10 @@
     <string name="nameDefault">First Name</string>
     <string name="mobilePhoneDefault">Mobile Phone</string>
     <string name="emailDefault">Email</string>
+    <string name="symbolDefault">Simbol</string>
+    <string name="priceDefault">Pret</string>
+    <string name="clientDefault">Client</string>
+    <string name="productDefault">Product</string>
+    <string name="piecesDefault">Pieces</string>
+    <string name="discountDefault">Discount</string>
 </resources>
