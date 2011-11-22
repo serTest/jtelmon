@@ -16,9 +16,8 @@
 	    	android:text="  "
 	    	android:layout_column="1" />
     		<EditText
-    		android:id="@+id/contactmobile"
-    		android:hint="@string/productDefault"
-	    	android:inputType="phone" /> 
+    		android:id="@+id/productName"
+    		android:hint="@string/productDefault"/> 
 	</TableRow>
 	<TableRow>
 		<TextView
@@ -36,13 +35,13 @@
     		android:id="@+id/discount"
     		android:hint="@string/discountDefault" /> 
 	</TableRow>
-	
+
 	<TableLayout 
         android:stretchColumns="0,1"
 		android:layout_width="fill_parent" 
-	    android:layout_height="fill_parent" 
+	    android:layout_height="fill_parent" >
 	<TableRow>
-	    <Button android:id="@+id/cancelbutton" android:text="Cancel" />
+	    <Button android:id="@+id/cancelbutton" android:text="Cancel"></Button>
 	    <Button android:text="Save" android:id="@+id/savebutton"></Button>
 	</TableRow>
 	</TableLayout>
