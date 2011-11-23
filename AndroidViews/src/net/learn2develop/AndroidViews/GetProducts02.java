@@ -13,6 +13,7 @@ import android.app.ListActivity;
 import java.io.ByteArrayInputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.util.List;
 import java.util.Vector;
 
 import android.app.Activity;
@@ -83,6 +84,9 @@ public class GetProducts02 extends ListActivity {
         	JSONObject json=new JSONObject(theString);
         	Log.i("_GetPerson_","<jsonobject>\n"+json.toString()+"\n</jsonobject>");
         	
+        	this.dm = new DataManipulator(this);
+        	List<String[]> names2 =null ;
+        	
         	JSONArray nameArray=json.getJSONArray("getProductsResult");
             for(int i=0;i<nameArray.length();i++)
             {
@@ -91,18 +95,33 @@ public class GetProducts02 extends ListActivity {
             	tempStringPrice  = nameArray.getJSONObject(i).getString("Price");
             	tempStringSymbol = nameArray.getJSONObject(i).getString("Symbol");
             		
-                Log.i("_GetProducts_","<ID"+i+">"      +nameArray.getJSONObject(i).getString("ID")    +"</ID"    +i+">\n");
-                Log.i("_GetProducts_","<Name"+i+">"    +nameArray.getJSONObject(i).getString("Name")    +"</Name"    +i+">\n");
-                Log.i("_GetProducts_","<Price"+i+">"   +nameArray.getJSONObject(i).getString("Price")   +"</Price"   +i+">\n");
-                Log.i("_GetProducts_","<Symbol"+i+">"  +nameArray.getJSONObject(i).getString("Symbol")+"</Symbol"+i+">\n");
+                Log.i("_GetProducts_","<ID"+i+">"      + tempStringID      +"</ID"    +i+">\n");
+                Log.i("_GetProducts_","<Name"+i+">"    + tempStringName    +"</Name"    +i+">\n");
+                Log.i("_GetProducts_","<Price"+i+">"   + tempStringPrice   +"</Price"   +i+">\n");
+                Log.i("_GetProducts_","<Symbol"+i+">"  + tempStringSymbol  +"</Symbol"+i+">\n");
                 
-    			this.dm = new DataManipulator(this);
-    			this.dm.insert(tempStringID,tempStringName,tempStringPrice,tempStringSymbol);
+    			
+    			this.dm.insertIntoProducts(tempStringID,tempStringName,tempStringPrice,tempStringSymbol);
+    			
                 
                 tempString=nameArray.getJSONObject(i).getString("Name")+"\n"+
                 		nameArray.getJSONObject(i).getString("Price")+"\n"+nameArray.getJSONObject(i).getString("Symbol");
                 vectorOfStrings.add(new String(tempString));
             }
+
+            names2 = this.dm.selectAllProducts();
+    		int ns = names2.size();
+
+
+
+    		String stg;
+    		Log.i("_DM_Products_", "FOR" + Integer.toString(ns) +"\n");
+    		for (String[] name : names2) {
+    			stg = name[0]+" - "+name[1]+ " - "+name[2]+" - "+name[3];
+    			Log.i("_DM_Products_", stg + ">\n");	
+    		}
+
+            
             int orderCount = vectorOfStrings.size();
             String[] orderTimeStamps = new String[orderCount];
             vectorOfStrings.copyInto(orderTimeStamps); 
