@@ -26,7 +26,8 @@ public class DataCheck extends ListActivity  {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.check);
 		  dm = new DataManipulator(this);
-	      names2 = dm.selectAll();
+	      // names2 = dm.selectAll();
+		  names2 = dm.selectAllProducts();
 
 		stg1=new String[names2.size()]; 
 
