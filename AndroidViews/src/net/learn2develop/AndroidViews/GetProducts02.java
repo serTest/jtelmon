@@ -85,6 +85,7 @@ public class GetProducts02 extends ListActivity {
         	Log.i("_GetPerson_","<jsonobject>\n"+json.toString()+"\n</jsonobject>");
         	
         	this.dm = new DataManipulator(this);
+        	this.dm.deleteAllProducts();
         	List<String[]> names2 =null ;
         	
         	JSONArray nameArray=json.getJSONArray("getProductsResult");
