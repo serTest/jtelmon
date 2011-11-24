@@ -58,6 +58,12 @@ public class DataManipulator {
 	public void sincroDB(){
 		// ToDo ... Next 
 	}
+
+	
+	public void deleteAllProducts() {
+		db.delete(TABLE_PRODUCTS, null, null);
+	}
+
 	
 	public void deleteAll() {
 		db.delete(TABLE_ORDERS, null, null);
