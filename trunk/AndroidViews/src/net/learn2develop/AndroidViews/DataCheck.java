@@ -28,7 +28,7 @@ public class DataCheck extends ListActivity  {
 		  dm = new DataManipulator(this);
 	      // names2 = dm.selectAll();
 		  names2 = dm.selectAllProducts();
-
+		  dm.db.close();
 		stg1=new String[names2.size()]; 
 
 		int x=0;

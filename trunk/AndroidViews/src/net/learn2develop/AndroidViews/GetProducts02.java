@@ -100,11 +100,9 @@ public class GetProducts02 extends ListActivity {
                 Log.i("_GetProducts_","<Name"+i+">"    + tempStringName    +"</Name"    +i+">\n");
                 Log.i("_GetProducts_","<Price"+i+">"   + tempStringPrice   +"</Price"   +i+">\n");
                 Log.i("_GetProducts_","<Symbol"+i+">"  + tempStringSymbol  +"</Symbol"+i+">\n");
-                
     			
     			this.dm.insertIntoProducts(tempStringID,tempStringName,tempStringPrice,tempStringSymbol);
     			
-                
                 tempString=nameArray.getJSONObject(i).getString("Name")+"\n"+
                 		nameArray.getJSONObject(i).getString("Price")+"\n"+nameArray.getJSONObject(i).getString("Symbol");
                 vectorOfStrings.add(new String(tempString));
@@ -113,16 +111,15 @@ public class GetProducts02 extends ListActivity {
             names2 = this.dm.selectAllProducts();
     		int ns = names2.size();
 
-
-
-    		String stg;
-    		Log.i("_DM_Products_", "FOR" + Integer.toString(ns) +"\n");
-    		for (String[] name : names2) {
-    			stg = name[0]+" - "+name[1]+ " - "+name[2]+" - "+name[3];
-    			Log.i("_DM_Products_", stg + ">\n");	
-    		}
-
-            
+    		//String stg;
+    		Log.i("_DataManipulator_Products_", "FROM SQLite : " + Integer.toString(ns) +"\n");
+    		//for (String[] name : names2) {
+    		//	stg = name[0]+" - "+name[1]+ " - "+name[2]+" - "+name[3];
+    		//	Log.i("_DM_Products_", stg + ">\n");	
+    		//}
+    		
+    		this.dm.db.close();
+    		
             int orderCount = vectorOfStrings.size();
             String[] orderTimeStamps = new String[orderCount];
             vectorOfStrings.copyInto(orderTimeStamps); 
