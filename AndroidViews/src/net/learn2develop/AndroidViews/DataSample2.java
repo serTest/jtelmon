@@ -13,7 +13,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 public class DataSample2 extends Activity implements OnClickListener {
+	
+	private DataManipulator dm;	
+	
 	/** Called when the activity is first created. */
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -38,6 +42,13 @@ public class DataSample2 extends Activity implements OnClickListener {
 			Intent i1 = new Intent(this, DataCheck.class);  
 			startActivity(i1);
 			break;
+		case R.id.button3:
+			this.dm.db.close();
+        	this.dm = new DataManipulator(this);
+        	this.dm.deleteAllProducts();
+        	this.dm.db.close(); 
+			break;
+			
 
 		}
 	}
