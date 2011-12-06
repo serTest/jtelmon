@@ -9,4 +9,5 @@
 		/>
 	<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/button1" android:text="Get Products from WebService" android:layout_below="@+id/text" android:layout_alignRight="@+id/text" android:layout_marginTop="124dp"></Button>
 	<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/button2" android:text="Check Products from Database" android:layout_below="@+id/button1" android:layout_alignRight="@+id/text"></Button>
+	<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/button3" android:text="Empty SQLite Database" android:layout_below="@+id/button2" android:layout_alignLeft="@+id/button1" android:layout_alignRight="@+id/button2"></Button>
 </RelativeLayout>
