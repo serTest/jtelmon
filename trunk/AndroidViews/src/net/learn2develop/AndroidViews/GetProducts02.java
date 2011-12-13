@@ -96,10 +96,10 @@ public class GetProducts02 extends ListActivity {
             	tempStringPrice  = nameArray.getJSONObject(i).getString("Price");
             	tempStringSymbol = nameArray.getJSONObject(i).getString("Symbol");
             		
-                Log.i("_GetProducts_","<ID"+i+">"      + tempStringID      +"</ID"    +i+">\n");
-                Log.i("_GetProducts_","<Name"+i+">"    + tempStringName    +"</Name"    +i+">\n");
-                Log.i("_GetProducts_","<Price"+i+">"   + tempStringPrice   +"</Price"   +i+">\n");
-                Log.i("_GetProducts_","<Symbol"+i+">"  + tempStringSymbol  +"</Symbol"+i+">\n");
+                // Log.i("_GetProducts_","<ID"+i+">"      + tempStringID      +"</ID"    +i+">\n");
+                // Log.i("_GetProducts_","<Name"+i+">"    + tempStringName    +"</Name"    +i+">\n");
+                // Log.i("_GetProducts_","<Price"+i+">"   + tempStringPrice   +"</Price"   +i+">\n");
+                // Log.i("_GetProducts_","<Symbol"+i+">"  + tempStringSymbol  +"</Symbol"+i+">\n");
     			
     			this.dm.insertIntoProducts(tempStringID,tempStringName,tempStringPrice,tempStringSymbol);
     			
