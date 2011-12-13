@@ -14,7 +14,8 @@ import android.view.View.OnClickListener;
 
 public class DataSample2 extends Activity implements OnClickListener {
 	
-	private DataManipulator dm;	
+	// private DataManipulator dm;	
+	DataManipulator dm;
 	
 	/** Called when the activity is first created. */
 
@@ -43,7 +44,7 @@ public class DataSample2 extends Activity implements OnClickListener {
 			startActivity(i1);
 			break;
 		case R.id.button3:
-			this.dm.db.close();
+			// this.dm.db.close();
         	this.dm = new DataManipulator(this);
         	this.dm.deleteAllProducts();
         	this.dm.db.close(); 

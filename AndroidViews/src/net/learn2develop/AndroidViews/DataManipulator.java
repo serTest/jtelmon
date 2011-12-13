@@ -1,6 +1,7 @@
 
 /* 
  * http://www.edumobile.org/android/android-development/use-of-sqlite/
+ * http://android-er.blogspot.com/2011/06/delete-row-in-sqlite-database.html
  * 
  */
 
@@ -141,7 +142,7 @@ public class DataManipulator {
 		@Override
 		public void onCreate(SQLiteDatabase db) {
 			db.execSQL("CREATE TABLE " + TABLE_ORDERS +   " (lineOrderId INTEGER PRIMARY KEY, clientName TEXT, productName TEXT, piecesNumber TEXT, discountNumber TEXT)");
-			db.execSQL("CREATE TABLE " + TABLE_PRODUCTS + " (ID TEXT, Name TEXT, Price TEXT, Symbol TEXT)");
+			db.execSQL("CREATE TABLE " + TABLE_PRODUCTS + " (_id integer primary key autoincrement, ID TEXT, Name TEXT, Price TEXT, Symbol TEXT)");
 		}
 
 		@Override
