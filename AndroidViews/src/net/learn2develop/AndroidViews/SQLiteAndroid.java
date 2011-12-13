@@ -16,7 +16,7 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class AndroidSQLite extends Activity {
+public class SQLiteAndroid extends Activity {
 	
 	EditText inputContent1, inputContent2;
 	Button buttonAdd, buttonDeleteAll;
@@ -96,29 +96,29 @@ public class AndroidSQLite extends Activity {
             String item_content2 = cursor.getString(cursor.getColumnIndex(SQLiteAdapter.KEY_CONTENT2));
             
             AlertDialog.Builder myDialog 
-            = new AlertDialog.Builder(AndroidSQLite.this);
+            = new AlertDialog.Builder(SQLiteAndroid.this);
             
             myDialog.setTitle("Delete?");
             
-            TextView dialogTxt_id = new TextView(AndroidSQLite.this);
+            TextView dialogTxt_id = new TextView(SQLiteAndroid.this);
             LayoutParams dialogTxt_idLayoutParams 
              = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
             dialogTxt_id.setLayoutParams(dialogTxt_idLayoutParams);
             dialogTxt_id.setText("#" + String.valueOf(item_id));
             
-            TextView dialogC1_id = new TextView(AndroidSQLite.this);
+            TextView dialogC1_id = new TextView(SQLiteAndroid.this);
             LayoutParams dialogC1_idLayoutParams 
              = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
             dialogC1_id.setLayoutParams(dialogC1_idLayoutParams);
             dialogC1_id.setText(item_content1);
             
-            TextView dialogC2_id = new TextView(AndroidSQLite.this);
+            TextView dialogC2_id = new TextView(SQLiteAndroid.this);
             LayoutParams dialogC2_idLayoutParams 
              = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
             dialogC2_id.setLayoutParams(dialogC2_idLayoutParams);
             dialogC2_id.setText(item_content2);
             
-            LinearLayout layout = new LinearLayout(AndroidSQLite.this);
+            LinearLayout layout = new LinearLayout(SQLiteAndroid.this);
             layout.setOrientation(LinearLayout.VERTICAL);
             layout.addView(dialogTxt_id);
             layout.addView(dialogC1_id);
