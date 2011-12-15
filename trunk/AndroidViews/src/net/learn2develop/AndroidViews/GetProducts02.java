@@ -1,5 +1,5 @@
 /*
- * 
+ * http://www.vogella.de/articles/AndroidSQLite/article.html
  * 
  * 
  */
@@ -118,7 +118,7 @@ public class GetProducts02 extends ListActivity {
     		//	Log.i("_DM_Products_", stg + ">\n");	
     		//}
     		
-    		this.dm.db.close();
+    		// this.dm.db.close();
     		
             int orderCount = vectorOfStrings.size();
             String[] orderTimeStamps = new String[orderCount];
@@ -130,6 +130,14 @@ public class GetProducts02 extends ListActivity {
 		}        
 
     }
+    
+    // @Override
+	protected void onDestroy() {
+		super.onDestroy();
+		if (dm != null) {
+			dm.close();
+		}
+	}
     
 }
 
