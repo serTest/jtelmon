@@ -47,10 +47,19 @@ public class DataSample2 extends Activity implements OnClickListener {
 			// this.dm.db.close();
         	this.dm = new DataManipulator(this);
         	this.dm.deleteAllProducts();
-        	this.dm.db.close(); 
+    		if (this.dm != null) {
+    			this.dm.close();
+    		}
 			break;
-			
-
 		}
 	}
+	
+	protected void onDestroy() {
+		super.onDestroy();
+		if (dm != null) {
+			dm.close();
+		}
+	}
+
 }
+
