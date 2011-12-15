@@ -28,7 +28,7 @@ public class DataCheck extends ListActivity  {
 		  dm = new DataManipulator(this);
 	      // names2 = dm.selectAll();
 		  names2 = dm.selectAllProducts();
-		  dm.db.close();
+		  // dm.db.close();
 		stg1=new String[names2.size()]; 
 
 		int x=0;
@@ -54,6 +54,11 @@ public class DataCheck extends ListActivity  {
 	public void onListItemClick(ListView parent, View v, int position, long id) {
 		selection.setText(stg1[position]);
 	}
-
+	protected void onDestroy() {
+		super.onDestroy();
+		if (dm != null) {
+			dm.close();
+		}
+	}
 
 }
