@@ -131,6 +131,10 @@ public class DataManipulator {
 		db.delete(TABLE_ORDERS, null, null);
 	}
 
+    // no-delete if missing ? 
+	public void close() {
+		db.close();
+	}
 
 
 	private static class OpenHelper extends SQLiteOpenHelper {
