@@ -71,13 +71,10 @@ public class DataManipulator {
 	
 	public void deleteAllProducts() {
 		// db.delete(TABLE_PRODUCTS, null, null);
-		
 		try{
 	    	// db = openOrCreateDatabase(DBNAME, Context.MODE_PRIVATE,null);
-
 	    	db.execSQL("DELETE FROM " + TABLE_PRODUCTS );
 			Log.i("_DataManipulator_","<DELETE FROM>" + TABLE_PRODUCTS + ">\n");
-			// Toast.makeText(this.context, " DELETED ?! " + "\n", Toast.LENGTH_LONG).show() ;
 	    	db.close();
 	    }catch(Exception e){
 			// Toast.makeText(getApplicationContext(), "Error encountered while deleting.", Toast.LENGTH_LONG);
