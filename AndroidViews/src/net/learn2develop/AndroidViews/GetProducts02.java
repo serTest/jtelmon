@@ -85,8 +85,8 @@ public class GetProducts02 extends ListActivity {
         	Log.i("_GetPerson_","<jsonobject>\n"+json.toString()+"\n</jsonobject>");
         	
         	this.dm = new DataManipulator(this);
-        	this.dm.deleteAllProducts();
-        	List<String[]> names2 =null ;
+        	// this.dm.deleteAllProducts();
+        	// List<String[]> names2 =null ;
         	
         	JSONArray nameArray=json.getJSONArray("getProductsResult");
             for(int i=0;i<nameArray.length();i++)
@@ -108,11 +108,11 @@ public class GetProducts02 extends ListActivity {
                 vectorOfStrings.add(new String(tempString));
             }
 
-            names2 = this.dm.selectAllProducts();
-    		int ns = names2.size();
+            // names2 = this.dm.selectAllProducts();
+    		// int ns = names2.size();
 
     		//String stg;
-    		Log.i("_DataManipulator_Products_", "FROM SQLite : " + Integer.toString(ns) +"\n");
+    		// Log.i("_DataManipulator_Products_", "FROM SQLite : " + Integer.toString(ns) +"\n");
     		//for (String[] name : names2) {
     		//	stg = name[0]+" - "+name[1]+ " - "+name[2]+" - "+name[3];
     		//	Log.i("_DM_Products_", stg + ">\n");	
