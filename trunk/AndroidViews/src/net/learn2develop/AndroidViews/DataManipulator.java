@@ -15,6 +15,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
 import java.util.ArrayList;
 import java.util.List;
+import android.util.Log;
+import android.widget.Toast;
+
+// import android.app.Activity;
+// import android.widget.Toast;
+// import android.widget.TextView;
 
 public class DataManipulator {
 	private static final  String DATABASE_NAME = "easysales.db";
@@ -64,7 +70,18 @@ public class DataManipulator {
 
 	
 	public void deleteAllProducts() {
-		db.delete(TABLE_PRODUCTS, null, null);
+		// db.delete(TABLE_PRODUCTS, null, null);
+		
+		try{
+	    	// db = openOrCreateDatabase(DBNAME, Context.MODE_PRIVATE,null);
+
+	    	db.execSQL("DELETE FROM " + TABLE_PRODUCTS );
+			Log.i("_DataManipulator_","<DELETE FROM>" + TABLE_PRODUCTS + ">\n");
+			// Toast.makeText(this.context, " DELETED ?! " + "\n", Toast.LENGTH_LONG).show() ;
+	    	db.close();
+	    }catch(Exception e){
+			// Toast.makeText(getApplicationContext(), "Error encountered while deleting.", Toast.LENGTH_LONG);
+		}
 	}
 
 	

@@ -14,8 +14,8 @@ import android.view.View.OnClickListener;
 
 public class DataSample2 extends Activity implements OnClickListener {
 	
-	// private DataManipulator dm;	
-	DataManipulator dm;
+	private DataManipulator dm;	
+	// DataManipulator dm;
 	
 	/** Called when the activity is first created. */
 
@@ -27,7 +27,9 @@ public class DataSample2 extends Activity implements OnClickListener {
 		button1Click.setOnClickListener(this);
 		View button2Click = findViewById(R.id.button2);
 		button2Click.setOnClickListener(this);        
-
+		View button3Click = findViewById(R.id.button3);
+		button3Click.setOnClickListener(this);        
+		
 	}
 
 	// @Override
