@@ -5,11 +5,21 @@
 <!-- .GetProducts02 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="net.learn2develop.AndroidViews"
+      package="net.learn2develop"
       android:versionCode="1"
       android:versionName="1.0.0">
     <application android:icon="@drawable/icon" android:label="@string/app_name">
-        <activity android:name=".DataSample2" 
+
+        <activity android:name=".sqlitetutorial.ActivityMain" 
+                  android:label="@string/app_name">
+            <intent-filter>
+ 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>        
+        
+        
+        <activity android:name=".AndroidViews.DataSample2" 
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,52 +27,61 @@
             </intent-filter>
         </activity>        
 
-        <activity android:name=".DataSave"
+        <activity android:name=".sqlitetutorial.ActivityInsert"
                   android:label="@string/app_name" />
 
-        <activity android:name=".GetProducts02"
+        <activity android:name=".sqlitetutorial.ActivityDelete"
+                  android:label="@string/app_name" />
+
+        <activity android:name=".sqlitetutorial.ActivityUpdate"
+                  android:label="@string/app_name" />
+        
+        
+        <activity android:name=".AndroidViews.DataSave"
+                  android:label="@string/app_name" />
+
+        <activity android:name=".AndroidViews.GetProducts02"
                   android:label="@string/app_name" />
 
 
-        <activity android:name=".DataCheck"
+        <activity android:name=".AndroidViews.DataCheck"
                   android:label="@string/app_name" />
 
-        <activity android:name=".DataManipulator"
+        <activity android:name=".AndroidViews.DataManipulator"
                   android:label="@string/app_name" />
  
 
-        <activity android:name=".BasicViewsExample"
+        <activity android:name=".AndroidViews.BasicViewsExample"
                   android:label="@string/app_name" />
  
-         <activity android:name=".AutoCompleteExample"
+         <activity android:name=".AndroidViews.AutoCompleteExample"
                   android:label="@string/app_name" />
 
-         <activity android:name=".DepoziteAutoComplete"
+         <activity android:name=".AndroidViews.DepoziteAutoComplete"
                   android:label="@string/app_name" />
 
-         <activity android:name=".ListViewExample"
+         <activity android:name=".AndroidViews.ListViewExample"
                   android:label="@string/app_name" />
 
-         <activity android:name=".LateOrdersByZone"
+         <activity android:name=".AndroidViews.LateOrdersByZone"
                   android:label="@string/app_name" />
                   
-          <activity android:name=".GetPersons03"
+          <activity android:name=".AndroidViews.GetPersons03"
                   android:label="@string/app_name" />        
 
-          <activity android:name=".SavePerson02"
+          <activity android:name=".AndroidViews.SavePerson02"
                   android:label="@string/app_name" />        
 
-          <activity android:name=".Caltroid"
+          <activity android:name=".AndroidViews.Caltroid"
                   android:label="@string/app_name" />        
 
-        <activity android:name=".ContactDetails"
+        <activity android:name=".AndroidViews.ContactDetails"
         	android:label="@string/contact_intent"
         	android:theme="@android:style/Theme.Dialog">
         </activity>
 
-          <activity android:name=".DbContactConsole"
+          <activity android:name=".AndroidViews.DbContactConsole"
                   android:label="@string/app_name" />        
-
 
     </application>
     
