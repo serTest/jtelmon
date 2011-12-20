@@ -1,5 +1,6 @@
 package net.learn2develop.AndroidViews;
  
+import net.learn2develop.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

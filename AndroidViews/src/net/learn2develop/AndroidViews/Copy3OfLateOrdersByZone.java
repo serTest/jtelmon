@@ -27,6 +27,8 @@ import android.util.Xml;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import net.learn2develop.R;
+
 import org.ksoap2.serialization.KvmSerializable;
 import org.ksoap2.serialization.PropertyInfo;
 import org.ksoap2.serialization.SoapObject;

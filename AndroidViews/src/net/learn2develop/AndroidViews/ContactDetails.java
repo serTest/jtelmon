@@ -6,6 +6,7 @@
 
 package net.learn2develop.AndroidViews;
 
+import net.learn2develop.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
