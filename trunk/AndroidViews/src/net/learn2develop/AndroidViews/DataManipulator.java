@@ -22,7 +22,7 @@ import android.util.Log;
 // import android.widget.TextView;
 
 public class DataManipulator {
-	private static final  String DATABASE_NAME = "easysales.db";
+	private static final  String DATABASE_NAME = "easysales";
 	private static final int DATABASE_VERSION = 1;
 	static final String TABLE_ORDERS   = "orders2";
 	static final String TABLE_PRODUCTS = "products2";

@@ -21,6 +21,8 @@ import android.util.Xml;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import net.learn2develop.R;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.HttpPost;

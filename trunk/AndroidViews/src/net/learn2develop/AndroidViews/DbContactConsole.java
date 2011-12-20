@@ -4,6 +4,7 @@
 	
 package net.learn2develop.AndroidViews;
 
+import net.learn2develop.R;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
