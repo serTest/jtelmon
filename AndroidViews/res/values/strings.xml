@@ -25,4 +25,5 @@
     <string name="productDefault">Product</string>
     <string name="piecesDefault">Pieces</string>
     <string name="discountDefault">Discount</string>
+    <string name="COUNTRY_LABEL">Country</string>
 </resources>
