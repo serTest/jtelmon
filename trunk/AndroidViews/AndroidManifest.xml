@@ -10,23 +10,36 @@
       android:versionName="1.0.0">
     <application android:icon="@drawable/icon" android:label="@string/app_name">
 
+         <activity android:name=".sqlitetutorial.autocomplete.UsingSQLite"
+                  android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />                
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+         </activity>
+        
         <activity android:name=".sqlitetutorial.ActivityMain" 
                   android:label="@string/app_name">
             <intent-filter>
- 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>        
-        
-        
-        <activity android:name=".AndroidViews.DataSample2" 
-                  android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>        
 
+        <activity android:name=".AndroidViews.DataSample2" 
+                  android:label="@string/app_name">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>        
+
+         <activity android:name=".AndroidViews.AutoCompleteExample"
+                  android:label="@string/app_name" >
+            <intent-filter>           
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>            
+            
         <activity android:name=".sqlitetutorial.ActivityInsert"
                   android:label="@string/app_name" />
 
@@ -36,13 +49,11 @@
         <activity android:name=".sqlitetutorial.ActivityUpdate"
                   android:label="@string/app_name" />
         
-        
         <activity android:name=".AndroidViews.DataSave"
                   android:label="@string/app_name" />
 
         <activity android:name=".AndroidViews.GetProducts02"
                   android:label="@string/app_name" />
-
 
         <activity android:name=".AndroidViews.DataCheck"
                   android:label="@string/app_name" />
@@ -50,11 +61,7 @@
         <activity android:name=".AndroidViews.DataManipulator"
                   android:label="@string/app_name" />
  
-
         <activity android:name=".AndroidViews.BasicViewsExample"
-                  android:label="@string/app_name" />
- 
-         <activity android:name=".AndroidViews.AutoCompleteExample"
                   android:label="@string/app_name" />
 
          <activity android:name=".AndroidViews.DepoziteAutoComplete"
