@@ -1,6 +1,6 @@
 /*
  * http://www.vogella.de/articles/AndroidSQLite/article.html
- * 
+ * http://www.youtube.com/watch?v=_7gxQq467Nk
  * 
  */
 

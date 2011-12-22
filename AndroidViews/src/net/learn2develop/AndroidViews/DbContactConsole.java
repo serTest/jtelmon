@@ -1,5 +1,10 @@
 /*
    http://computersight.com/software/android-and-sqlite-using-database-part-five/
+   http://computersight.com/computers/android-and-sqlite-using-database-part-four/
+   http://computersight.com/software/android-and-sqlite-using-database-part-three/
+   http://computersight.com/software/android-and-sqlite-using-database-part-two/
+   
+   http://www.youtube.com/watch?v=4WynsycSuL0
 */
 	
 package net.learn2develop.AndroidViews;
@@ -208,3 +213,4 @@ public class DbContactConsole extends ListActivity {
 		   setListAdapter(adapter);
 	   }
 }
+
